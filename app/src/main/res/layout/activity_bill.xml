@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app=""
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_bill"
     android:layout_width="match_parent"
@@ -9,5 +10,77 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.brandeis.jjwang95.inminder.Bill">
+
+    <TextView
+        android:text="TIME"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/time_text" />
+
+    <Button
+        android:text="-"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/minus_budget"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/time_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:minWidth="200dip"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar3"
+        android:progress="30"
+        android:layout_alignBottom="@+id/minus_budget"
+        android:layout_toRightOf="@+id/minus_budget"
+        android:layout_toEndOf="@+id/minus_budget" />
+
+    <Button
+        android:text="+"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:id="@+id/plus_budget"
+        android:layout_alignBottom="@+id/progressBar3"
+        android:layout_toRightOf="@+id/progressBar3"
+        android:layout_toEndOf="@+id/progressBar3" />
+
+    <TextView
+        android:text="Current Balance: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/minus_budget"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="32dp"
+        android:id="@+id/current_balance" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/current_balance"
+        android:layout_toRightOf="@+id/current_balance"
+        android:layout_toEndOf="@+id/current_balance"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:id="@+id/balance"
+        android:text="850" />
+    <ListView
+        android:id="@+id/bill_list"
+        android:layout_below="@id/current_balance"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>
