@@ -5,9 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 /**
  * Created by WangJingjing on 11/10/16.
@@ -22,13 +22,13 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String TEXT_TYPE = " TEXT";
     private static final String COMMA_SEP = ",";
 
-    // Table names
-    private static final String PASSWORD_TABLE = "Password";
-    private static final String BILL_TABLE = "Bill";
-    private static final String REMINDER_TABLE = "Reminder";
+    // Table names cannot capitalized !!!!!
+    private static final String PASSWORD_TABLE = "password_table";
+    private static final String BILL_TABLE = "bill_table";
+    private static final String REMINDER_TABLE = "reminder_table";
 
     // Common column names
-    private static final String KEY_ID = "id";
+    private static final String KEY_ID = "_id";
     private static final String KEY_CREATED_AT = "created_at";
 
     // PASSWORD
@@ -38,10 +38,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Statement for creating Password table
     private static final String PASSWORD_CREATE =
-            "CREATE TABLE if not exists " + PASSWORD_TABLE + " (" +
-                    PASSWORD_ID + " integer PRIMARY KEY autoincrement," +
+            "CREATE TABLE " + PASSWORD_TABLE + " (" +
+                    PASSWORD_ID + " integer PRIMARY KEY AUTOINCREMENT," +
                     KEY_WEBSITE + "," +
-                    KEY_PASSWORD + "," + ");";
+                    KEY_PASSWORD + ");";
                     /*" UNIQUE (" + KEY_CODE +"));";*/
 
 
@@ -52,9 +52,9 @@ public class DBHelper extends SQLiteOpenHelper {
     // Statement for creating Bill table
     private static final String BILL_CREATE =
             "CREATE TABLE if not exists " + BILL_TABLE + " (" +
-                    BILL_ID + " integer PRIMARY KEY autoincrement," +
+                    BILL_ID + " integer PRIMARY KEY AUTOINCREMENT," +
                     KEY_TITLE + "," +
-                    KEY_AMOUNT + "," + ");";
+                    KEY_AMOUNT + ");";
 
     // REMINDER
     public static final String REMINDER_ID = "_id";
@@ -65,10 +65,10 @@ public class DBHelper extends SQLiteOpenHelper {
     //Statement for creating Reminder table
     private static final String REMINDER_CREATE =
             "CREATE TABLE if not exists " + REMINDER_TABLE + " (" +
-                    REMINDER_ID + " integer PRIMARY KEY autoincrement," +
+                    REMINDER_ID + " integer PRIMARY KEY AUTOINCREMENT," +
                     KEY_TIME + "," +
                     KEY_NAME + "," +
-                    KEY_NOTE + "," + ");";
+                    KEY_NOTE + ");";
 
     //private final Context context;
     private DBHelper dbHelper;
@@ -118,7 +118,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues initPassword = new ContentValues();
         initPassword.put(KEY_WEBSITE, password.getWebsite());
         initPassword.put(KEY_PASSWORD, password.getPassword());
-
+        Log.d("Initialize Password", "Initialized");
         return db.insert(PASSWORD_TABLE, null, initPassword);
     }
     public PasswordObject getPassword(){
@@ -173,7 +173,6 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues initBill = new ContentValues();
         initBill.put(KEY_TITLE, bill.getTitle());
         initBill.put(KEY_AMOUNT, bill.getAmount());
-
         return db.insert(BILL_TABLE, null, initBill);
     }
     public BillObject getBill(){
