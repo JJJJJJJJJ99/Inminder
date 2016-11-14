@@ -5,8 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SimpleCursorAdapter;
 
 public class MainActivity extends AppCompatActivity {
+    private DBHelper dbHelper;
+    private SimpleCursorAdapter dataAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +18,10 @@ public class MainActivity extends AppCompatActivity {
         Button rem_button = (Button) findViewById(R.id.reminder_button);
         Button bill_button = (Button) findViewById(R.id.bill_button);
         Button pass_button = (Button) findViewById(R.id.password_button);
+
+        dbHelper = new DBHelper(getApplicationContext());
+
+
 
         rem_button.setOnClickListener(new View.OnClickListener() {
             @Override
