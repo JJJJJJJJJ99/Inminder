@@ -22,14 +22,17 @@ public class MainActivity extends AppCompatActivity {
         Button bill_button = (Button) findViewById(R.id.bill_button);
         Button pass_button = (Button) findViewById(R.id.password_button);
 
+        /*********************Test*******************************************************/
         Log.d("Start", "SHOW");
-        dbHelper = new DBHelper(getApplicationContext());
+        dbHelper = DBHelper.getInstance(getApplicationContext());
         dbHelper.onOpen(db);
         Log.d("Create dbHelper", "Created");
-        /*********************Test*******************************************************/
         PasswordObject testPassword = new PasswordObject("lalalala", "1111");
         long testPassword_id = dbHelper.createPassword(testPassword);
         Log.d("Added one password", "Password count" + dbHelper.getAllPasswords().size());
+        dbHelper.deleteAllPassword();
+        Log.d("Delete All", "Password count" + dbHelper.getAllPasswords().size());
+        dbHelper.closeDB();
         /*********************Test*******************************************************/
 
         rem_button.setOnClickListener(new View.OnClickListener() {

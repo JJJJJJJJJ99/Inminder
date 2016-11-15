@@ -32,7 +32,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String KEY_CREATED_AT = "created_at";
 
     // PASSWORD
-    public static final String PASSWORD_ID = "_id";
+    private static final String PASSWORD_ID = "_id";
     private static final String KEY_WEBSITE = "website";
     private static final String KEY_PASSWORD = "password";
 
@@ -45,7 +45,7 @@ public class DBHelper extends SQLiteOpenHelper {
                     /*" UNIQUE (" + KEY_CODE +"));";*/
 
 
-    public static final String BILL_ID = "_id";
+    private static final String BILL_ID = "_id";
     private static final String KEY_TITLE = "title";
     private static final String KEY_AMOUNT = "amount";
 
@@ -57,7 +57,7 @@ public class DBHelper extends SQLiteOpenHelper {
                     KEY_AMOUNT + ");";
 
     // REMINDER
-    public static final String REMINDER_ID = "_id";
+    private static final String REMINDER_ID = "_id";
     private static final String KEY_TIME = "date";
     private static final String KEY_NAME = "name";
     private static final String KEY_NOTE = "note";
@@ -71,11 +71,18 @@ public class DBHelper extends SQLiteOpenHelper {
                     KEY_NOTE + ");";
 
     //private final Context context;
-    private DBHelper dbHelper;
+    private static DBHelper dbHelper;
     private SQLiteDatabase db;
 
-    public DBHelper(Context context){
+    private DBHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    public static synchronized DBHelper getInstance(Context context){
+        if(dbHelper == null){
+            dbHelper = new DBHelper(context.getApplicationContext());
+        }
+        return dbHelper;
     }
 
     // Override method, create tables
@@ -102,12 +109,6 @@ public class DBHelper extends SQLiteOpenHelper {
         if (db != null && db.isOpen())
             db.close();
     }
-
-//    public edu.brandeis.jjwang95.inminder.DBHelper open(){
-//        dbHelper = new DBHelper(context);
-//        db = dbHelper.getWritableDatabase();
-//        return this;
-//    }
 
 
     // Jingjing Wang: jjwang95@brandeis.edu
@@ -168,6 +169,11 @@ public class DBHelper extends SQLiteOpenHelper {
                 new String[] { String.valueOf(p_id) });
     }
 
+    public void deleteAllPassword(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from "+ PASSWORD_TABLE);
+    }
+
     // Bill tables ********************************************************************
     public long createBill(BillObject bill){
         ContentValues initBill = new ContentValues();
@@ -219,6 +225,10 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(BILL_TABLE, KEY_ID + " = ?",
                 new String[] { String.valueOf(b_id) });
+    }
+    public void deleteAllBill(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from " + BILL_TABLE);
     }
 
     // Reminder tables ******************************************************************** zhen shi tai chang le !!!
@@ -279,6 +289,9 @@ public class DBHelper extends SQLiteOpenHelper {
         db.delete(REMINDER_TABLE, KEY_ID + " = ?",
                 new String[] { String.valueOf(r_id) });
     }
-
+    public void deleteAllReminder(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from "+ REMINDER_TABLE);
+    }
 
 }
