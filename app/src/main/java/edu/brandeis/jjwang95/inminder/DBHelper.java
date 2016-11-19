@@ -124,7 +124,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     public PasswordObject getPassword(){
         SQLiteDatabase db = this.getReadableDatabase();
-
+        // Check PASSWORD_ID
         String selectQuery = "SELECT  * FROM " + PASSWORD_TABLE + " WHERE "
                 + KEY_ID + " = " + PASSWORD_ID;
         Cursor c = db.rawQuery(selectQuery, null);
@@ -137,12 +137,12 @@ public class DBHelper extends SQLiteOpenHelper {
         p.setWebsite(c.getString(c.getColumnIndex(KEY_WEBSITE)));
         return p;
     }
-    public ArrayList<PasswordObject> getAllPasswords(){
-        ArrayList<PasswordObject> objects = new ArrayList<PasswordObject>();
+    public Cursor getAllPasswords(){
+        //ArrayList<PasswordObject> objects = new ArrayList<PasswordObject>();
         String selectQuery = "SELECT  * FROM " + PASSWORD_TABLE;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(selectQuery, null);
-        if (c.moveToFirst()) {
+        /*if (c.moveToFirst()) {
             do {
                 PasswordObject po = new PasswordObject();
                 po.setId(c.getInt((c.getColumnIndex(KEY_ID))));
@@ -150,9 +150,9 @@ public class DBHelper extends SQLiteOpenHelper {
                 po.setPassword(c.getString(c.getColumnIndex(KEY_PASSWORD)));
                 objects.add(po);
             } while (c.moveToNext());
-        }
+        }*/
 
-        return objects;
+        return c;
     }
     public int updatePassword(PasswordObject p){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -196,12 +196,12 @@ public class DBHelper extends SQLiteOpenHelper {
         b.setTitle(c.getString(c.getColumnIndex(KEY_TITLE)));
         return b;
     }
-    public ArrayList<BillObject> getAllBills(){
-        ArrayList<BillObject> objects = new ArrayList<BillObject>();
+    public Cursor getAllBills(){
+        //ArrayList<BillObject> objects = new ArrayList<BillObject>();
         String selectQuery = "SELECT  * FROM " + BILL_TABLE;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(selectQuery, null);
-        if (c.moveToFirst()) {
+        /*if (c.moveToFirst()) {
             do {
                 BillObject bo = new BillObject();
                 bo.setId(c.getInt((c.getColumnIndex(KEY_ID))));
@@ -209,9 +209,9 @@ public class DBHelper extends SQLiteOpenHelper {
                 bo.setAmount(c.getString(c.getColumnIndex(KEY_AMOUNT)));
                 objects.add(bo);
             } while (c.moveToNext());
-        }
+        }*/
 
-        return objects;
+        return c;
     }
     public int updateBill(BillObject b){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -257,12 +257,12 @@ public class DBHelper extends SQLiteOpenHelper {
         r.setNote(c.getString(c.getColumnIndex(KEY_NOTE)));
         return r;
     }
-    public ArrayList<ReminderObject> getAllReminders(){
-        ArrayList<ReminderObject> objects = new ArrayList<ReminderObject>();
+    public Cursor getAllReminders(){
+        //ArrayList<ReminderObject> objects = new ArrayList<ReminderObject>();
         String selectQuery = "SELECT  * FROM " + REMINDER_TABLE;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(selectQuery, null);
-        if (c.moveToFirst()) {
+        /*if (c.moveToFirst()) {
             do {
                 ReminderObject ro = new ReminderObject();
                 ro.setId(c.getInt((c.getColumnIndex(KEY_ID))));
@@ -271,9 +271,9 @@ public class DBHelper extends SQLiteOpenHelper {
                 ro.setName(c.getString(c.getColumnIndex(KEY_NAME)));
                 objects.add(ro);
             } while (c.moveToNext());
-        }
+        }*/
 
-        return objects;
+        return c;
     }
     public int updateReminder(ReminderObject r){
         SQLiteDatabase db = this.getWritableDatabase();
