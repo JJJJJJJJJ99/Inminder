@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Inminder</string>
+    <string name="reminderName">Topic:</string>
+    <string name="notes">Notes:</string>
+    <string name="notifiTime">Time:</string>
+    <string name="detailBtn">Details</string>
+    <string name="deleteBtn">Delete</string>
+    <string name="updateBtn">Edit</string>
 </resources>
