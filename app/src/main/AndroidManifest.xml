@@ -15,27 +15,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Reminder"
+        <activity
+            android:name=".Reminder"
             android:label="Reminder">
-        <intent-filter>
-            <action android:name="edu.brandeis..jjwang95.inminder.Reminder" />
+            <intent-filter>
+                <action android:name="edu.brandeis..jjwang95.inminder.Reminder" />
 
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
-        <activity android:name=".Bill"
+        <activity
+            android:name=".Bill"
             android:label="Bill">
-        <intent-filter>
-            <action android:name="edu.brandeis..jjwang95.inminder.Bill" />
+            <intent-filter>
+                <action android:name="edu.brandeis..jjwang95.inminder.Bill" />
 
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
-
-        <activity android:name=".Password"
+        <activity
+            android:name=".Password"
             android:label="Password">
             <intent-filter>
                 <action android:name="edu.brandeis..jjwang95.inminder.Reminder" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ReminderDetail"
+            android:label="ReminderDetail">
+            <intent-filter>
+                <action android:name="edu.brandeis..jjwang95.inminder.ReminderDetail" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
