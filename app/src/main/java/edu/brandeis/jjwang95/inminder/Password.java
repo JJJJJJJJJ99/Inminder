@@ -6,6 +6,7 @@ import android.support.v7.widget.SearchView;
 import android.widget.ListView;
 
 public class Password extends AppCompatActivity {
+    private DBHelper helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +15,8 @@ public class Password extends AppCompatActivity {
 
         SearchView search = new SearchView(getApplicationContext());
         ListView list = new ListView(getApplicationContext());
+
+        helper = DBHelper.getInstance(getApplicationContext());
 
     }
 }
