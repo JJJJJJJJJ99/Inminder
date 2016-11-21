@@ -5,7 +5,7 @@ package edu.brandeis.jjwang95.inminder;
  */
 
 public class PasswordObject {
-    int id;
+    long id;
     String website;
     String password;
 
@@ -18,7 +18,7 @@ public class PasswordObject {
     }
 
     // Setters ####################
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
     public void setWebsite(String website){
@@ -29,7 +29,7 @@ public class PasswordObject {
     }
 
     // Getters ####################
-    public int getId(){
+    public long getId(){
         return id;
     }
     public String getWebsite(){

@@ -29,9 +29,12 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Create dbHelper", "Created");
         PasswordObject testPassword = new PasswordObject("lalalala", "1111");
         long testPassword_id = dbHelper.createPassword(testPassword);
-//        Log.d("Added one password", "Password count" + dbHelper.getAllPasswords().size());
+
+        testPassword.setId(testPassword_id);
+        //Log.d("Added one password", "Password count" + dbHelper.getAllPasswords().size());
         dbHelper.deleteAllPassword();
-//        Log.d("Delete All", "Password count" + dbHelper.getAllPasswords().size());
+        //Log.d("Delete All", "Password count" + dbHelper.getAllPasswords().size());
+
         dbHelper.closeDB();
         /*********************Test*******************************************************/
 
