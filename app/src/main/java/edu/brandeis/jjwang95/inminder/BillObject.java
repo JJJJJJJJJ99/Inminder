@@ -5,7 +5,7 @@ package edu.brandeis.jjwang95.inminder;
  */
 
 public class BillObject {
-    int id;
+    long id;
     String title;
     String amount;
 
@@ -18,7 +18,7 @@ public class BillObject {
     }
 
     // Setters ####################
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
     public void setTitle(String title){
@@ -29,7 +29,7 @@ public class BillObject {
     }
 
     // Getters ####################
-    public int getId(){
+    public long getId(){
         return id;
     }
     public String getTitle(){

@@ -5,7 +5,7 @@ package edu.brandeis.jjwang95.inminder;
  */
 
 public class ReminderObject {
-    int id;
+    long id;
     String time;
     String name;
     String note;
@@ -20,7 +20,7 @@ public class ReminderObject {
     }
 
     // Setters ####################
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
     public void setTime(String date){
@@ -34,7 +34,7 @@ public class ReminderObject {
     }
 
     // Getters ####################
-    public int getId(){
+    public long getId(){
         return id;
     }
     public String getTime(){

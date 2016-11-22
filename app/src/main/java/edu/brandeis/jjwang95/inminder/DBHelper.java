@@ -122,11 +122,11 @@ public class DBHelper extends SQLiteOpenHelper {
         Log.d("Initialize Password", "Initialized");
         return db.insert(PASSWORD_TABLE, null, initPassword);
     }
-    public PasswordObject getPassword(){
+    public PasswordObject getPassword(long id){
         SQLiteDatabase db = this.getReadableDatabase();
         // Check PASSWORD_ID
         String selectQuery = "SELECT  * FROM " + PASSWORD_TABLE + " WHERE "
-                + KEY_ID + " = " + PASSWORD_ID;
+                + KEY_ID + " = " + id;
         Cursor c = db.rawQuery(selectQuery, null);
         if (c != null) {
             c.moveToFirst();
@@ -165,8 +165,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     public void deletePassword(long p_id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(PASSWORD_TABLE, KEY_ID + " = ?",
-                new String[] { String.valueOf(p_id) });
+        db.delete(PASSWORD_TABLE, KEY_ID + "=" + p_id, null);
     }
 
     public void deleteAllPassword(){
@@ -181,11 +180,11 @@ public class DBHelper extends SQLiteOpenHelper {
         initBill.put(KEY_AMOUNT, bill.getAmount());
         return db.insert(BILL_TABLE, null, initBill);
     }
-    public BillObject getBill(){
+    public BillObject getBill(long id){
         SQLiteDatabase db = this.getReadableDatabase();
 
         String selectQuery = "SELECT  * FROM " + BILL_TABLE + " WHERE "
-                + KEY_ID + " = " + BILL_ID;
+                + KEY_ID + " = " + id;
         Cursor c = db.rawQuery(selectQuery, null);
         if (c != null) {
             c.moveToFirst();
@@ -223,8 +222,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     public void deleteBill(long b_id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(BILL_TABLE, KEY_ID + " = ?",
-                new String[] { String.valueOf(b_id) });
+        db.delete(BILL_TABLE, KEY_ID + "=" + b_id, null);
     }
     public void deleteAllBill(){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -241,11 +239,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return db.insert(REMINDER_TABLE, null, initReminder);
     }
-    public ReminderObject getReminder(){
+    public ReminderObject getReminder(long id){
         SQLiteDatabase db = this.getReadableDatabase();
 
         String selectQuery = "SELECT  * FROM " + REMINDER_TABLE + " WHERE "
-                + KEY_ID + " = " + REMINDER_ID;
+                + KEY_ID + " = " + id;
         Cursor c = db.rawQuery(selectQuery, null);
         if (c != null) {
             c.moveToFirst();
@@ -286,8 +284,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     public void deleteReminder(long r_id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(REMINDER_TABLE, KEY_ID + " = ?",
-                new String[] { String.valueOf(r_id) });
+        db.delete(REMINDER_TABLE, KEY_ID + "=" + r_id, null);
     }
     public void deleteAllReminder(){
         SQLiteDatabase db = this.getWritableDatabase();
