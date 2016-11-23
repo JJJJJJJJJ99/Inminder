@@ -10,38 +10,40 @@
     tools:context="edu.brandeis.jjwang95.inminder.MainActivity">
 
         <com.beardedhen.androidbootstrap.BootstrapButton
-            app:layout_marginTopPercent="25%"
-            app:layout_marginLeftPercent="25%"
+            app:layout_marginTopPercent="17%"
+            app:layout_marginLeftPercent="15%"
             app:bootstrapBrand="info"
             android:text="Reminer"
             android:id="@+id/reminder_button"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:layout_widthPercent="50%"
-            app:bootstrapSize="lg"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="75%"
+            app:layout_heightPercent="20%"
             app:roundedCorners="true"
             />
 
         <com.beardedhen.androidbootstrap.BootstrapButton
-            app:layout_marginLeftPercent="25%"
+            app:layout_marginLeftPercent="15%"
             app:bootstrapBrand="warning"
             android:text="Bill"
             android:id="@+id/bill_button"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:layout_widthPercent="50%"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="75%"
+            app:layout_heightPercent="20%"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/reminder_button"
             app:roundedCorners="true"/>
 
         <com.beardedhen.androidbootstrap.BootstrapButton
-            app:layout_marginLeftPercent="25%"
+            app:layout_marginLeftPercent="15%"
             app:bootstrapBrand="danger"
             android:text="Password"
             android:id="@+id/password_button"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:layout_widthPercent="50%"
+            android:layout_height="match_parent"
+            app:layout_widthPercent="75%"
+            app:layout_heightPercent="20%"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/bill_button"
             app:roundedCorners="true"/>
