@@ -23,19 +23,21 @@ public class MainActivity extends AppCompatActivity {
         Button pass_button = (Button) findViewById(R.id.password_button);
 
         /*********************Test*******************************************************/
-        Log.d("Start", "SHOW");
+//        Log.d("Start", "SHOW");
         dbHelper = DBHelper.getInstance(getApplicationContext());
         dbHelper.onOpen(db);
-        Log.d("Create dbHelper", "Created");
-        PasswordObject testPassword = new PasswordObject("lalalala", "baba","1111");
-        long testPassword_id = dbHelper.createPassword(testPassword);
 
-        testPassword.setId(testPassword_id);
+//        Log.d("Create dbHelper", "Created");
+//        PasswordObject testPassword = new PasswordObject("lalalala", "1111");
+//        long testPassword_id = dbHelper.createPassword(testPassword);
+
+
+//        testPassword.setId(testPassword_id);
         //Log.d("Added one password", "Password count" + dbHelper.getAllPasswords().size());
-        dbHelper.deleteAllPassword();
+//        dbHelper.deleteAllPassword();
         //Log.d("Delete All", "Password count" + dbHelper.getAllPasswords().size());
-
-        dbHelper.closeDB();
+//
+//        dbHelper.closeDB();
         /*********************Test*******************************************************/
 
         rem_button.setOnClickListener(new View.OnClickListener() {
@@ -58,8 +60,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent("edu.brandeis.jjwang95.inminder.Password"));
             }
         });
-
-
-
     }
+
 }
