@@ -8,13 +8,16 @@ public class BillObject {
     long id;
     String title;
     String amount;
+    String note;
 
     public BillObject(){
 
     }
-    public BillObject(String title, String amount){
+    public BillObject(String title, String amount, String note){
         this.title = title;
         this.amount = amount;
+        this.note = note;
+
     }
 
     // Setters ####################
@@ -27,6 +30,7 @@ public class BillObject {
     public void setAmount(String amount){
         this.amount = amount;
     }
+    public void setNote(String note){this.note = note;}
 
     // Getters ####################
     public long getId(){
@@ -38,5 +42,6 @@ public class BillObject {
     public String getAmount(){
         return amount;
     }
+    public String getNote(){return note;}
 
 }

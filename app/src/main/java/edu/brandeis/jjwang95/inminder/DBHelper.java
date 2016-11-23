@@ -48,13 +48,15 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String BILL_ID = "_id";
     private static final String KEY_TITLE = "title";
     private static final String KEY_AMOUNT = "amount";
+    private static final String KEY_BILLNOTE = "note";
 
     // Statement for creating Bill table
     private static final String BILL_CREATE =
             "CREATE TABLE if not exists " + BILL_TABLE + " (" +
                     BILL_ID + " integer PRIMARY KEY AUTOINCREMENT," +
                     KEY_TITLE + "," +
-                    KEY_AMOUNT + ");";
+                    KEY_AMOUNT + "," +
+                    KEY_BILLNOTE + ");";
 
     // REMINDER
     private static final String REMINDER_ID = "_id";
