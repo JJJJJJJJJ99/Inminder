@@ -51,6 +51,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".Add_password"></activity>
     </application>
 
 </manifest>

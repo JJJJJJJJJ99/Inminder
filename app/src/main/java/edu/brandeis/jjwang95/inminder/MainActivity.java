@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = DBHelper.getInstance(getApplicationContext());
         dbHelper.onOpen(db);
         Log.d("Create dbHelper", "Created");
-        PasswordObject testPassword = new PasswordObject("lalalala", "1111");
+        PasswordObject testPassword = new PasswordObject("lalalala", "baba","1111");
         long testPassword_id = dbHelper.createPassword(testPassword);
 
         testPassword.setId(testPassword_id);

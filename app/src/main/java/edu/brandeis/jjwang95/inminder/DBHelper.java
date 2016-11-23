@@ -34,6 +34,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // PASSWORD
     private static final String PASSWORD_ID = "_id";
     private static final String KEY_WEBSITE = "website";
+    private static final String KEY_EMAIL = "email";
     private static final String KEY_PASSWORD = "password";
 
     // Statement for creating Password table
@@ -118,6 +119,7 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues initPassword = new ContentValues();
         initPassword.put(KEY_WEBSITE, password.getWebsite());
+        initPassword.put(KEY_EMAIL, password.getEmail());
         initPassword.put(KEY_PASSWORD, password.getPassword());
         Log.d("Initialize Password", "Initialized");
         return db.insert(PASSWORD_TABLE, null, initPassword);
@@ -135,6 +137,7 @@ public class DBHelper extends SQLiteOpenHelper {
         p.setId(c.getInt(c.getColumnIndex(KEY_ID)));
         p.setPassword(c.getString(c.getColumnIndex(KEY_PASSWORD)));
         p.setWebsite(c.getString(c.getColumnIndex(KEY_WEBSITE)));
+        p.setEmail(c.getString(c.getColumnIndex(KEY_EMAIL)));
         return p;
     }
     public Cursor getAllPasswords(){
@@ -160,6 +163,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(KEY_PASSWORD, p.getPassword());
         // Based on if website can change or not
         values.put(KEY_WEBSITE, p.getWebsite());
+        values.put(KEY_EMAIL,p.getEmail());
         return db.update(PASSWORD_TABLE, values, KEY_ID + " = ?",
                 new String[] { String.valueOf(p.getId()) });
     }
