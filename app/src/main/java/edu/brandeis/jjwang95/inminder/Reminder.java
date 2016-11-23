@@ -16,7 +16,7 @@ public class Reminder extends AppCompatActivity {
     private SimpleCursorAdapter reAdapter;
     private SQLiteDatabase db;
     ListView listview;
-    Button detailBtn;
+    Button detailBtn, addBtn;
     int request_Code;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +25,18 @@ public class Reminder extends AppCompatActivity {
         dbHelper = DBHelper.getInstance(getApplicationContext());
         dbHelper.onOpen(db);
         Cursor cursor = dbHelper.getAllReminders();
-        String[] keys = new String[]{"name","time"};
+
+        String[] keys = new String[]{"name","date"};
         int[] boundTo = new int[]{R.id.nameShow, R.id.timeShow};
         listview = (ListView) findViewById(R.id.reminder_list);
+
+        addBtn = (Button) findViewById(R.id.addBtn);
+        addBtn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent("edu.brandeis.jjwang95.inminder.AddReminder");
+                startActivityForResult(intent,request_Code);
+            }
+        });
 
         reAdapter = new ReminderCursorAdapter(this, R.layout.reminder_entry, cursor, keys, boundTo, 0) {
             public View getView(final int position, View view, ViewGroup parent) {
