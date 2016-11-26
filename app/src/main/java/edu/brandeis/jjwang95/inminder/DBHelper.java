@@ -42,6 +42,7 @@ public class DBHelper extends SQLiteOpenHelper {
             "CREATE TABLE " + PASSWORD_TABLE + " (" +
                     PASSWORD_ID + " integer PRIMARY KEY AUTOINCREMENT," +
                     KEY_WEBSITE + "," +
+                    KEY_EMAIL + "," +
                     KEY_PASSWORD + ");";
                     /*" UNIQUE (" + KEY_CODE +"));";*/
 

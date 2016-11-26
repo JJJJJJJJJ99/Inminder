@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,7 +19,7 @@ public class Password extends AppCompatActivity {
     private DBHelper helper;
     private Cursor cursor;
     private PasswordCursorAdapter adapter;
-    private int code = 888;
+    private int code = 123;
     private ListView list;
 
     @Override
@@ -26,15 +27,15 @@ public class Password extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password);
 
-        SearchView search = new SearchView(getApplicationContext());
-        list = new ListView(getApplicationContext());
+//        SearchView search = new SearchView(getApplicationContext());
+        list = (ListView) findViewById(R.id.password_list);
 
         helper = DBHelper.getInstance(getApplicationContext());
         cursor = helper.getAllPasswords();
-        String[] from = new String[] {"website","email","password"};
-        int[] to = new int[] {R.id.website,R.id.emails, R.id.password};
+        String[] from = new String[] {"website","email"};
+        int[] to = new int[] {R.id.website,R.id.email};
 
-        adapter = new PasswordCursorAdapter(this,cursor);
+        adapter = new PasswordCursorAdapter(this,R.layout.activity_password,cursor,from,to,0);
         list.setAdapter(adapter);
 
         list.setOnItemClickListener(
@@ -62,21 +63,22 @@ public class Password extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode==code) {
+        if (requestCode == code) {
             if (resultCode == RESULT_OK) {
                 String accountType = data.getStringExtra("account type");
                 String accountName = data.getStringExtra("account name");
                 String password = data.getStringExtra("password");
 
-                helper.createPassword(new PasswordObject(accountType, accountName, password));
+                PasswordObject papa = new PasswordObject(accountType, accountName, password);
+                long id = helper.createPassword(papa);
+                papa.setId(id);
                 cursor = helper.getAllPasswords();
 
-                String[] from = new String[] {"website","email","password"};
-                int[] to = new int[] {R.id.website,R.id.emails, R.id.password};
+                String[] from = new String[] {"website","email"};
+                int[] to = new int[] {R.id.website,R.id.email};
 
-                adapter = new PasswordCursorAdapter(this,cursor);
+                adapter = new PasswordCursorAdapter(this,R.layout.activity_password,cursor,from,to,0);
                 list.setAdapter(adapter);
-
 
             }
         }
