@@ -35,6 +35,7 @@ public class Reminder extends AppCompatActivity {
             public void onClick(View v){
                 Intent intent = new Intent("edu.brandeis.jjwang95.inminder.AddReminder");
                 startActivityForResult(intent,request_Code);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
@@ -49,6 +50,7 @@ public class Reminder extends AppCompatActivity {
                         Intent intent = new Intent(Reminder.this, ReminderDetail.class);
                         intent.putExtra("id",id);
                         startActivityForResult(intent,request_Code);
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     }
                 });
                 return myView;

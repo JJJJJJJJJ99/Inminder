@@ -80,12 +80,14 @@ public class EditReminder extends AppCompatActivity implements DatePickerDialog.
                 Intent data = new Intent();
                 setResult(RESULT_OK, data);
                 finish();
+                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
             }
         });
 
         cancel.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 finish();
+                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
             }
         });
     }

@@ -51,6 +51,7 @@ public class ReminderDetail extends AppCompatActivity {
                 newIntent.putExtra("time", curr.getTime());
                 newIntent.putExtra("id", id);
                 startActivityForResult(newIntent,request_Code);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
@@ -60,6 +61,7 @@ public class ReminderDetail extends AppCompatActivity {
                 Intent data = new Intent();
                 setResult(RESULT_OK,data);
                 finish();
+                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
             }
         });
 
@@ -68,6 +70,7 @@ public class ReminderDetail extends AppCompatActivity {
                 Intent data = new Intent();
                 setResult(RESULT_OK, data);
                 finish();
+                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
             }
         });
     }
