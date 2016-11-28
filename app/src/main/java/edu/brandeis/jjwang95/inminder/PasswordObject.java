@@ -7,13 +7,15 @@ package edu.brandeis.jjwang95.inminder;
 public class PasswordObject {
     long id;
     String website;
+    String email;
     String password;
 
     public PasswordObject(){
 
     }
-    public PasswordObject(String website, String password){
+    public PasswordObject(String website, String email, String password){
         this.website = website;
+        this.email = email;
         this.password = password;
     }
 
@@ -24,6 +26,8 @@ public class PasswordObject {
     public void setWebsite(String website){
         this.website = website;
     }
+    public void setEmail(String email) {this.email = email;}
+
     public void setPassword(String password){
         this.password = password;
     }
@@ -34,6 +38,9 @@ public class PasswordObject {
     }
     public String getWebsite(){
         return website;
+    }
+    public String getEmail() {
+        return email;
     }
     public String getPassword(){
         return password;

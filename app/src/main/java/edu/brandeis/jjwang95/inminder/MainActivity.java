@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SimpleCursorAdapter;
+import com.beardedhen.androidbootstrap.TypefaceProvider;
+import com.beardedhen.androidbootstrap.BootstrapButton;
 
 public class MainActivity extends AppCompatActivity {
     private DBHelper dbHelper;
@@ -17,18 +19,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TypefaceProvider.registerDefaultIconSets();
         setContentView(R.layout.activity_main);
-        Button rem_button = (Button) findViewById(R.id.reminder_button);
-        Button bill_button = (Button) findViewById(R.id.bill_button);
-        Button pass_button = (Button) findViewById(R.id.password_button);
+        BootstrapButton rem_button = (BootstrapButton) findViewById(R.id.reminder_button);
+        BootstrapButton bill_button = (BootstrapButton) findViewById(R.id.bill_button);
+        BootstrapButton pass_button = (BootstrapButton) findViewById(R.id.password_button);
 
         /*********************Test*******************************************************/
 //        Log.d("Start", "SHOW");
         dbHelper = DBHelper.getInstance(getApplicationContext());
+        db = dbHelper.getWritableDatabase();
         dbHelper.onOpen(db);
+
 //        Log.d("Create dbHelper", "Created");
 //        PasswordObject testPassword = new PasswordObject("lalalala", "1111");
 //        long testPassword_id = dbHelper.createPassword(testPassword);
+
 
 //        testPassword.setId(testPassword_id);
         //Log.d("Added one password", "Password count" + dbHelper.getAllPasswords().size());
