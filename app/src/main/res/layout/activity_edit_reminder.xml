@@ -1,105 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_reminder_detail"
+    android:id="@+id/activity_edit_reminder"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="edu.brandeis.jjwang95.inminder.ReminderDetail">
+    tools:context="edu.brandeis.jjwang95.inminder.EditReminder">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/reminderName"
-        android:id="@+id/name"
+        android:id="@+id/editRe_nameLabel"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text=""
-        android:id="@+id/nameDetail"
-        android:layout_below="@+id/name"
+        android:ems="20"
+        android:id="@+id/editRe_name"
+        android:layout_below="@+id/editRe_nameLabel"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
+    <Button
+        android:id="@+id/editRe_timeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/editRe_name"
+        android:text="@string/addDate" />
+
+    <TextView
+        android:id="@+id/editRe_timeLabel"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/notifiTime"
-        android:id="@+id/time"
-        android:layout_below="@+id/nameDetail"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text=""
-        android:id="@+id/timeDetail"
-        android:layout_below="@+id/time"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/editRe_timeBtn"
+        android:text="@string/timeLabel"/>
+
+    <TextView
+        android:id="@+id/editRe_timeshow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editRe_timeLabel"
+        android:text=""/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/notes"
-        android:id="@+id/notes"
-        android:layout_below="@+id/timeDetail"
+        android:id="@+id/editRe_notesLabel"
+        android:layout_below="@id/editRe_timeshow"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text=""
-        android:id="@+id/noteDetail"
-        android:layout_below="@+id/notes"
+        android:ems="20"
+        android:id="@+id/editRe_notes"
+        android:layout_below="@+id/editRe_notesLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/editRe_save"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/editRe_notes"
+        android:text="@string/save"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/updateBtn"
-        android:id="@+id/re_detail_edit"
-        android:layout_below="@+id/noteDetail"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/deleteBtn"
-        android:id="@+id/re_detail_delete"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_alignBaseline="@+id/re_detail_edit"
-        android:layout_alignBottom="@+id/re_detail_edit"
-        android:layout_toRightOf="@+id/re_detail_edit"
-        android:layout_toEndOf="@+id/re_detail_edit" />
-
-    <Button
         android:text="@string/cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/re_detail_delete"
-        android:layout_toRightOf="@+id/re_detail_delete"
-        android:layout_toEndOf="@+id/re_detail_delete"
-        android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp"
-        android:id="@+id/re_detail_cancel" />
+        android:id="@+id/editRe_cancel"
+        android:layout_below="@+id/editRe_notes"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>

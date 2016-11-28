@@ -38,7 +38,7 @@ public class Reminder extends AppCompatActivity {
             }
         });
 
-        reAdapter = new ReminderCursorAdapter(this, R.layout.reminder_entry, cursor, keys, boundTo, 0) {
+        reAdapter = new SimpleCursorAdapter(this, R.layout.reminder_entry, cursor, keys, boundTo, 0) {
             public View getView(final int position, View view, ViewGroup parent) {
                 View myView = super.getView(position, view, parent);
                 detailBtn = (Button) myView.findViewById(R.id.detailBtn);
@@ -54,6 +54,7 @@ public class Reminder extends AppCompatActivity {
                 return myView;
             }
         };
+        listview.setAdapter(reAdapter);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){

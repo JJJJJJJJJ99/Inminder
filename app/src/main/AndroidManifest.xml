@@ -15,8 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Reminder">
+        <activity android:name=".Reminder">
             <intent-filter>
                 <action android:name="edu.brandeis.jjwang95.inminder.Reminder" />
 
@@ -50,14 +49,21 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".AddReminder">
+        <activity android:name=".AddReminder">
             <intent-filter>
                 <action android:name="edu.brandeis.jjwang95.inminder.AddReminder" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".EditReminder">
+            <intent-filter>
+                <action android:name="edu.brandeis.jjwang95.inminder.EditReminder" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

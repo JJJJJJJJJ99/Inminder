@@ -1,5 +1,6 @@
 package edu.brandeis.jjwang95.inminder;
 
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -21,41 +22,50 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.content.Intent;
 
-public class AddReminder extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
+public class EditReminder extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
     DBHelper dbHelper;
     SQLiteDatabase db;
     Button setDate, save, cancel;
-    Calendar calendar = Calendar.getInstance();
-    int _year, _month, _day, _hour, _minute;
+    int _year, _month, _day, _hour, _minute, id;
     DatePickerDialog dialog;
     TimePickerDialog t_dialog;
-    String time;
+    String time, originalTime;
     EditText name,notes;
     TextView timeshow;
-    Boolean currTimeCheck=false;
+    ReminderObject updated;
     @Override
 
-        protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_reminder);
+        setContentView(R.layout.activity_edit_reminder);
 
         dbHelper = DBHelper.getInstance(getApplicationContext());
         dbHelper.onOpen(db);
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
 
-        setDate = (Button) findViewById(R.id.DateBtn);
-        save = (Button) findViewById(R.id.reminder_save);
-        cancel = (Button) findViewById(R.id.reminder_cancel);
-        name = (EditText) findViewById(R.id.reminder_addtopic);
-        notes = (EditText) findViewById(R.id.reminder_addNotes);
-        timeshow = (TextView) findViewById(R.id.reminder_timeshow);
+        setDate = (Button) findViewById(R.id.editRe_timeBtn);
+        save = (Button) findViewById(R.id.editRe_save);
+        cancel = (Button) findViewById(R.id.editRe_cancel);
+        name = (EditText) findViewById(R.id.editRe_name);
+        notes = (EditText) findViewById(R.id.editRe_notes);
+        timeshow = (TextView) findViewById(R.id.editRe_timeshow);
+
+        name.setText(b.get("name").toString());
+        notes.setText(b.get("notes").toString());
+        timeshow.setText(b.get("time").toString());
+        id = (int)b.get("id");
+
+        originalTime = b.get("time").toString();
+        _year = 2000 + Integer.parseInt(originalTime.substring(6,8));
+        _month = Integer.parseInt(originalTime.substring(0,2));
+        _day = Integer.parseInt(originalTime.substring(3,5));
+        _hour = Integer.parseInt(originalTime.substring(9,11));
+        _minute = Integer.parseInt(originalTime.substring(12,14));
 
         setDate.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                if (currTimeCheck){
-                    dialog = new DatePickerDialog(AddReminder.this, AddReminder.this, _year, _month, _day);
-                }else{
-                    dialog = new DatePickerDialog(AddReminder.this, AddReminder.this, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
-                }
+                dialog = new DatePickerDialog(EditReminder.this, EditReminder.this, _year, _month-1, _day);
                 dialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
                 dialog.show();
             }
@@ -64,7 +74,9 @@ public class AddReminder extends AppCompatActivity implements DatePickerDialog.O
         save.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 time = (new SimpleDateFormat("MM/dd/yy HH:mm:ss", Locale.US)).format(new Date(_year, _month, _day, _hour, _minute));
-                dbHelper.createReminder(new ReminderObject(time, name.getText().toString().trim(), notes.getText().toString().trim()));
+                updated = new ReminderObject(time, name.getText().toString().trim(), notes.getText().toString().trim());
+                updated.setId(id);
+                dbHelper.updateReminder(updated);
                 Intent data = new Intent();
                 setResult(RESULT_OK, data);
                 finish();
@@ -83,18 +95,13 @@ public class AddReminder extends AppCompatActivity implements DatePickerDialog.O
         _month = i1;
         _day = i2;
 
-        if (currTimeCheck){
-            t_dialog = new TimePickerDialog(AddReminder.this, AddReminder.this, _hour, _minute, true);
-        }else {
-            t_dialog = new TimePickerDialog(AddReminder.this, AddReminder.this, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true);
-        }
+        t_dialog = new TimePickerDialog(EditReminder.this, EditReminder.this, _hour, _minute, true);
         t_dialog.show();
     }
 
     public void onTimeSet(TimePicker timePicker, int i, int i2){
         _hour = i;
         _minute = i2;
-        currTimeCheck = true;
         timeshow.setText((new SimpleDateFormat("MM/dd/yy HH:mm:ss", Locale.US)).format(new Date(_year, _month, _day, _hour, _minute)));
 
     }

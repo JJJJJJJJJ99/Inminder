@@ -11,42 +11,45 @@
     tools:context="edu.brandeis.jjwang95.inminder.AddReminder">
 
     <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceLarge"
-    android:text="@string/reminderName"
-    android:id="@+id/addname"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true" />
-
-    <EditText
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:ems="20"
-    android:id="@+id/addtopic"
-    android:layout_below="@+id/addname"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true" />
-
-    <TimePicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/addtopic"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="21dp"
-        android:layout_marginEnd="21dp"
-        android:id="@+id/timePicker" />
-
-    <DatePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="138dp"
-        android:id="@+id/datePicker"
-        android:layout_below="@+id/timePicker"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/reminderName"
+        android:id="@+id/addname"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="20"
+        android:id="@+id/reminder_addtopic"
+        android:layout_below="@+id/addname"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/DateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reminder_addtopic"
+        android:text="@string/addDate" />
+
+    <TextView
+        android:id="@+id/reminder_timeLabel"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/DateBtn"
+        android:text="@string/timeLabel"/>
+
+    <TextView
+        android:id="@+id/reminder_timeshow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reminder_timeLabel"
+        android:text=""/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,8 +57,35 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/notes"
         android:id="@+id/notes"
-        android:layout_below="@id/datePicker"
+        android:layout_below="@id/reminder_timeshow"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="20"
+        android:id="@+id/reminder_addNotes"
+        android:layout_below="@+id/notes"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/reminder_save"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/reminder_addNotes"
+        android:text="@string/save"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:id="@+id/reminder_cancel"
+        android:layout_below="@+id/reminder_addNotes"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>
