@@ -25,7 +25,12 @@ public class MainActivity extends AppCompatActivity {
         /*********************Test*******************************************************/
 //        Log.d("Start", "SHOW");
         dbHelper = DBHelper.getInstance(getApplicationContext());
+        db = dbHelper.getWritableDatabase();
         dbHelper.onOpen(db);
+        // For Erase data
+        //dbHelper.onUpgrade(db, 1, 2);
+
+
 //        Log.d("Create dbHelper", "Created");
 //        PasswordObject testPassword = new PasswordObject("lalalala", "1111");
 //        long testPassword_id = dbHelper.createPassword(testPassword);

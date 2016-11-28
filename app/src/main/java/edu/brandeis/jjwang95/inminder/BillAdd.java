@@ -13,22 +13,29 @@ import android.widget.EditText;
  */
 
 public class BillAdd extends AppCompatActivity {
+    final BillObject bill = new BillObject();
+    DBHelper dbHelper;
+    EditText title;
+    EditText amount;
+    EditText note;
     protected void onCreate(Bundle savedInstanceState){
-        final DBHelper dbhelper = DBHelper.getInstance(getApplicationContext());
+        super.onCreate(savedInstanceState);
+        dbHelper = DBHelper.getInstance(getApplicationContext());
+        setContentView(R.layout.bill_add);
         //SQLiteDatabase db = dbhelper.getWritableDatabase();
-        EditText title = (EditText) findViewById(R.id.editText_title);
-        EditText amount = (EditText) findViewById(R.id.editText_amount);
-        EditText note = (EditText) findViewById(R.id.editText_note);
+        title = (EditText) findViewById(R.id.editText_title);
+        amount = (EditText) findViewById(R.id.editText_amount);
+        note = (EditText) findViewById(R.id.editText_note);
         Button cancel = (Button) findViewById(R.id.button_cancel);
         Button save = (Button) findViewById(R.id.button_save);
-        final String titleText = title.getText().toString();
-        final String amountText = amount.getText().toString();
-        final String noteText = note.getText().toString();
+        //String titleText = title.getText().toString();
+        //String amountText = amount.getText().toString();
+        //String noteText = note.getText().toString();
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(BillAdd.this, MainActivity.class);
+                Intent myIntent = new Intent(BillAdd.this, Bill.class);
                 BillAdd.this.startActivity(myIntent);
             }
         });
@@ -36,9 +43,13 @@ public class BillAdd extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BillObject bill = new BillObject(titleText,amountText,noteText);
-                dbhelper.createBill(bill);
-                Intent myIntent = new Intent(BillAdd.this, MainActivity.class);
+                bill.setNote(note.getText().toString());
+                bill.setAmount(Double.parseDouble(amount.getText().toString()));
+                dbHelper.addToSum(Double.parseDouble(amount.getText().toString()));
+                bill.setTitle(title.getText().toString());
+                long id = dbHelper.createBill(bill);
+                bill.setId(id);
+                Intent myIntent = new Intent(BillAdd.this, Bill.class);
                 BillAdd.this.startActivity(myIntent);
             }
         });

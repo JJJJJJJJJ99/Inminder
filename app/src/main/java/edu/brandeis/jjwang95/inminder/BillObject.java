@@ -7,13 +7,13 @@ package edu.brandeis.jjwang95.inminder;
 public class BillObject {
     long id;
     String title;
-    String amount;
+    Double amount;
     String note;
 
     public BillObject(){
 
     }
-    public BillObject(String title, String amount, String note){
+    public BillObject(String title, Double amount, String note){
         this.title = title;
         this.amount = amount;
         this.note = note;
@@ -27,7 +27,7 @@ public class BillObject {
     public void setTitle(String title){
         this.title = title;
     }
-    public void setAmount(String amount){
+    public void setAmount(Double amount){
         this.amount = amount;
     }
     public void setNote(String note){this.note = note;}
@@ -39,7 +39,7 @@ public class BillObject {
     public String getTitle(){
         return title;
     }
-    public String getAmount(){
+    public Double getAmount(){
         return amount;
     }
     public String getNote(){return note;}

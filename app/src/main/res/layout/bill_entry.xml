@@ -8,12 +8,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView_title"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:textColor="@color/colorPrimary" />
 
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView_amount"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:textColor="@color/colorAccent" />
 </LinearLayout>

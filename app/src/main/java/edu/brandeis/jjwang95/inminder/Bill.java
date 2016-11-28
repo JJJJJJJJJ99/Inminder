@@ -1,5 +1,6 @@
 package edu.brandeis.jjwang95.inminder;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -19,8 +20,7 @@ public class Bill extends AppCompatActivity {
     public SQLiteDatabase db;
     public DBHelper dbhelper;
     public ProgressBar progress;
-    public int sum;
-    public int budgetAmount;
+    public double sum = 0;
 
 
     @Override
@@ -32,62 +32,46 @@ public class Bill extends AppCompatActivity {
 
         // Prepare for list view
         Cursor c = db.rawQuery("SELECT * FROM bill_table", null);
-        //String[] columns = new String[] { "title", "amount"};
-        //int[] views = new int[]{R.id.textView_title, R.id.textView_amount};
-        BillCursorAdapter adapter = new BillCursorAdapter(getApplicationContext(), c);
+        String[] columns = new String[] { "title", "amount"};
+        int[] views = new int[]{R.id.textView_title, R.id.textView_amount};
+        BillCursorAdapter adapter = new BillCursorAdapter(getApplicationContext(), R.layout.bill_entry, c, columns, views);
         ListView billlst = (ListView) findViewById(R.id.bill_list);
         billlst.setAdapter(adapter);
 
+        // Balance
         TextView balance = (TextView) findViewById(R.id.balance);
         Button plus = (Button) findViewById(R.id.plus_budget);
-        budgetAmount = 0;
         plus.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                startActivityForResult(new Intent("edu.brandeis.jjwang95.inminder.Bill" ), 2);
+                Intent intent = new Intent(Bill.this, BillSetBudget.class);
+                Bill.this.startActivity(intent);
             }
         });
-
-        Intent intent = getIntent();
-        Bundle b = intent.getExtras();
-        if(b != null){
-            budgetAmount = (int) b.get("budget");
-        }
-        sum = sum + budgetAmount;
-        //Log.d("SUM", Integer.toString(sum));
-        balance.setText(Integer.toString(sum));
+        sum =  dbhelper.getBudget() - dbhelper.getSum();
+        balance.setText(Double.toString(sum));
 
         // Progress Bar
-        sum = sum - getExpense();
-        ProgressBar progress = (ProgressBar) findViewById(R.id.progressBar3);
-        if (sum<0){
-            progress.setProgress(-sum);
+        int pro = (int) Math.round(sum); // Converting a double sum into integer for display in progress bar
+        progress = (ProgressBar) findViewById(R.id.progressBar3);
+        if (pro<0){
+            progress.setProgress(-pro);
             progress.getProgressDrawable().setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
         } else{
-            progress.setProgress(sum);
+            progress.setProgress(pro);
             progress.getProgressDrawable().setColorFilter(Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN);
         }
 
+        // Add Expense
         Button add = (Button) findViewById(R.id.button_add);
         add.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(Bill.this, BillAdd.class);
+                Intent myIntent = new Intent(new Intent("edu.brandeis.jjwang95.inminder.BillAdd" ));
                 Bill.this.startActivity(myIntent);
-
             }
         });
 
 
-    }
-
-    public int getExpense(){
-        int sum = 0;
-        Cursor c2 = db.rawQuery("SELECT SUM(amount) FROM bill_table ", null);
-        c2.moveToFirst();
-        if(c2.getCount() > 0) {
-            sum=c2.getInt(0);
-        }
-        return sum;
     }
 }

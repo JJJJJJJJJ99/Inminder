@@ -24,6 +24,22 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".BillAdd">
+            <intent-filter>
+                <action android:name="edu.brandeis.jjwang95.inminder.BillAdd" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".BillSetBudget">
+            <intent-filter>
+                <action android:name="edu.brandeis.jjwang95.inminder.BillSetBudget" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Bill"
             android:label="Bill">
             <intent-filter>
