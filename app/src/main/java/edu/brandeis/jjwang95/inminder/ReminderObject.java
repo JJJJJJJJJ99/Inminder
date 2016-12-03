@@ -24,7 +24,7 @@ public class ReminderObject {
         this.id = id;
     }
     public void setTime(String date){
-        this.time = time;
+        this.time = date;
     }
     public void setName(String name){
         this.name = name;

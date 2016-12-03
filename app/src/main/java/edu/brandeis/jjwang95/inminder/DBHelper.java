@@ -50,13 +50,17 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String BILL_ID = "_id";
     private static final String KEY_TITLE = "title";
     private static final String KEY_AMOUNT = "amount";
+    private static final String KEY_BILLNOTE = "note";
+    private static Double budget = 0.0;
+    private static Double sum = 0.0;
 
     // Statement for creating Bill table
     private static final String BILL_CREATE =
             "CREATE TABLE if not exists " + BILL_TABLE + " (" +
                     BILL_ID + " integer PRIMARY KEY AUTOINCREMENT," +
                     KEY_TITLE + "," +
-                    KEY_AMOUNT + ");";
+                    KEY_AMOUNT + " REAL," +
+                    KEY_BILLNOTE + ");";
 
     // REMINDER
     private static final String REMINDER_ID = "_id";
@@ -179,10 +183,16 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Bill tables ********************************************************************
+
     public long createBill(BillObject bill){
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues initBill = new ContentValues();
         initBill.put(KEY_TITLE, bill.getTitle());
+        Log.d("ADD BILL TITLE", bill.getTitle());
         initBill.put(KEY_AMOUNT, bill.getAmount());
+        //Log.d("ADD BILL AMOUNT", bill.getAmount());
+        initBill.put(KEY_BILLNOTE, bill.getNote());
+        Log.d("ADD BILL NOTE", bill.getNote());
         return db.insert(BILL_TABLE, null, initBill);
     }
     public BillObject getBill(long id){
@@ -196,8 +206,9 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         BillObject b = new BillObject();
         b.setId(c.getInt(c.getColumnIndex(KEY_ID)));
-        b.setAmount(c.getString(c.getColumnIndex(KEY_AMOUNT)));
+        b.setAmount(c.getDouble(c.getColumnIndex(KEY_AMOUNT)));
         b.setTitle(c.getString(c.getColumnIndex(KEY_TITLE)));
+        b.setNote(c.getString((c.getColumnIndex(KEY_BILLNOTE))));
         return b;
     }
     public Cursor getAllBills(){
@@ -217,11 +228,33 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return c;
     }
+
+    public Double getBudget(){
+        return budget;
+    }
+    public Double getSum(){
+        return sum;
+    }
+
+    public void setBudget(Double budget){
+        this.budget = budget;
+    }
+
+    public void setSum(Double sum){
+        this.sum = sum;
+    }
+
+    public void addToSum(Double add){
+        sum = sum + add;
+    }
+
     public int updateBill(BillObject b){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_AMOUNT, b.getAmount());
         values.put(KEY_TITLE, b.getTitle());
+        values.put(KEY_BILLNOTE, b.getNote());
+        values.put(KEY_ID, b.getId());
         return db.update(BILL_TABLE, values, KEY_ID + " = ?",
                 new String[] { String.valueOf(b.getId()) });
     }
@@ -237,6 +270,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // Reminder tables ******************************************************************** zhen shi tai chang le !!!
     // Ren wu ke ren!!!!!!
     public long createReminder(ReminderObject reminder){
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues initReminder = new ContentValues();
         initReminder.put(KEY_TIME, reminder.getTime());
         initReminder.put(KEY_NAME, reminder.getName());

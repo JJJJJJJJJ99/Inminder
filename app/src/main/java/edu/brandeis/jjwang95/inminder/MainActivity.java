@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         /*********************Test*******************************************************/
 //        Log.d("Start", "SHOW");
         dbHelper = DBHelper.getInstance(getApplicationContext());
+        db = dbHelper.getWritableDatabase();
         dbHelper.onOpen(db);
 
 //        Log.d("Create dbHelper", "Created");

@@ -35,10 +35,11 @@ public class Reminder extends AppCompatActivity {
             public void onClick(View v){
                 Intent intent = new Intent("edu.brandeis.jjwang95.inminder.AddReminder");
                 startActivityForResult(intent,request_Code);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
-        reAdapter = new ReminderCursorAdapter(this, R.layout.reminder_entry, cursor, keys, boundTo, 0) {
+        reAdapter = new SimpleCursorAdapter(this, R.layout.reminder_entry, cursor, keys, boundTo, 0) {
             public View getView(final int position, View view, ViewGroup parent) {
                 View myView = super.getView(position, view, parent);
                 detailBtn = (Button) myView.findViewById(R.id.detailBtn);
@@ -49,11 +50,13 @@ public class Reminder extends AppCompatActivity {
                         Intent intent = new Intent(Reminder.this, ReminderDetail.class);
                         intent.putExtra("id",id);
                         startActivityForResult(intent,request_Code);
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     }
                 });
                 return myView;
             }
         };
+        listview.setAdapter(reAdapter);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){
