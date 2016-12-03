@@ -11,4 +11,7 @@
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
     <string name="timeLabel">Estimated Alerting Time:</string>
+    <string name="stopAlarm">Stop</string>
+    <string name="toggle_turn_on">Alarm On</string>
+    <string name="toggle_turn_off">Alarm Off</string>
 </resources>

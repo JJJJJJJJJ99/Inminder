@@ -1,5 +1,6 @@
 package edu.brandeis.jjwang95.inminder;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -18,10 +19,12 @@ public class Reminder extends AppCompatActivity {
     ListView listview;
     Button detailBtn, addBtn;
     int request_Code;
+    static Reminder _instance;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reminder);
+        _instance = this;
         dbHelper = DBHelper.getInstance(getApplicationContext());
         dbHelper.onOpen(db);
         Cursor cursor = dbHelper.getAllReminders();
@@ -67,5 +70,9 @@ public class Reminder extends AppCompatActivity {
                 reAdapter.changeCursor(dbHelper.getAllReminders());
             }
         }
+    }
+
+    public static Reminder getInstance() {
+        return _instance;
     }
 }

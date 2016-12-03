@@ -6,8 +6,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
-
+import android.util.Log;
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -27,6 +29,7 @@ public class EditReminder extends AppCompatActivity implements DatePickerDialog.
     SQLiteDatabase db;
     Button setDate, save, cancel;
     int _year, _month, _day, _hour, _minute, id;
+    Calendar alarmCal = Calendar.getInstance();
     DatePickerDialog dialog;
     TimePickerDialog t_dialog;
     String time, originalTime;
@@ -77,6 +80,21 @@ public class EditReminder extends AppCompatActivity implements DatePickerDialog.
                 updated = new ReminderObject(time, name.getText().toString().trim(), notes.getText().toString().trim());
                 updated.setId(id);
                 dbHelper.updateReminder(updated);
+                Log.e("time", time);
+                Intent my_intent = new Intent(Reminder.getInstance(), Alarm_Receiver.class);
+                alarmCal.set(Calendar.YEAR, _year);
+                alarmCal.set(Calendar.MONTH, _month);
+                alarmCal.set(Calendar.DAY_OF_MONTH, _day);
+                alarmCal.set(Calendar.HOUR_OF_DAY, _hour);
+                alarmCal.set(Calendar.MINUTE, _minute);
+                alarmCal.set(Calendar.SECOND, 0);
+                Log.e(alarmCal.getTime().toString(), "check");
+                my_intent.putExtra("extra", "on");
+                my_intent.putExtra("id", id);
+                PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), id, my_intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                ((AlarmManager) getSystemService(ALARM_SERVICE)).set(AlarmManager.RTC_WAKEUP, alarmCal.getTimeInMillis(), pending_intent);
+
+
                 Intent data = new Intent();
                 setResult(RESULT_OK, data);
                 finish();

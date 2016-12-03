@@ -1,25 +1,37 @@
 package edu.brandeis.jjwang95.inminder;
 
 import android.database.sqlite.SQLiteDatabase;
-import android.net.Uri;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Button;
+import android.content.Context;
+import android.widget.ToggleButton;
+import java.util.Date;
+import java.util.Calendar;
 
 public class ReminderDetail extends AppCompatActivity {
     DBHelper dbHelper;
     SQLiteDatabase db;
     TextView name, notes, time;
-    Button update, delete,cancel;
+    Button update, delete,cancel, stop;
     ReminderObject curr;
-    int id, request_Code;
+    int id, request_Code, _month, _day, _hour, _minute, _year;
+    Context context;
+    ToggleButton toggle;
+    AlarmManager alarmManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reminder_detail);
+
+        this.context = this;
 
         dbHelper = DBHelper.getInstance(getApplicationContext());
         dbHelper.onOpen(db);
@@ -30,6 +42,8 @@ public class ReminderDetail extends AppCompatActivity {
         update = (Button) findViewById(R.id.re_detail_edit);
         delete = (Button) findViewById(R.id.re_detail_delete);
         cancel = (Button) findViewById(R.id.re_detail_cancel);
+        toggle = (ToggleButton) findViewById(R.id.reminder_toggleBtn);
+
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
 
@@ -42,6 +56,64 @@ public class ReminderDetail extends AppCompatActivity {
         name.setText(curr.getName());
         notes.setText(curr.getNote());
         time.setText(curr.getTime());
+
+        alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        toggle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (toggle.isChecked()){
+                    curr = dbHelper.getReminder(id);
+                    String originalTime = curr.getTime();
+                    _year = 2000 + Integer.parseInt(originalTime.substring(6,8));
+                    _month = Integer.parseInt(originalTime.substring(0,2));
+                    _day = Integer.parseInt(originalTime.substring(3,5));
+                    _hour = Integer.parseInt(originalTime.substring(9,11));
+                    _minute = Integer.parseInt(originalTime.substring(12,14));
+
+                    Log.e("in Toggle TRUe", "a");
+                    Intent myIntent = new Intent(Reminder.getInstance(), Alarm_Receiver.class);
+                    Calendar alarmCal = Calendar.getInstance();
+                    alarmCal.set(Calendar.YEAR, _year);
+                    alarmCal.set(Calendar.MONTH, _month-1);
+                    alarmCal.set(Calendar.DAY_OF_MONTH, _day);
+                    alarmCal.set(Calendar.HOUR_OF_DAY, _hour);
+                    alarmCal.set(Calendar.MINUTE, _minute);
+                    alarmCal.set(Calendar.SECOND, 0);
+                    Log.e(alarmCal.getTime().toString(), "check");
+
+                    myIntent.putExtra("extra", "on");
+                    myIntent.putExtra("id", id);
+                    PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), id, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                    alarmManager.set(AlarmManager.RTC_WAKEUP, alarmCal.getTimeInMillis(), pending_intent);
+                }else{
+                    curr = dbHelper.getReminder(id);
+                    String originalTime = curr.getTime();
+                    _year = 100 + Integer.parseInt(originalTime.substring(6,8));
+                    _month = Integer.parseInt(originalTime.substring(0,2)) - 1;
+                    _day = Integer.parseInt(originalTime.substring(3,5));
+                    _hour = Integer.parseInt(originalTime.substring(9,11));
+                    _minute = Integer.parseInt(originalTime.substring(12,14));
+                    Date thisTime = new Date(_year, _month, _day, _hour, _minute);
+                    Intent myIntent = new Intent(Reminder.getInstance(), Alarm_Receiver.class);
+                    Log.e("year check", Integer.toString(_year));
+                    Log.e("time check", new Date().toString());
+                    Log.e("time check2", thisTime.toString());
+
+
+                    if (new Date().before(thisTime)){
+                        myIntent.putExtra("extra", "pre-off");
+                    }else{
+                        myIntent.putExtra("extra", "off");
+                    }
+                    myIntent.putExtra("id", id);
+                    PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), id, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                    sendBroadcast(myIntent);
+
+                    alarmManager.cancel(pending_intent);
+                }
+            }
+        });
+
 
         update.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -58,6 +130,13 @@ public class ReminderDetail extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 dbHelper.deleteReminder((long) id);
+                Intent myIntent = new Intent(Reminder.getInstance(), Alarm_Receiver.class);
+                myIntent.putExtra("extra", "cancel");
+                myIntent.putExtra("id", id);
+                PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), id, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                sendBroadcast(myIntent);
+
+                alarmManager.cancel(pending_intent);
                 Intent data = new Intent();
                 setResult(RESULT_OK,data);
                 finish();
@@ -73,6 +152,12 @@ public class ReminderDetail extends AppCompatActivity {
                 overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
             }
         });
+
+//        stop.setOnClickListener(new View.OnClickListener(){
+//            public void onClick(View v){
+//
+//            }
+//        });
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -84,6 +169,7 @@ public class ReminderDetail extends AppCompatActivity {
                 name.setText(curr.getName());
                 notes.setText(curr.getNote());
                 time.setText(curr.getTime());
+                toggle.setChecked(true);
             }
         }
     }

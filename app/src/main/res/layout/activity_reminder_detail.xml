@@ -102,4 +102,24 @@
         android:layout_marginStart="17dp"
         android:id="@+id/re_detail_cancel" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stopAlarm"
+        android:id="@+id/re_stopAlarm"
+        android:layout_below="@+id/re_detail_edit"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="@string/toggle_turn_on"
+        android:textOff="@string/toggle_turn_off"
+        android:checked="true"
+        android:id="@+id/reminder_toggleBtn"
+        android:layout_above="@+id/notes"
+        android:layout_toRightOf="@id/timeDetail"
+        android:layout_toEndOf="@id/timeDetail"/>
+
 </RelativeLayout>
