@@ -15,4 +15,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button_set" />
+
+    <Button
+        android:text="Cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bill_button_cancel" />
 </LinearLayout>

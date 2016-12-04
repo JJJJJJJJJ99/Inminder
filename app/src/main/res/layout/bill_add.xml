@@ -24,13 +24,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Note:"
         android:ems="10"
         android:layout_below="@+id/editText_title"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="22dp"
-        android:id="@+id/editText_note" />
+        android:id="@+id/editText_note"
+        android:hint="Note" />
 
     <Button
         android:text="Cancel"
