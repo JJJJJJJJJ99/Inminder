@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class Password extends AppCompatActivity {
     private DBHelper helper;
@@ -21,13 +22,14 @@ public class Password extends AppCompatActivity {
     private PasswordCursorAdapter adapter;
     private int code = 123;
     private ListView list;
+    private SearchView search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password);
 
-//        SearchView search = new SearchView(getApplicationContext());
+//        search = (SearchView) findViewById(R.id.password_search);
         list = (ListView) findViewById(R.id.password_list);
 
         helper = DBHelper.getInstance(getApplicationContext());
@@ -49,16 +51,31 @@ public class Password extends AppCompatActivity {
                         builder.setPositiveButton("I got it!", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                finish();
+                                dialog.dismiss();
                             }
                         });
-
                         AlertDialog dialog = builder.create();
                         dialog.show();
                     }
                 }
         );
 
+//        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                if (cursor==null) {
+//                    Toast.makeText(Password.this,"No results found.",Toast.LENGTH_LONG).show();
+//                }
+//                adapter.swapCursor(cursor);
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String text) {
+//                adapter.swapCursor(cursor);
+//                return false;
+//            }
+//        });
     }
 
     @Override
