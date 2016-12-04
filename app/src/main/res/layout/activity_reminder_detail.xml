@@ -14,29 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/reminderName"
-        android:id="@+id/name"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text=""
         android:id="@+id/nameDetail"
-        android:layout_below="@+id/name"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/notifiTime"
-        android:id="@+id/time"
-        android:layout_below="@+id/nameDetail"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -46,17 +25,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text=""
         android:id="@+id/timeDetail"
-        android:layout_below="@+id/time"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/notes"
-        android:id="@+id/notes"
-        android:layout_below="@+id/timeDetail"
+        android:layout_below="@+id/nameDetail"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -66,7 +35,17 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text=""
         android:id="@+id/noteDetail"
-        android:layout_below="@+id/notes"
+        android:layout_below="@+id/timeDetail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/re_detail_cancel"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/noteDetail"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -77,19 +56,9 @@
         android:textOff="@string/toggle_turn_off"
         android:checked="true"
         android:id="@+id/reminder_toggleBtn"
-        android:layout_above="@+id/notes"
-        android:layout_toRightOf="@id/timeDetail"
-        android:layout_toEndOf="@id/timeDetail"/>
-
-    <Button
-        android:text="@string/cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/re_detail_cancel"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/noteDetail"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <!--<EditText-->
         <!--android:layout_width="wrap_content"-->
