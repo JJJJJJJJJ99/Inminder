@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "outputFile": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 95
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -31,7 +31,7 @@
                     "endOffset": 439
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -52,7 +52,7 @@
                     "endOffset": 582
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -73,7 +73,7 @@
                     "endOffset": 859
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -94,7 +94,7 @@
                     "endOffset": 1097
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 24,
                         "startColumn": 4,
@@ -115,7 +115,7 @@
                     "endOffset": 1314
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 31,
                         "startColumn": 4,
@@ -135,7 +135,7 @@
                     "endOffset": 1358
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 37,
                         "startColumn": 4,
@@ -154,7 +154,7 @@
                     "endOffset": 1410
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 38,
                         "startColumn": 4,
@@ -173,7 +173,7 @@
                     "endOffset": 1458
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 39,
                         "startColumn": 4,
@@ -192,7 +192,7 @@
                     "endOffset": 1513
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 40,
                         "startColumn": 4,
@@ -212,7 +212,7 @@
                     "endOffset": 34665
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 41,
                         "startColumn": 4,
@@ -232,7 +232,7 @@
                     "endOffset": 34711
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 736,
                         "startColumn": 4,
@@ -251,7 +251,7 @@
                     "endOffset": 34760
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 737,
                         "startColumn": 4,
@@ -271,7 +271,7 @@
                     "endOffset": 81752
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 738,
                         "startColumn": 4,
@@ -291,7 +291,7 @@
                     "endOffset": 81799
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 1672,
                         "startColumn": 4,
@@ -310,7 +310,7 @@
                     "endOffset": 81850
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 1673,
                         "startColumn": 4,
@@ -329,7 +329,7 @@
                     "endOffset": 81898
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 1674,
                         "startColumn": 4,
@@ -348,7 +348,7 @@
                     "endOffset": 81944
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 1675,
                         "startColumn": 4,
@@ -368,7 +368,7 @@
                     "endOffset": 98991
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 1676,
                         "startColumn": 4,
@@ -388,7 +388,7 @@
                     "endOffset": 99057
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2014,
                         "startColumn": 4,
@@ -407,7 +407,7 @@
                     "endOffset": 99114
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2015,
                         "startColumn": 4,
@@ -426,7 +426,7 @@
                     "endOffset": 99169
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2016,
                         "startColumn": 4,
@@ -445,7 +445,7 @@
                     "endOffset": 99227
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2017,
                         "startColumn": 4,
@@ -464,7 +464,7 @@
                     "endOffset": 99294
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2018,
                         "startColumn": 4,
@@ -483,7 +483,7 @@
                     "endOffset": 99359
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2019,
                         "startColumn": 4,
@@ -502,7 +502,7 @@
                     "endOffset": 99424
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2020,
                         "startColumn": 4,
@@ -521,7 +521,7 @@
                     "endOffset": 99482
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2021,
                         "startColumn": 4,
@@ -540,7 +540,7 @@
                     "endOffset": 99540
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2022,
                         "startColumn": 4,
@@ -559,7 +559,7 @@
                     "endOffset": 99601
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2023,
                         "startColumn": 4,
@@ -578,7 +578,7 @@
                     "endOffset": 99665
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2024,
                         "startColumn": 4,
@@ -597,7 +597,7 @@
                     "endOffset": 99714
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2025,
                         "startColumn": 4,
@@ -616,7 +616,7 @@
                     "endOffset": 99768
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2026,
                         "startColumn": 4,
@@ -635,7 +635,7 @@
                     "endOffset": 99823
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2027,
                         "startColumn": 4,
@@ -654,7 +654,7 @@
                     "endOffset": 99880
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2028,
                         "startColumn": 4,
@@ -673,7 +673,7 @@
                     "endOffset": 99938
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2029,
                         "startColumn": 4,
@@ -692,7 +692,7 @@
                     "endOffset": 100005
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2030,
                         "startColumn": 4,
@@ -711,7 +711,7 @@
                     "endOffset": 100065
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2031,
                         "startColumn": 4,
@@ -730,7 +730,7 @@
                     "endOffset": 100127
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2032,
                         "startColumn": 4,
@@ -749,7 +749,7 @@
                     "endOffset": 102769
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2046,
                         "startColumn": 4,
@@ -768,7 +768,7 @@
                     "endOffset": 102824
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2047,
                         "startColumn": 4,
@@ -787,7 +787,7 @@
                     "endOffset": 102883
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2048,
                         "startColumn": 4,
@@ -806,7 +806,7 @@
                     "endOffset": 102943
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2049,
                         "startColumn": 4,
@@ -825,7 +825,7 @@
                     "endOffset": 103012
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2050,
                         "startColumn": 4,
@@ -844,7 +844,7 @@
                     "endOffset": 103078
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2051,
                         "startColumn": 4,
@@ -863,7 +863,7 @@
                     "endOffset": 103144
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2052,
                         "startColumn": 4,
@@ -882,7 +882,7 @@
                     "endOffset": 103213
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2053,
                         "startColumn": 4,
@@ -901,7 +901,7 @@
                     "endOffset": 103284
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2054,
                         "startColumn": 4,
@@ -920,7 +920,7 @@
                     "endOffset": 103346
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2055,
                         "startColumn": 4,
@@ -939,7 +939,7 @@
                     "endOffset": 103417
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2056,
                         "startColumn": 4,
@@ -958,7 +958,7 @@
                     "endOffset": 103485
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2057,
                         "startColumn": 4,
@@ -977,7 +977,7 @@
                     "endOffset": 103553
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2058,
                         "startColumn": 4,
@@ -996,7 +996,7 @@
                     "endOffset": 103623
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2059,
                         "startColumn": 4,
@@ -1015,7 +1015,7 @@
                     "endOffset": 103696
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2060,
                         "startColumn": 4,
@@ -1034,7 +1034,7 @@
                     "endOffset": 103766
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2061,
                         "startColumn": 4,
@@ -1053,7 +1053,7 @@
                     "endOffset": 103841
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2062,
                         "startColumn": 4,
@@ -1072,7 +1072,7 @@
                     "endOffset": 103917
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2063,
                         "startColumn": 4,
@@ -1091,7 +1091,7 @@
                     "endOffset": 103987
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2064,
                         "startColumn": 4,
@@ -1110,7 +1110,7 @@
                     "endOffset": 104051
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2065,
                         "startColumn": 4,
@@ -1129,7 +1129,7 @@
                     "endOffset": 104120
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2066,
                         "startColumn": 4,
@@ -1148,7 +1148,7 @@
                     "endOffset": 104183
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2067,
                         "startColumn": 4,
@@ -1167,7 +1167,7 @@
                     "endOffset": 104249
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2068,
                         "startColumn": 4,
@@ -1186,7 +1186,7 @@
                     "endOffset": 104312
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2069,
                         "startColumn": 4,
@@ -1205,7 +1205,7 @@
                     "endOffset": 104371
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2070,
                         "startColumn": 4,
@@ -1224,7 +1224,7 @@
                     "endOffset": 104427
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2071,
                         "startColumn": 4,
@@ -1243,7 +1243,7 @@
                     "endOffset": 104487
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2072,
                         "startColumn": 4,
@@ -1262,7 +1262,7 @@
                     "endOffset": 104546
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2073,
                         "startColumn": 4,
@@ -1281,7 +1281,7 @@
                     "endOffset": 104600
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2074,
                         "startColumn": 4,
@@ -1300,7 +1300,7 @@
                     "endOffset": 104656
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2075,
                         "startColumn": 4,
@@ -1319,7 +1319,7 @@
                     "endOffset": 104714
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2076,
                         "startColumn": 4,
@@ -1338,7 +1338,7 @@
                     "endOffset": 104770
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2077,
                         "startColumn": 4,
@@ -1357,7 +1357,7 @@
                     "endOffset": 104830
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2078,
                         "startColumn": 4,
@@ -1376,7 +1376,7 @@
                     "endOffset": 104888
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2079,
                         "startColumn": 4,
@@ -1395,7 +1395,7 @@
                     "endOffset": 104942
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2080,
                         "startColumn": 4,
@@ -1414,7 +1414,7 @@
                     "endOffset": 105001
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2081,
                         "startColumn": 4,
@@ -1433,7 +1433,7 @@
                     "endOffset": 105057
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2082,
                         "startColumn": 4,
@@ -1452,7 +1452,7 @@
                     "endOffset": 105113
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2083,
                         "startColumn": 4,
@@ -1471,7 +1471,7 @@
                     "endOffset": 105173
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2084,
                         "startColumn": 4,
@@ -1490,7 +1490,7 @@
                     "endOffset": 105231
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2085,
                         "startColumn": 4,
@@ -1509,7 +1509,7 @@
                     "endOffset": 105285
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2086,
                         "startColumn": 4,
@@ -1528,7 +1528,7 @@
                     "endOffset": 105343
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2087,
                         "startColumn": 4,
@@ -1547,7 +1547,7 @@
                     "endOffset": 105415
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2088,
                         "startColumn": 4,
@@ -1566,7 +1566,7 @@
                     "endOffset": 105476
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2089,
                         "startColumn": 4,
@@ -1585,7 +1585,7 @@
                     "endOffset": 105535
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2090,
                         "startColumn": 4,
@@ -1604,7 +1604,7 @@
                     "endOffset": 105596
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2091,
                         "startColumn": 4,
@@ -1623,7 +1623,7 @@
                     "endOffset": 105654
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2092,
                         "startColumn": 4,
@@ -1642,7 +1642,7 @@
                     "endOffset": 105710
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2093,
                         "startColumn": 4,
@@ -1661,7 +1661,7 @@
                     "endOffset": 105764
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2094,
                         "startColumn": 4,
@@ -1680,7 +1680,7 @@
                     "endOffset": 105820
                 },
                 "from": {
-                    "file": "/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2095,
                         "startColumn": 4,
