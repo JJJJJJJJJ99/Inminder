@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -21,6 +22,7 @@ public class Bill extends AppCompatActivity {
     public DBHelper dbhelper;
     public ProgressBar progress;
     public double sum = 0;
+    public int request_Code;
 
 
     @Override
@@ -38,6 +40,15 @@ public class Bill extends AppCompatActivity {
         ListView billlst = (ListView) findViewById(R.id.bill_list);
         billlst.setAdapter(adapter);
 
+        billlst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(Bill.this, BillNote.class);
+                intent.putExtra("id", id);
+                Bill.this.startActivityForResult(intent, request_Code);
+            }
+        });
+
         // Balance
         TextView balance = (TextView) findViewById(R.id.balance);
         Button plus = (Button) findViewById(R.id.plus_budget);
@@ -50,7 +61,7 @@ public class Bill extends AppCompatActivity {
         sum =  dbhelper.getBudget() - dbhelper.getSum();
         balance.setText(Double.toString(sum));
 
-        // Progress Bar
+        /* Progress Bar
         int pro = (int) Math.round(sum); // Converting a double sum into integer for display in progress bar
         progress = (ProgressBar) findViewById(R.id.progressBar3);
         if (pro<0){
@@ -59,7 +70,7 @@ public class Bill extends AppCompatActivity {
         } else{
             progress.setProgress(pro);
             progress.getProgressDrawable().setColorFilter(Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN);
-        }
+        }*/
 
         // Add Expense
         Button add = (Button) findViewById(R.id.button_add);
