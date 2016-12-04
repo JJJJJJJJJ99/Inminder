@@ -7,4 +7,8 @@
     <string name="deleteBtn">Delete</string>
     <string name="updateBtn">Edit</string>
     <string name="add">Add New Reminder</string>
+    <string name="addDate">Set Alerting Time</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="timeLabel">Estimated Alerting Time:</string>
 </resources>

@@ -270,6 +270,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // Reminder tables ******************************************************************** zhen shi tai chang le !!!
     // Ren wu ke ren!!!!!!
     public long createReminder(ReminderObject reminder){
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues initReminder = new ContentValues();
         initReminder.put(KEY_TIME, reminder.getTime());
         initReminder.put(KEY_NAME, reminder.getName());
