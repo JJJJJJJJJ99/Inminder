@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="edu.brandeis.jjwang95.inminder.Reminder">
+    tools:context="edu.brandeis.jjwang95.inminder.Reminder"
+    android:background="@mipmap/background">
     <Button
         android:id="@+id/addBtn"
         android:text="@string/add"

@@ -19,6 +19,7 @@ import android.content.Intent;
 import android.widget.Button;
 import android.content.Context;
 import android.widget.ToggleButton;
+import android.graphics.Typeface;
 import java.util.Date;
 import java.util.Calendar;
 
@@ -42,14 +43,16 @@ public class ReminderDetail extends AppCompatActivity {
 
         dbHelper = DBHelper.getInstance(getApplicationContext());
         dbHelper.onOpen(db);
-
+        Typeface mycustomFont = Typeface.createFromAsset(getAssets(), "fonts/Nawabiat.ttf");
         name = (TextView) findViewById(R.id.nameDetail);
         notes = (TextView) findViewById(R.id.noteDetail);
         time = (TextView) findViewById(R.id.timeDetail);
         cancel = (Button) findViewById(R.id.re_detail_cancel);
         toggle = (ToggleButton) findViewById(R.id.reminder_toggleBtn);
 
-
+        name.setTypeface(mycustomFont);
+        notes.setTypeface(mycustomFont);
+        time.setTypeface(mycustomFont);
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
 

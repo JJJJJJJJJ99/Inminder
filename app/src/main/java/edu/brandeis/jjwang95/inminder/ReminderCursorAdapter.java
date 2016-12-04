@@ -1,8 +1,10 @@
 package edu.brandeis.jjwang95.inminder;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,21 +23,12 @@ public class ReminderCursorAdapter extends SimpleCursorAdapter {
         super(context,layout, cursor, from, to, flag);
     }
 
-//    public View getView(final int position, View view, ViewGroup parent){
-//        View myView = super.getView(position,view,parent);
-//        dbHelper = DBHelper.getInstance(getApplicationContext());
-//        dbHelper.onOpen(db);
-//        deleteBtn = (Button) myView.findViewById(R.id.deleteBtn);
-//        deleteBtn.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                Cursor curr = (Cursor)getItem(position);
-//                int id = curr.getInt(curr.getColumnIndex(dBHandler.KEY_ID));
-//                dBHandler.deleteEntry(id);
-//                myAdapter.changeCursor(dBHandler.getAllEntries());
-//            }
-//        });
-//        return myView;
-//    }
+    public View getView(final int position, View view, ViewGroup parent){
+        View myView = super.getView(position,view,parent);
+
+
+        return myView;
+    }
 
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {

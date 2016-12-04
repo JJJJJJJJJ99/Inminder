@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.AdapterView;
+import android.widget.TextView;
 
 public class Reminder extends AppCompatActivity {
     private DBHelper dbHelper;
@@ -20,6 +23,7 @@ public class Reminder extends AppCompatActivity {
     Button detailBtn, addBtn;
     int request_Code;
     static Reminder _instance;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,27 +43,54 @@ public class Reminder extends AppCompatActivity {
                 Intent intent = new Intent("edu.brandeis.jjwang95.inminder.AddReminder");
                 startActivityForResult(intent,request_Code);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
             }
         });
 
-        reAdapter = new SimpleCursorAdapter(this, R.layout.reminder_entry, cursor, keys, boundTo, 0) {
-            public View getView(final int position, View view, ViewGroup parent) {
-                View myView = super.getView(position, view, parent);
-                detailBtn = (Button) myView.findViewById(R.id.detailBtn);
-                detailBtn.setOnClickListener(new View.OnClickListener(){
-                    public void onClick(View v){
-                        Cursor curr = (Cursor)getItem(position);
-                        int id = curr.getInt(curr.getColumnIndex("_id"));
+        reAdapter = new SimpleCursorAdapter(this, R.layout.reminder_entry, cursor, keys, boundTo, 0){
+                public View getView(final int position, View view, ViewGroup parent) {
+                    View myView = super.getView(position, view, parent);
+                    Typeface mycustomFont = Typeface.createFromAsset(getAssets(), "fonts/Nawabiat.ttf");
+                    ((TextView) myView.findViewById(R.id.nameShow)).setTypeface(mycustomFont, Typeface.BOLD);
+                    ((TextView) myView.findViewById(R.id.nameShow)).setTextSize(50);
+                    ((TextView) myView.findViewById(R.id.timeShow)).setTypeface(mycustomFont);
+                    ((TextView) myView.findViewById(R.id.timeShow)).setTextSize(30);
+
+                    return myView;
+                }
+        };
+        listview.setAdapter(reAdapter);
+
+        listview.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                        Cursor curr = (Cursor)getItem(position);
+//                        int id = curr.getInt(curr.getColumnIndex("_id"));
                         Intent intent = new Intent(Reminder.this, ReminderDetail.class);
-                        intent.putExtra("id",id);
+                        intent.putExtra("id",(int)id);
                         startActivityForResult(intent,request_Code);
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     }
-                });
-                return myView;
-            }
-        };
-        listview.setAdapter(reAdapter);
+                }
+        );
+//        {
+//            public View getView(final int position, View view, ViewGroup parent) {
+//                View myView = super.getView(position, view, parent);
+//                detailBtn = (Button) myView.findViewById(R.id.detailBtn);
+//                detailBtn.setOnClickListener(new View.OnClickListener(){
+//                    public void onClick(View v){
+//                        Cursor curr = (Cursor)getItem(position);
+//                        int id = curr.getInt(curr.getColumnIndex("_id"));
+//                        Intent intent = new Intent(Reminder.this, ReminderDetail.class);
+//                        intent.putExtra("id",id);
+//                        startActivityForResult(intent,request_Code);
+//                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+//                    }
+//                });
+//                return myView;
+//            }
+//        };
+//        listview.setAdapter(reAdapter);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){
