@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new Reminder(), "Reminder");
-//        adapter.addFragment(new TwoFragment(), "TWO");
+        adapter.addFragment(new Password(), "Password");
 //        adapter.addFragment(new ThreeFragment(), "THREE");
         viewPager.setAdapter(adapter);
     }
