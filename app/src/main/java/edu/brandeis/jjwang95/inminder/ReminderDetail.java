@@ -3,11 +3,17 @@ package edu.brandeis.jjwang95.inminder;
 import android.database.sqlite.SQLiteDatabase;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.net.Uri;
 import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.view.ActionMode;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Button;
@@ -20,7 +26,8 @@ public class ReminderDetail extends AppCompatActivity {
     DBHelper dbHelper;
     SQLiteDatabase db;
     TextView name, notes, time;
-    Button update, delete,cancel, stop;
+    Button update, delete,cancel, search;
+    EditText keywords;
     ReminderObject curr;
     int id, request_Code, _month, _day, _hour, _minute, _year;
     Context context;
@@ -39,18 +46,18 @@ public class ReminderDetail extends AppCompatActivity {
         name = (TextView) findViewById(R.id.nameDetail);
         notes = (TextView) findViewById(R.id.noteDetail);
         time = (TextView) findViewById(R.id.timeDetail);
-        update = (Button) findViewById(R.id.re_detail_edit);
-        delete = (Button) findViewById(R.id.re_detail_delete);
         cancel = (Button) findViewById(R.id.re_detail_cancel);
         toggle = (ToggleButton) findViewById(R.id.reminder_toggleBtn);
+
 
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
 
         if(b != null){
-            id = (int)b.get("id");
+            id = b.getInt("id");
         }
 
+        Log.e("check", Integer.toString(b.getInt("id")));
         curr = dbHelper.getReminder(id);
 
         name.setText(curr.getName());
@@ -114,35 +121,48 @@ public class ReminderDetail extends AppCompatActivity {
             }
         });
 
+//        search.setOnClickListener(new View.OnClickListener(){
+//            public void onClick(View v){
+//                Intent newIntent = new Intent("edu.brandeis.jjwang95.inminder.ReminderWebSearch");
+//                String key = keywords.getText().toString().trim();
+//                String webpage = "https://www.google.com/#q=";
+//                for (String s : key.split(" ")){
+//                    webpage = webpage + s + "+";
+//                }
+//                newIntent.putExtra("keyword",webpage);
+//                startActivityForResult(newIntent,request_Code);
+//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+//            }
+//        });
 
-        update.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent newIntent = new Intent("edu.brandeis.jjwang95.inminder.EditReminder");
-                newIntent.putExtra("name",curr.getName());
-                newIntent.putExtra("notes", curr.getNote());
-                newIntent.putExtra("time", curr.getTime());
-                newIntent.putExtra("id", id);
-                startActivityForResult(newIntent,request_Code);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
-        });
-
-        delete.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v) {
-                dbHelper.deleteReminder((long) id);
-                Intent myIntent = new Intent(Reminder.getInstance(), Alarm_Receiver.class);
-                myIntent.putExtra("extra", "cancel");
-                myIntent.putExtra("id", id);
-                PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), id, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-                sendBroadcast(myIntent);
-
-                alarmManager.cancel(pending_intent);
-                Intent data = new Intent();
-                setResult(RESULT_OK,data);
-                finish();
-                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
-            }
-        });
+//        update.setOnClickListener(new View.OnClickListener(){
+//            public void onClick(View v){
+//                Intent newIntent = new Intent("edu.brandeis.jjwang95.inminder.EditReminder");
+//                newIntent.putExtra("name",curr.getName());
+//                newIntent.putExtra("notes", curr.getNote());
+//                newIntent.putExtra("time", curr.getTime());
+//                newIntent.putExtra("id", id);
+//                startActivityForResult(newIntent,request_Code);
+//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+//            }
+//        });
+//
+//        delete.setOnClickListener(new View.OnClickListener(){
+//            public void onClick(View v) {
+//                dbHelper.deleteReminder((long) id);
+//                Intent myIntent = new Intent(Reminder.getInstance(), Alarm_Receiver.class);
+//                myIntent.putExtra("extra", "cancel");
+//                myIntent.putExtra("id", id);
+//                PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), id, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+//                sendBroadcast(myIntent);
+//
+//                alarmManager.cancel(pending_intent);
+//                Intent data = new Intent();
+//                setResult(RESULT_OK,data);
+//                finish();
+//                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
+//            }
+//        });
 
         cancel.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -160,6 +180,47 @@ public class ReminderDetail extends AppCompatActivity {
 //        });
     }
 
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater myInflater = getMenuInflater();
+        myInflater.inflate(R.menu.reminder_menu,menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.reminder_menu_search) {
+            Intent newIntent = new Intent("edu.brandeis.jjwang95.inminder.ReminderWebSearch");
+            startActivity(newIntent);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            return true;
+        } else if (item.getItemId() == R.id.reminder_menu_update) {
+            curr = dbHelper.getReminder(id);
+            Intent newIntent = new Intent("edu.brandeis.jjwang95.inminder.EditReminder");
+            newIntent.putExtra("name", curr.getName());
+            newIntent.putExtra("notes", curr.getNote());
+            newIntent.putExtra("time", curr.getTime());
+            newIntent.putExtra("id", id);
+            startActivityForResult(newIntent, request_Code);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            return true;
+        } else if (item.getItemId() == R.id.reminder_menu_delete){
+            dbHelper.deleteReminder((long) id);
+            Intent myIntent = new Intent(Reminder.getInstance(), Alarm_Receiver.class);
+            myIntent.putExtra("extra", "cancel");
+            myIntent.putExtra("id", id);
+            PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), id, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+            sendBroadcast(myIntent);
+
+            ((AlarmManager) getSystemService(ALARM_SERVICE)).cancel(pending_intent);
+            Intent data = new Intent();
+            setResult(RESULT_OK,data);
+            finish();
+            overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
+            return true;
+        }else{
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         if (requestCode == request_Code){
             if (resultCode == RESULT_OK) {
@@ -173,4 +234,6 @@ public class ReminderDetail extends AppCompatActivity {
             }
         }
     }
+
+
 }
