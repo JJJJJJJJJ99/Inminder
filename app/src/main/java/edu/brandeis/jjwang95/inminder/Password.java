@@ -1,5 +1,8 @@
 package edu.brandeis.jjwang95.inminder;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -7,11 +10,11 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.URLUtil;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -23,6 +26,7 @@ public class Password extends AppCompatActivity {
     private int code = 123;
     private ListView list;
     private SearchView search;
+    private Long getID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,7 @@ public class Password extends AppCompatActivity {
 
 //        search = (SearchView) findViewById(R.id.password_search);
         list = (ListView) findViewById(R.id.password_list);
+
 
         helper = DBHelper.getInstance(getApplicationContext());
         cursor = helper.getAllPasswords();
@@ -44,16 +49,41 @@ public class Password extends AppCompatActivity {
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        getID = id;
                         AlertDialog.Builder builder = new AlertDialog.Builder(Password.this);
 
                         builder.setTitle("Your password is: ");
                         builder.setMessage(helper.getPassword(id).getPassword());
-                        builder.setPositiveButton("I got it!", new DialogInterface.OnClickListener() {
+                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
                             }
                         });
+                        builder.setNegativeButton("Copy", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                                ClipData clip = ClipData.newPlainText("",helper.getPassword(getID).getPassword());
+                                clipboard.setPrimaryClip(clip);
+                                Toast.makeText(getApplicationContext(), "Password copied!", Toast.LENGTH_LONG).show();
+                            }
+                        });
+                        builder.setNeutralButton("Go to site", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent i = new Intent(Password.this,Password_website.class);
+                                String url = helper.getPassword(getID).getWebsite();
+                                i.putExtra("site",url);
+                                if (URLUtil.isValidUrl(url)) {
+                                    startActivity(i);
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Not a valid website!", Toast.LENGTH_LONG).show();
+                                    dialog.dismiss();
+                                }
+                            }
+                        });
+
                         AlertDialog dialog = builder.create();
                         dialog.show();
                     }
@@ -63,17 +93,18 @@ public class Password extends AppCompatActivity {
 //        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 //            @Override
 //            public boolean onQueryTextSubmit(String query) {
-//                if (cursor==null) {
-//                    Toast.makeText(Password.this,"No results found.",Toast.LENGTH_LONG).show();
-//                }
-//                adapter.swapCursor(cursor);
+////                if (cursor==null) {
+////                    Toast.makeText(Password.this,"No results found.",Toast.LENGTH_LONG).show();
+////                }
+////                adapter.swapCursor(cursor);
 //                return false;
 //            }
 //
 //            @Override
 //            public boolean onQueryTextChange(String text) {
-//                adapter.swapCursor(cursor);
-//                return false;
+////                adapter.swapCursor(cursor);
+//                adapter.getFilter().filter(text);
+//                return true;
 //            }
 //        });
     }

@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 public class Add_password extends AppCompatActivity {
     private EditText account_type,account_name,password;
-    private Button edit_password,save_password,cancel_password;
+    private Button save_password,cancel_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,16 +20,8 @@ public class Add_password extends AppCompatActivity {
         account_name = (EditText) findViewById(R.id.account_name);
         password = (EditText) findViewById(R.id.password);
 
-        edit_password = (Button) findViewById(R.id.edit_password);
         save_password = (Button) findViewById(R.id.save_password);
         cancel_password = (Button) findViewById(R.id.cancel_password);
-
-        View.OnClickListener editOcl = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        };
 
         View.OnClickListener saveOcl = new View.OnClickListener() {
             @Override
@@ -50,7 +42,6 @@ public class Add_password extends AppCompatActivity {
             }
         };
 
-        edit_password.setOnClickListener(editOcl);
         save_password.setOnClickListener(saveOcl);
         cancel_password.setOnClickListener(cancelOcl);
     }
