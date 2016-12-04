@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.brandeis.jjwang95.inminder">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,16 +24,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".BillAdd">
+        <activity android:name=".BillAdd">
             <intent-filter>
                 <action android:name="edu.brandeis.jjwang95.inminder.BillAdd" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".BillSetBudget">
+        <activity android:name=".BillSetBudget">
             <intent-filter>
                 <action android:name="edu.brandeis.jjwang95.inminder.BillSetBudget" />
 
@@ -75,13 +75,21 @@
         <activity android:name=".EditReminder">
             <intent-filter>
                 <action android:name="edu.brandeis.jjwang95.inminder.EditReminder" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Add_password">
+        <activity android:name=".Add_password">
             <intent-filter>
                 <action android:name="edu.brandeis.jjwang95.inminder.Add_password" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Password_website">
+            <intent-filter>
+                <action android:name="edu.brandeis.jjwang95.inminder.Password_website" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
