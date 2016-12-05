@@ -26,12 +26,13 @@ public class PasswordCursorAdapter extends SimpleCursorAdapter {
     }
 
     @Override
-    public void bindView(View view, Context context, Cursor cursor) {
+    public void bindView(View view, Context context, final Cursor cursor) {
         TextView website = (TextView) view.findViewById(R.id.website);
         TextView email = (TextView) view.findViewById(R.id.email);
 
         website.setText(cursor.getString(cursor.getColumnIndex("website")));
         email.setText(cursor.getString(cursor.getColumnIndex("email")));
+
     }
 
 }
