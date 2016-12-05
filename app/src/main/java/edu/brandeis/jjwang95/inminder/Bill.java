@@ -1,6 +1,7 @@
 package edu.brandeis.jjwang95.inminder;
 
 import android.app.Activity;
+import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,7 +9,9 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
@@ -17,44 +20,54 @@ import android.widget.TextView;
 
 
 
-public class Bill extends AppCompatActivity {
+public class Bill extends Fragment {
     public SQLiteDatabase db;
     public DBHelper dbhelper;
     public ProgressBar progress;
     public double sum = 0;
     public int request_Code;
+    View rootView;
 
+    public Bill(){
 
+    }
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bill);
-        dbhelper = DBHelper.getInstance(getApplicationContext());
+
+
+    }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        rootView = inflater.inflate(R.layout.activity_bill, container, false);
+
+        dbhelper = DBHelper.getInstance(getActivity());
         db = dbhelper.getWritableDatabase();
 
         // Prepare for list view
         Cursor c = db.rawQuery("SELECT * FROM bill_table", null);
         String[] columns = new String[] { "title", "amount"};
         int[] views = new int[]{R.id.textView_title, R.id.textView_amount};
-        BillCursorAdapter adapter = new BillCursorAdapter(getApplicationContext(), R.layout.bill_entry, c, columns, views);
-        ListView billlst = (ListView) findViewById(R.id.bill_list);
+        BillCursorAdapter adapter = new BillCursorAdapter(getActivity(), R.layout.bill_entry, c, columns, views);
+        ListView billlst = (ListView) rootView.findViewById(R.id.bill_list);
         billlst.setAdapter(adapter);
 
         billlst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(Bill.this, BillNote.class);
+                Intent intent = new Intent(getActivity(), BillNote.class);
                 intent.putExtra("id", id);
                 Bill.this.startActivityForResult(intent, request_Code);
             }
         });
 
         // Balance
-        TextView balance = (TextView) findViewById(R.id.balance);
-        Button plus = (Button) findViewById(R.id.plus_budget);
+        TextView balance = (TextView) rootView.findViewById(R.id.balance);
+        Button plus = (Button) rootView.findViewById(R.id.plus_budget);
         plus.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent(Bill.this, BillSetBudget.class);
+                Intent intent = new Intent(getActivity(), BillSetBudget.class);
                 Bill.this.startActivity(intent);
             }
         });
@@ -73,7 +86,7 @@ public class Bill extends AppCompatActivity {
         }*/
 
         // Add Expense
-        Button add = (Button) findViewById(R.id.button_add);
+        Button add = (Button) rootView.findViewById(R.id.button_add);
         add.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -82,7 +95,7 @@ public class Bill extends AppCompatActivity {
                 Bill.this.startActivity(myIntent);
             }
         });
-
-
+        return rootView;
     }
+
 }
