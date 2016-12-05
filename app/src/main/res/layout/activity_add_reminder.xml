@@ -8,24 +8,27 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@mipmap/background"
     tools:context="edu.brandeis.jjwang95.inminder.AddReminder">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/reminderName"
-        android:id="@+id/addname"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+        <!--android:text="@string/reminderName"-->
+        <!--android:id="@+id/addname"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true" />-->
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:ems="20"
         android:id="@+id/reminder_addtopic"
-        android:layout_below="@+id/addname"
+        android:layout_alignParentTop="true"
+        android:hint="Please Enter Topic"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -36,37 +39,40 @@
         android:layout_below="@id/reminder_addtopic"
         android:text="@string/addDate" />
 
-    <TextView
-        android:id="@+id/reminder_timeLabel"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/DateBtn"
-        android:text="@string/timeLabel"/>
+    <!--<TextView-->
+        <!--android:id="@+id/reminder_timeLabel"-->
+        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/DateBtn"-->
+        <!--android:text="@string/timeLabel"/>-->
 
     <TextView
         android:id="@+id/reminder_timeshow"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/reminder_timeLabel"
+        android:layout_below="@id/DateBtn"
         android:text=""/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/notes"
-        android:id="@+id/notes"
-        android:layout_below="@id/reminder_timeshow"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+        <!--android:text="@string/notes"-->
+        <!--android:id="@+id/notes"-->
+        <!--android:layout_below="@id/reminder_timeshow"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true" />-->
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:ems="20"
+        android:hint="Please Enter Note"
         android:id="@+id/reminder_addNotes"
-        android:layout_below="@+id/notes"
+        android:layout_below="@+id/reminder_timeshow"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

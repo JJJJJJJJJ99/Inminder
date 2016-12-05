@@ -4,6 +4,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.net.Uri;
+import android.os.CountDownTimer;
 import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,18 +23,39 @@ import android.widget.ToggleButton;
 import android.graphics.Typeface;
 import java.util.Date;
 import java.util.Calendar;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
+
+import android.os.Build;
+import android.annotation.TargetApi;
+import android.annotation.SuppressLint;
+
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.appindexing.Thing;
+import com.google.android.gms.common.api.GoogleApiClient;
+
+
+@TargetApi(Build.VERSION_CODES.GINGERBREAD)
+@SuppressLint("NewApi")
 
 public class ReminderDetail extends AppCompatActivity {
     DBHelper dbHelper;
     SQLiteDatabase db;
-    TextView name, notes, time;
-    Button update, delete,cancel, search;
+    TextView name, notes, time, counter, daysLeft;
+    Button update, delete, cancel, search;
     EditText keywords;
     ReminderObject curr;
     int id, request_Code, _month, _day, _hour, _minute, _year;
     Context context;
     ToggleButton toggle;
     AlarmManager alarmManager;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,22 +69,54 @@ public class ReminderDetail extends AppCompatActivity {
         name = (TextView) findViewById(R.id.nameDetail);
         notes = (TextView) findViewById(R.id.noteDetail);
         time = (TextView) findViewById(R.id.timeDetail);
+        counter = (TextView) findViewById(R.id.CountdownTest);
+        daysLeft = (TextView) findViewById(R.id.daysLeft);
         cancel = (Button) findViewById(R.id.re_detail_cancel);
         toggle = (ToggleButton) findViewById(R.id.reminder_toggleBtn);
 
         name.setTypeface(mycustomFont);
+        name.setTextSize(50);
         notes.setTypeface(mycustomFont);
+        notes.setTextSize(30);
         time.setTypeface(mycustomFont);
+        time.setTextSize(40);
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
 
-        if(b != null){
+        if (b != null) {
             id = b.getInt("id");
         }
 
         Log.e("check", Integer.toString(b.getInt("id")));
         curr = dbHelper.getReminder(id);
+        String thisTime = curr.getTime();
+        _year = 100 + Integer.parseInt(thisTime.substring(6, 8));
+        _month = Integer.parseInt(thisTime.substring(0, 2)) - 1;
+        _day = Integer.parseInt(thisTime.substring(3, 5));
+        _hour = Integer.parseInt(thisTime.substring(9, 11));
+        _minute = Integer.parseInt(thisTime.substring(12, 14));
 
+        Log.e("scheduled time", (new Date(_year,_month,_day,_hour,_minute)).toString());
+        Log.e("curr time", (new Date()).toString());
+        int millis = (int)((new Date(_year,_month,_day,_hour,_minute)).getTime() - (new Date()).getTime());
+        if (millis>=0) {
+            long diffSeconds = millis / 1000 % 60;
+            long diffMinutes = millis / (60 * 1000) % 60;
+            long diffHours = millis / (60 * 60 * 1000) % 24;
+            long diffDays = millis / (24 * 60 * 60 * 1000);
+            daysLeft.setText(Long.toString(diffDays)+" Days ");
+            daysLeft.setTypeface(mycustomFont, Typeface.BOLD);
+            daysLeft.setTextSize(60);
+            String currUntilFuture = diffHours + ":" + diffMinutes + ":" + diffSeconds;
+            counter.setText(currUntilFuture);
+            final CounterClass timer = new CounterClass(millis, 1000);
+            timer.start();
+        }else{
+            counter.setText("Time's Up");
+        }
+
+        counter.setTypeface(mycustomFont, Typeface.BOLD);
+        counter.setTextSize(50);
         name.setText(curr.getName());
         notes.setText(curr.getNote());
         time.setText(curr.getTime());
@@ -71,20 +125,20 @@ public class ReminderDetail extends AppCompatActivity {
         toggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (toggle.isChecked()){
+                if (toggle.isChecked()) {
                     curr = dbHelper.getReminder(id);
                     String originalTime = curr.getTime();
-                    _year = 2000 + Integer.parseInt(originalTime.substring(6,8));
-                    _month = Integer.parseInt(originalTime.substring(0,2));
-                    _day = Integer.parseInt(originalTime.substring(3,5));
-                    _hour = Integer.parseInt(originalTime.substring(9,11));
-                    _minute = Integer.parseInt(originalTime.substring(12,14));
+                    _year = 2000 + Integer.parseInt(originalTime.substring(6, 8));
+                    _month = Integer.parseInt(originalTime.substring(0, 2));
+                    _day = Integer.parseInt(originalTime.substring(3, 5));
+                    _hour = Integer.parseInt(originalTime.substring(9, 11));
+                    _minute = Integer.parseInt(originalTime.substring(12, 14));
 
                     Log.e("in Toggle TRUe", "a");
                     Intent myIntent = new Intent(Reminder.getInstance(), Alarm_Receiver.class);
                     Calendar alarmCal = Calendar.getInstance();
                     alarmCal.set(Calendar.YEAR, _year);
-                    alarmCal.set(Calendar.MONTH, _month-1);
+                    alarmCal.set(Calendar.MONTH, _month - 1);
                     alarmCal.set(Calendar.DAY_OF_MONTH, _day);
                     alarmCal.set(Calendar.HOUR_OF_DAY, _hour);
                     alarmCal.set(Calendar.MINUTE, _minute);
@@ -95,14 +149,14 @@ public class ReminderDetail extends AppCompatActivity {
                     myIntent.putExtra("id", id);
                     PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), id, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                     alarmManager.set(AlarmManager.RTC_WAKEUP, alarmCal.getTimeInMillis(), pending_intent);
-                }else{
+                } else {
                     curr = dbHelper.getReminder(id);
                     String originalTime = curr.getTime();
-                    _year = 100 + Integer.parseInt(originalTime.substring(6,8));
-                    _month = Integer.parseInt(originalTime.substring(0,2)) - 1;
-                    _day = Integer.parseInt(originalTime.substring(3,5));
-                    _hour = Integer.parseInt(originalTime.substring(9,11));
-                    _minute = Integer.parseInt(originalTime.substring(12,14));
+                    _year = 100 + Integer.parseInt(originalTime.substring(6, 8));
+                    _month = Integer.parseInt(originalTime.substring(0, 2)) - 1;
+                    _day = Integer.parseInt(originalTime.substring(3, 5));
+                    _hour = Integer.parseInt(originalTime.substring(9, 11));
+                    _minute = Integer.parseInt(originalTime.substring(12, 14));
                     Date thisTime = new Date(_year, _month, _day, _hour, _minute);
                     Intent myIntent = new Intent(Reminder.getInstance(), Alarm_Receiver.class);
                     Log.e("year check", Integer.toString(_year));
@@ -110,9 +164,9 @@ public class ReminderDetail extends AppCompatActivity {
                     Log.e("time check2", thisTime.toString());
 
 
-                    if (new Date().before(thisTime)){
+                    if (new Date().before(thisTime)) {
                         myIntent.putExtra("extra", "pre-off");
-                    }else{
+                    } else {
                         myIntent.putExtra("extra", "off");
                     }
                     myIntent.putExtra("id", id);
@@ -167,8 +221,8 @@ public class ReminderDetail extends AppCompatActivity {
 //            }
 //        });
 
-        cancel.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
+        cancel.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 Intent data = new Intent();
                 setResult(RESULT_OK, data);
                 finish();
@@ -181,11 +235,14 @@ public class ReminderDetail extends AppCompatActivity {
 //
 //            }
 //        });
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater myInflater = getMenuInflater();
-        myInflater.inflate(R.menu.reminder_menu,menu);
+        myInflater.inflate(R.menu.reminder_menu, menu);
         return true;
     }
 
@@ -205,7 +262,7 @@ public class ReminderDetail extends AppCompatActivity {
             startActivityForResult(newIntent, request_Code);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             return true;
-        } else if (item.getItemId() == R.id.reminder_menu_delete){
+        } else if (item.getItemId() == R.id.reminder_menu_delete) {
             dbHelper.deleteReminder((long) id);
             Intent myIntent = new Intent(Reminder.getInstance(), Alarm_Receiver.class);
             myIntent.putExtra("extra", "cancel");
@@ -215,17 +272,17 @@ public class ReminderDetail extends AppCompatActivity {
 
             ((AlarmManager) getSystemService(ALARM_SERVICE)).cancel(pending_intent);
             Intent data = new Intent();
-            setResult(RESULT_OK,data);
+            setResult(RESULT_OK, data);
             finish();
             overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
             return true;
-        }else{
+        } else {
             return super.onOptionsItemSelected(item);
         }
     }
 
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
-        if (requestCode == request_Code){
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == request_Code) {
             if (resultCode == RESULT_OK) {
                 dbHelper = DBHelper.getInstance(getApplicationContext());
                 dbHelper.onOpen(db);
@@ -238,5 +295,29 @@ public class ReminderDetail extends AppCompatActivity {
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
+    @SuppressLint("NewApi")
+    public class CounterClass extends CountDownTimer {
+        public CounterClass(long millisInFuture, long countDownInterval){
+            super(millisInFuture, countDownInterval);
+        }
+
+        @SuppressLint("NewApi")
+        @TargetApi(Build.VERSION_CODES.GINGERBREAD)
+        public void onTick(long millisUntilFinished){
+            long millis = millisUntilFinished;
+            String hms = String.format(Locale.US,"%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis),
+                    TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)),
+                    TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+            System.out.println(hms);
+            counter.setText(hms);
+
+        }
+
+        public void onFinish(){
+            counter.setText("DoNE");
+        }
+
+    }
 
 }

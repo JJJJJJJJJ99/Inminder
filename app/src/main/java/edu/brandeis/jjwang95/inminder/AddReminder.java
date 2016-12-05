@@ -12,6 +12,7 @@ import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -53,6 +54,7 @@ public class AddReminder extends AppCompatActivity implements DatePickerDialog.O
         dbHelper = DBHelper.getInstance(getApplicationContext());
         dbHelper.onOpen(db);
 
+        Typeface mycustomFont = Typeface.createFromAsset(getAssets(), "fonts/Nawabiat.ttf");
         setDate = (Button) findViewById(R.id.DateBtn);
         save = (Button) findViewById(R.id.reminder_save);
         cancel = (Button) findViewById(R.id.reminder_cancel);
@@ -60,6 +62,12 @@ public class AddReminder extends AppCompatActivity implements DatePickerDialog.O
         notes = (EditText) findViewById(R.id.reminder_addNotes);
         timeshow = (TextView) findViewById(R.id.reminder_timeshow);
 
+        timeshow.setTypeface(mycustomFont);
+        timeshow.setTextSize(40);
+        name.setTextSize(50);
+        name.setTypeface(mycustomFont);
+        notes.setTypeface(mycustomFont);
+        notes.setTextSize(30);
         my_intent = new Intent(Reminder.getInstance(), Alarm_Receiver.class);
         setDate.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){

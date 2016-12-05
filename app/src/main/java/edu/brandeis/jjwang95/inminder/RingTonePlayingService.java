@@ -30,8 +30,8 @@ public class RingTonePlayingService extends Service {
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public int onStartCommand(Intent intent, int flags, int startId){
         NotificationManager notify_manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        Intent intent_to_reminder = new Intent(RingTonePlayingService.this, Reminder.class);
-//        intent_to_reminder.putExtras(intent.getExtras());
+        Intent intent_to_reminder = new Intent(RingTonePlayingService.this, ReminderDetail.class);
+        intent_to_reminder.putExtras(intent.getExtras());
         PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent_to_reminder, 0);
 
 
