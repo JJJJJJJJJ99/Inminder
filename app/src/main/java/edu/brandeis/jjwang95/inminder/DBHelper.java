@@ -3,6 +3,7 @@ package edu.brandeis.jjwang95.inminder;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -162,6 +163,27 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return c;
     }
+
+    public Cursor getPasswordsByAccountName(String constraint) throws SQLException {
+        Cursor c = null;
+        SQLiteDatabase db = this.getReadableDatabase();
+        if (constraint==null||constraint.length()==0) {
+            c = db.query(PASSWORD_TABLE,
+                    new String[] {PASSWORD_ID,KEY_WEBSITE,KEY_EMAIL,KEY_PASSWORD},
+                    null,null,null,null,null);
+        } else {
+            c = db.query(true,PASSWORD_TABLE,
+                    new String[] {PASSWORD_ID,KEY_WEBSITE,KEY_EMAIL,KEY_PASSWORD},
+                    KEY_EMAIL+" like '%"+constraint+"%'",
+                    null,null,null,null,null);
+        }
+        if (c!=null) {
+            c.moveToFirst();
+        }
+        return c;
+
+    }
+
     public int updatePassword(PasswordObject p){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
