@@ -6,6 +6,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+
+import android.graphics.Color;
+import android.graphics.Typeface;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
@@ -41,18 +45,29 @@ public class EditReminder extends AppCompatActivity implements DatePickerDialog.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_reminder);
-
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.actionBarTop);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        myToolbar.setTitleTextColor(Color.WHITE);
         dbHelper = DBHelper.getInstance(getApplicationContext());
         dbHelper.onOpen(db);
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
 
+        Typeface mycustomFont = Typeface.createFromAsset(getAssets(), "fonts/Nawabiat.ttf");
         setDate = (Button) findViewById(R.id.editRe_timeBtn);
         save = (Button) findViewById(R.id.editRe_save);
         cancel = (Button) findViewById(R.id.editRe_cancel);
         name = (EditText) findViewById(R.id.editRe_name);
         notes = (EditText) findViewById(R.id.editRe_notes);
         timeshow = (TextView) findViewById(R.id.editRe_timeshow);
+
+        timeshow.setTypeface(mycustomFont);
+        timeshow.setTextSize(40);
+        name.setTextSize(50);
+        name.setTypeface(mycustomFont);
+        notes.setTypeface(mycustomFont);
+        notes.setTextSize(30);
 
         name.setText(b.get("name").toString());
         notes.setText(b.get("notes").toString());

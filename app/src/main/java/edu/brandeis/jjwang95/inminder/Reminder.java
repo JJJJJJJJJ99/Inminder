@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.AdapterView;
@@ -25,7 +26,7 @@ public class Reminder extends Fragment {
     private SimpleCursorAdapter reAdapter;
     private SQLiteDatabase db;
     ListView listview;
-    Button detailBtn, addBtn;
+    ImageButton addBtn;
     int request_Code;
     static FragmentActivity _instance;
 
@@ -47,7 +48,7 @@ public class Reminder extends Fragment {
         _instance = getActivity();
         rootView = inflater.inflate(R.layout.activity_reminder, container, false);
         listview = (ListView) rootView.findViewById(R.id.reminder_list);
-        addBtn = (Button) rootView.findViewById(R.id.addBtn);
+        addBtn = (ImageButton) rootView.findViewById(R.id.addBtn);
 
 
 

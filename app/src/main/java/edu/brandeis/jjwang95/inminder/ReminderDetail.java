@@ -3,12 +3,14 @@ package edu.brandeis.jjwang95.inminder;
 import android.database.sqlite.SQLiteDatabase;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.CountDownTimer;
 import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.ActionMode;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -60,7 +62,11 @@ public class ReminderDetail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reminder_detail);
-
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.actionBarTop);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        myToolbar.setTitleTextColor(Color.WHITE);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         this.context = this;
 
         dbHelper = DBHelper.getInstance(getApplicationContext());
@@ -71,7 +77,7 @@ public class ReminderDetail extends AppCompatActivity {
         time = (TextView) findViewById(R.id.timeDetail);
         counter = (TextView) findViewById(R.id.CountdownTest);
         daysLeft = (TextView) findViewById(R.id.daysLeft);
-        cancel = (Button) findViewById(R.id.re_detail_cancel);
+//        cancel = (Button) findViewById(R.id.re_detail_cancel);
         toggle = (ToggleButton) findViewById(R.id.reminder_toggleBtn);
 
         name.setTypeface(mycustomFont);
@@ -221,14 +227,14 @@ public class ReminderDetail extends AppCompatActivity {
 //            }
 //        });
 
-        cancel.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent data = new Intent();
-                setResult(RESULT_OK, data);
-                finish();
-                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
-            }
-        });
+//        cancel.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                Intent data = new Intent();
+//                setResult(RESULT_OK, data);
+//                finish();
+//                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
+//            }
+//        });
 
 //        stop.setOnClickListener(new View.OnClickListener(){
 //            public void onClick(View v){
@@ -281,6 +287,12 @@ public class ReminderDetail extends AppCompatActivity {
         }
     }
 
+    public boolean onSupportNavigateUp(){
+        finish();
+        overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
+        return true;
+    }
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == request_Code) {
             if (resultCode == RESULT_OK) {
@@ -315,7 +327,7 @@ public class ReminderDetail extends AppCompatActivity {
         }
 
         public void onFinish(){
-            counter.setText("DoNE");
+            counter.setText("Time's Up");
         }
 
     }
