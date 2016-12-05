@@ -45,7 +45,7 @@ public class Password extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         getID = id;
-                        AlertDialog.Builder builder = new AlertDialog.Builder(Password.this);
+                        final AlertDialog.Builder builder = new AlertDialog.Builder(Password.this);
 
                         builder.setTitle("Your password is: ");
                         builder.setMessage(helper.getPassword(id).getPassword());
