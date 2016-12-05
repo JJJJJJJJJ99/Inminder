@@ -10,7 +10,6 @@ import android.database.Cursor;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -29,7 +28,6 @@ public class Password extends Fragment {
     private PasswordCursorAdapter adapter;
     private int code = 123;
     private ListView list;
-    private SearchView search;
     private Long getID;
     private Button password_add_btn;
 
@@ -46,6 +44,7 @@ public class Password extends Fragment {
 
 
         helper = DBHelper.getInstance(getActivity());
+
         cursor = helper.getAllPasswords();
         String[] from = new String[] {"website","email"};
         int[] to = new int[] {R.id.website,R.id.email};
@@ -62,9 +61,12 @@ public class Password extends Fragment {
 
                         builder.setTitle("Your password is: ");
                         builder.setMessage(helper.getPassword(id).getPassword());
-                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+                        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                helper.deletePassword(getID);
+                                adapter.changeCursor(helper.getAllPasswords());
                                 dialog.dismiss();
                             }
                         });
@@ -77,20 +79,19 @@ public class Password extends Fragment {
                                 Toast.makeText(getActivity(), "Password copied!", Toast.LENGTH_LONG).show();
                             }
                         });
-                        builder.setNeutralButton("Go to site", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Intent i = new Intent(getActivity(),Password_website.class);
-                                String url = helper.getPassword(getID).getWebsite();
-                                i.putExtra("site",url);
-                                if (URLUtil.isValidUrl(url)) {
+
+
+                        final Intent i = new Intent(getActivity(),Password_website.class);
+                        String url = helper.getPassword(getID).getWebsite();
+                        i.putExtra("site",url);
+                        if (URLUtil.isValidUrl(url)) {
+                            builder.setNeutralButton("Go to site", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
                                     startActivity(i);
-                                } else {
-                                    Toast.makeText(getActivity(), "Not a valid website!", Toast.LENGTH_LONG).show();
-                                    dialog.dismiss();
                                 }
-                            }
-                        });
+                            });
+                        }
 
                         AlertDialog dialog = builder.create();
                         dialog.show();
@@ -114,23 +115,6 @@ public class Password extends Fragment {
         super.onCreate(savedInstanceState);
 
 
-//        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-////                if (cursor==null) {
-////                    Toast.makeText(Password.this,"No results found.",Toast.LENGTH_LONG).show();
-////                }
-////                adapter.swapCursor(cursor);
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String text) {
-////                adapter.swapCursor(cursor);
-//                adapter.getFilter().filter(text);
-//                return true;
-//            }
-//        });
     }
 
     @Override
