@@ -12,8 +12,10 @@ import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -44,9 +46,14 @@ public class AddReminder extends AppCompatActivity implements DatePickerDialog.O
 
     @Override
 
-        protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_reminder);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.actionBarTop);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        myToolbar.setTitleTextColor(Color.WHITE);
 
         alarm_manager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
