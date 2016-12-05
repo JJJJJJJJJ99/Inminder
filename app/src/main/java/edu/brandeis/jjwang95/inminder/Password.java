@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.view.View;
 import android.webkit.URLUtil;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.view.LayoutInflater;
@@ -29,7 +31,7 @@ public class Password extends Fragment {
     private int code = 123;
     private ListView list;
     private Long getID;
-    private Button password_add_btn;
+    private ImageButton password_add_btn;
 
     public Password() {
         // Required empty public constructor
@@ -100,7 +102,8 @@ public class Password extends Fragment {
         );
 
 
-        password_add_btn = (Button)rootView.findViewById(R.id.password_add_btn);
+        password_add_btn = (ImageButton)rootView.findViewById(R.id.password_add_btn);
+        password_add_btn.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorPrimaryLight));
         password_add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

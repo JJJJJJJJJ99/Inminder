@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 /**
  * Created by WangJingjing on 11/14/16.
@@ -25,7 +26,6 @@ public class ReminderCursorAdapter extends SimpleCursorAdapter {
 
     public View getView(final int position, View view, ViewGroup parent){
         View myView = super.getView(position,view,parent);
-
 
         return myView;
     }
