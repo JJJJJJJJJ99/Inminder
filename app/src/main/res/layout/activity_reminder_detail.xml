@@ -24,8 +24,8 @@
         android:layout_below="@+id/actionBarTop"
         android:text=""
         android:paddingTop="5dp"
-        android:paddingLeft="10dp"
-        android:paddingStart="10dp"
+        android:paddingLeft="20dp"
+        android:paddingStart="20dp"
         android:textAppearance="?android:textAppearanceLarge"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
@@ -40,8 +40,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:paddingTop="5dp"
-        android:paddingLeft="10dp"
-        android:paddingStart="10dp"/>
+        android:paddingLeft="20dp"
+        android:paddingStart="20dp"/>
 
 
     <TextView
@@ -54,8 +54,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:paddingTop="5dp"
-        android:paddingLeft="10dp"
-        android:paddingStart="10dp"/>
+        android:paddingLeft="20dp"
+        android:paddingStart="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -67,8 +67,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:paddingTop="5dp"
-        android:paddingLeft="10dp"
-        android:paddingStart="10dp"/>
+        android:paddingLeft="20dp"
+        android:paddingStart="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -80,8 +80,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:paddingTop="5dp"
-        android:paddingLeft="10dp"
-        android:paddingStart="10dp"/>
+        android:paddingLeft="20dp"
+        android:paddingStart="20dp"/>
 
         <ToggleButton
             android:layout_width="wrap_content"
@@ -90,7 +90,8 @@
             android:textOff="@string/toggle_turn_off"
             android:checked="true"
             android:id="@+id/reminder_toggleBtn"
-            android:layout_alignBaseline="@+id/CountdownTest"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_alignBottom="@+id/CountdownTest"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />

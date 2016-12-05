@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,10 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+
+import org.w3c.dom.Text;
+
+import java.util.Date;
 
 
 public class Reminder extends Fragment {
@@ -79,12 +84,31 @@ public class Reminder extends Fragment {
         reAdapter = new SimpleCursorAdapter(getActivity(), R.layout.reminder_entry, cursor, keys, boundTo, 0){
                 public View getView(final int position, View view, ViewGroup parent) {
                     View myView = super.getView(position, view, parent);
+                    Cursor curr = (Cursor)getItem(position);
+                    int id = curr.getInt(curr.getColumnIndex("_id"));
+                    ReminderObject thisEntry = dbHelper.getReminder(id);
+                    String originalTime = thisEntry.getTime();
+                    int _year = 100 + Integer.parseInt(originalTime.substring(6, 8));
+                    int _month = Integer.parseInt(originalTime.substring(0, 2)) - 1;
+                    int _day = Integer.parseInt(originalTime.substring(3, 5));
+                    int _hour = Integer.parseInt(originalTime.substring(9, 11));
+                    int _minute = Integer.parseInt(originalTime.substring(12, 14));
                     Typeface mycustomFont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Nawabiat.ttf");
-                    ((TextView) myView.findViewById(R.id.nameShow)).setTypeface(mycustomFont, Typeface.BOLD);
-                    ((TextView) myView.findViewById(R.id.nameShow)).setTextSize(50);
-                    ((TextView) myView.findViewById(R.id.timeShow)).setTypeface(mycustomFont);
-                    ((TextView) myView.findViewById(R.id.timeShow)).setTextSize(30);
-
+                    TextView name = (TextView) myView.findViewById(R.id.nameShow);
+                    TextView time = (TextView) myView.findViewById(R.id.timeShow);
+                    name.setTypeface(mycustomFont, Typeface.BOLD);
+                    name.setTextSize(50);
+                    time.setTypeface(mycustomFont);
+                    time.setTextSize(30);
+                    Date current = new Date();
+                    Date thisDate = new Date(_year,_month,_day,_hour,_minute);
+                    if (thisDate.before(current)){
+                        name.setTextColor(Color.GRAY);
+                        time.setTextColor(Color.GRAY);
+                    }else if (((int)(thisDate.getTime() - current.getTime()))/(24 * 60 * 60 * 1000)==0){
+                        name.setTextColor(Color.RED);
+                        time.setTextColor(Color.RED);
+                    }
                     return myView;
                 }
         };

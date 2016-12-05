@@ -114,6 +114,9 @@ public class ReminderDetail extends AppCompatActivity {
             daysLeft.setTypeface(mycustomFont, Typeface.BOLD);
             daysLeft.setTextSize(60);
             String currUntilFuture = diffHours + ":" + diffMinutes + ":" + diffSeconds;
+            if (diffDays==0){
+                counter.setTextColor(Color.RED);
+            }
             counter.setText(currUntilFuture);
             final CounterClass timer = new CounterClass(millis, 1000);
             timer.start();

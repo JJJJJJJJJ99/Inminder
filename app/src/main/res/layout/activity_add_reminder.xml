@@ -58,9 +58,9 @@
 
     <Button
         android:id="@+id/DateBtn"
-        android:paddingTop="5dp"
-        android:paddingLeft="20dp"
-        android:paddingStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/reminder_addtopic"
@@ -76,7 +76,7 @@
 
     <TextView
         android:id="@+id/reminder_timeshow"
-        android:paddingTop="5dp"
+        android:paddingTop="10dp"
         android:paddingLeft="20dp"
         android:paddingStart="20dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -96,7 +96,7 @@
         <!--android:layout_alignParentStart="true" />-->
 
     <EditText
-        android:paddingTop="5dp"
+        android:paddingTop="10dp"
         android:paddingLeft="20dp"
         android:paddingStart="20dp"
         android:layout_width="wrap_content"
@@ -115,6 +115,8 @@
         android:layout_width="wrap_content"
         android:layout_below="@id/reminder_addNotes"
         android:text="@string/save"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

@@ -32,8 +32,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editRe_name"
         android:text="@string/addDate"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"/>
 
     <!--<TextView-->
         <!--android:id="@+id/editRe_timeLabel"-->
@@ -50,7 +51,7 @@
         android:layout_below="@id/editRe_timeBtn"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text=""
-        android:paddingTop="5dp"
+        android:paddingTop="10dp"
         android:paddingLeft="20dp"
         android:paddingStart="20dp"/>
 
@@ -65,7 +66,7 @@
         <!--android:layout_alignParentStart="true" />-->
 
     <EditText
-        android:paddingTop="5dp"
+        android:paddingTop="10dp"
         android:paddingLeft="20dp"
         android:paddingStart="20dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -83,6 +84,8 @@
         android:layout_width="wrap_content"
         android:layout_below="@id/editRe_notes"
         android:text="@string/save"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
