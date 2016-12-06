@@ -108,6 +108,9 @@ public class Reminder extends Fragment {
                     }else if (((int)(thisDate.getTime() - current.getTime()))/(24 * 60 * 60 * 1000)==0){
                         name.setTextColor(Color.RED);
                         time.setTextColor(Color.RED);
+                    }else{
+                        name.setTextColor(Color.BLACK);
+                        time.setTextColor(Color.BLACK);
                     }
                     return myView;
                 }

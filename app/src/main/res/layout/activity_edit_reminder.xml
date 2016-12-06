@@ -4,7 +4,7 @@
     android:id="@+id/activity_edit_reminder"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/background"
+    android:background="@color/backgroundColor"
     tools:context="edu.brandeis.jjwang95.inminder.EditReminder">
     <!--android:paddingBottom="@dimen/activity_vertical_margin"-->
     <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
@@ -26,16 +26,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:id="@+id/editRe_timeBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editRe_name"
-        android:text="@string/addDate"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"/>
-
     <!--<TextView-->
         <!--android:id="@+id/editRe_timeLabel"-->
         <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
@@ -48,7 +38,7 @@
         android:id="@+id/editRe_timeshow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editRe_timeBtn"
+        android:layout_below="@id/editRe_name"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text=""
         android:paddingTop="10dp"
@@ -78,25 +68,37 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:id="@+id/editRe_save"
-        android:layout_height="wrap_content"
+    <ImageButton
+        android:id="@+id/editRe_timeBtn"
         android:layout_width="wrap_content"
-        android:layout_below="@id/editRe_notes"
-        android:text="@string/save"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_height="wrap_content"
+        android:text=""
+        android:background="@drawable/ic_alarm_add_black_24dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_below="@+id/editRe_name"
+        android:layout_toRightOf="@+id/editRe_timeshow"
+        android:layout_toEndOf="@+id/editRe_timeshow" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cancel"
-        android:id="@+id/editRe_cancel"
-        android:layout_below="@+id/editRe_notes"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+    <!--<Button-->
+        <!--android:id="@+id/editRe_save"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_below="@id/editRe_notes"-->
+        <!--android:text="@string/save"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginStart="20dp"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true" />-->
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/cancel"-->
+        <!--android:id="@+id/editRe_cancel"-->
+        <!--android:layout_below="@+id/editRe_notes"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true"/>-->
 
 
 </RelativeLayout>
