@@ -3,23 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/reminderName"
-        android:id="@+id/nameLabel"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:paddingTop="5dp"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
         android:text=""
         android:id="@+id/nameShow"
-        android:layout_below="@+id/nameLabel"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -27,29 +20,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/notifiTime"
-        android:id="@+id/timeLabel"
+        android:text=""
+        android:paddingTop="5dp"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="5dp"
+        android:id="@+id/timeShow"
         android:layout_below="@+id/nameShow"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text=""
-        android:id="@+id/timeShow"
-        android:layout_below="@+id/timeLabel"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detailBtn"
-        android:id="@+id/detailBtn"
-        android:layout_below="@+id/timeShow"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:focusable="false" />
 </RelativeLayout>

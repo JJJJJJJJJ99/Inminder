@@ -1,91 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_add_reminder"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/backgroundColor"
     tools:context="edu.brandeis.jjwang95.inminder.AddReminder">
+<!--<<<<<<< HEAD-->
+    <!--android:paddingBottom="@dimen/activity_vertical_margin"-->
+    <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
+    <!--android:paddingRight="@dimen/activity_horizontal_margin"-->
+    <!--android:paddingTop="@dimen/activity_vertical_margin"-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/reminderName"
-        android:id="@+id/addname"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <!--tools:context="edu.brandeis.jjwang95.inminder.AddReminder"-->
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+        <!--android:text="@string/reminderName"-->
+        <!--android:id="@+id/addname"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true" />-->
+<!--=======-->
+
+
+
+   <include layout="@layout/actiontoolbar"/>
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+        <!--android:text="@string/reminderName"-->
+        <!--android:layout_below="@+id/actionBarTop"-->
+        <!--android:id="@+id/addname"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true" />-->
+<!--&gt;>>>>>> zhengyr-->
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:ems="20"
         android:id="@+id/reminder_addtopic"
-        android:layout_below="@+id/addname"
+        android:layout_below="@+id/actionBarTop"
+        android:hint="Please Enter Topic"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingStart="20dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
+    <ImageButton
         android:id="@+id/DateBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/reminder_addtopic"
+        android:background="@drawable/ic_alarm_add_black_24dp"
+        android:layout_toRightOf="@+id/reminder_timeshow"
+        android:layout_toEndOf="@+id/reminder_timeshow"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:text="@string/addDate" />
 
-    <TextView
-        android:id="@+id/reminder_timeLabel"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/DateBtn"
-        android:text="@string/timeLabel"/>
+    <!--<TextView-->
+        <!--android:id="@+id/reminder_timeLabel"-->
+        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/DateBtn"-->
+        <!--android:text="@string/timeLabel"/>-->
 
     <TextView
         android:id="@+id/reminder_timeshow"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:paddingStart="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/reminder_timeLabel"
+        android:layout_below="@id/reminder_addtopic"
         android:text=""/>
 
-    <TextView
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+        <!--android:text="@string/notes"-->
+        <!--android:id="@+id/notes"-->
+        <!--android:layout_below="@id/reminder_timeshow"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true" />-->
+
+    <EditText
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:paddingStart="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/notes"
-        android:id="@+id/notes"
-        android:layout_below="@id/reminder_timeshow"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:ems="20"
+        android:hint="Please Enter Note"
         android:id="@+id/reminder_addNotes"
-        android:layout_below="@+id/notes"
+        android:layout_below="@+id/reminder_timeshow"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:id="@+id/reminder_save"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_below="@id/reminder_addNotes"
-        android:text="@string/save"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <!--<Button-->
+        <!--android:id="@+id/reminder_save"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_below="@id/reminder_addNotes"-->
+        <!--android:text="@string/save"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginStart="20dp"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true" />-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cancel"
-        android:id="@+id/reminder_cancel"
-        android:layout_below="@+id/reminder_addNotes"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/cancel"-->
+        <!--android:id="@+id/reminder_cancel"-->
+        <!--android:layout_below="@+id/reminder_addNotes"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true"/>-->
 
 </RelativeLayout>

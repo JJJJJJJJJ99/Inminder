@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/Eggowner/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/jniLibs"/></dataSet><dataSet config="release"><source path="/Users/Eggowner/AndroidStudioProjects/Inminder/AndroidBootstrap/src/release/jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/src/main/jniLibs"/></dataSet><dataSet config="release"><source path="/Users/zhengyr/Dropbox/cosi153/Test/Inminder/AndroidBootstrap/src/release/jniLibs"/></dataSet></merger>

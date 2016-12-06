@@ -2,12 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.brandeis.jjwang95.inminder">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/MyMaterialTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,16 +25,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".BillAdd">
+        <activity android:name=".BillAdd">
             <intent-filter>
                 <action android:name="edu.brandeis.jjwang95.inminder.BillAdd" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".BillSetBudget">
+        <activity android:name=".BillSetBudget">
             <intent-filter>
                 <action android:name="edu.brandeis.jjwang95.inminder.BillSetBudget" />
 
@@ -75,13 +76,21 @@
         <activity android:name=".EditReminder">
             <intent-filter>
                 <action android:name="edu.brandeis.jjwang95.inminder.EditReminder" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Add_password">
+        <activity android:name=".Add_password">
             <intent-filter>
                 <action android:name="edu.brandeis.jjwang95.inminder.Add_password" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Password_website">
+            <intent-filter>
+                <action android:name="edu.brandeis.jjwang95.inminder.Password_website" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -93,6 +102,24 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".ReminderWebSearch">
+            <intent-filter>
+                <action android:name="edu.brandeis.jjwang95.inminder.ReminderWebSearch" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".Alarm_Receiver" />
+
+        <service
+            android:name=".RingTonePlayingService"
+            android:enabled="true">
+        </service><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
     </application>
 
 </manifest>
