@@ -278,6 +278,10 @@ public class ReminderDetail extends AppCompatActivity {
             alert.setView(email);
             alert.setPositiveButton("Send", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
+                    curr = dbHelper.getReminder(id);
+                    String text = "Notes From Reminder\n" + "Topic: \n" + curr.getName() + "\n\n" + "Time Due: \n"
+                                + curr.getTime() + "\n\n" + "Notes: \n" + curr.getNote();
+
                     String sendTo = email.getText().toString();
                     String[] to = sendTo.split(";");
                     String subject = "A Message From InMinder";
@@ -285,7 +289,7 @@ public class ReminderDetail extends AppCompatActivity {
                     emailIntent.setData(Uri.parse("mailto:"));
                     emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
                     emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-                    emailIntent.putExtra(Intent.EXTRA_TEXT, "TEST");
+                    emailIntent.putExtra(Intent.EXTRA_TEXT, text);
                     emailIntent.setType("message/rfc822");
                     startActivity(Intent.createChooser(emailIntent, "Email"));
                     dialog.dismiss();
