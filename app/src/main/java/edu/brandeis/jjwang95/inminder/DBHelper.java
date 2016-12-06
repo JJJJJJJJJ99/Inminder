@@ -318,7 +318,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     public Cursor getAllReminders(){
         //ArrayList<ReminderObject> objects = new ArrayList<ReminderObject>();
-        String selectQuery = "SELECT  * FROM " + REMINDER_TABLE;
+        String selectQuery = "SELECT  * FROM " + REMINDER_TABLE + " ORDER BY " + REMINDER_ID + " DESC";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(selectQuery, null);
         /*if (c.moveToFirst()) {

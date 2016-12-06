@@ -33,7 +33,7 @@ public class PasswordCursorAdapter extends SimpleCursorAdapter {
         TextView email = (TextView) view.findViewById(R.id.email);
         Typeface mycustomFont = Typeface.createFromAsset(context.getAssets(), "fonts/Nawabiat.ttf");
         website.setTypeface(mycustomFont, Typeface.BOLD);
-        website.setTextSize(30);
+        website.setTextSize(35);
         email.setTypeface(mycustomFont);
         email.setTextSize(30);
         website.setText(cursor.getString(cursor.getColumnIndex("website")));

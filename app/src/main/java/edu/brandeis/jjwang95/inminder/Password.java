@@ -1,5 +1,7 @@
 package edu.brandeis.jjwang95.inminder;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -10,9 +12,11 @@ import android.database.Cursor;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.URLUtil;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -52,7 +56,7 @@ public class Password extends Fragment {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         getID = id;
 
-                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.MyDialogTheme);
                         builder.setTitle("Your password is: ");
                         builder.setMessage(helper.getPassword(id).getPassword());
 
@@ -94,11 +98,50 @@ public class Password extends Fragment {
         );
 
         password_add_btn = (ImageButton)rootView.findViewById(R.id.password_add_btn);
-        password_add_btn.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorPrimaryLight));
+//        password_add_btn.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorPrimaryLight));
         password_add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivityForResult(new Intent(getActivity(),Add_password.class),code);
+//                startActivityForResult(new Intent(getActivity(),Add_password.class),code);
+                Typeface myTface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Nawabiat.ttf");
+                LayoutInflater factory = LayoutInflater.from(getActivity());
+                final View textEntryView = factory.inflate(R.layout.activity_add_password, null);
+                final EditText name = (EditText) textEntryView.findViewById(R.id.account_name);
+                name.setHint("Account Name");
+                name.setTypeface(myTface);
+                name.setTextSize(30);
+                final EditText type = (EditText) textEntryView.findViewById(R.id.account_type);
+                type.setHint("Account Type");
+                type.setTypeface(myTface);
+                type.setTextSize(30);
+                final EditText password = (EditText) textEntryView.findViewById(R.id.password);
+                password.setHint("Password");
+                password.setTypeface(myTface);
+                password.setTextSize(30);
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.MyDialogTheme);
+                alert.setTitle("New Password");
+
+                alert.setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        String accountType = type.getText().toString();
+                        String accountName = name.getText().toString();
+                        String pwd = password.getText().toString();
+                        PasswordObject po = new PasswordObject(accountType, accountName, pwd);
+                        long id = helper.createPassword(po);
+                        adapter.changeCursor(helper.getAllPasswords());
+                        list.setAdapter(adapter);
+                        dialog.dismiss();
+                    }
+                });
+
+                alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                    }
+                });
+                alert.setView(textEntryView);
+                alert.show();
             }
         });
 
@@ -109,26 +152,26 @@ public class Password extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == code) {
-            if (resultCode == getActivity().RESULT_OK) {
-                String accountType = data.getStringExtra("account type");
-                String accountName = data.getStringExtra("account name");
-                String password = data.getStringExtra("password");
-
-                PasswordObject po = new PasswordObject(accountType, accountName, password);
-                long id = helper.createPassword(po);
-                po.setId(id);
-                cursor = helper.getAllPasswords();
-
-                String[] from = new String[] {"website","email"};
-                int[] to = new int[] {R.id.website,R.id.email};
-
-                adapter = new PasswordCursorAdapter(getActivity(),R.layout.activity_password,cursor,from,to,0);
-                list.setAdapter(adapter);
-
-            }
-        }
-    }
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        if (requestCode == code) {
+//            if (resultCode == getActivity().RESULT_OK) {
+//                String accountType = data.getStringExtra("account type");
+//                String accountName = data.getStringExtra("account name");
+//                String password = data.getStringExtra("password");
+//
+//                PasswordObject po = new PasswordObject(accountType, accountName, password);
+//                long id = helper.createPassword(po);
+//                po.setId(id);
+//                cursor = helper.getAllPasswords();
+//
+//                String[] from = new String[] {"website","email"};
+//                int[] to = new int[] {R.id.website,R.id.email};
+//
+//                adapter = new PasswordCursorAdapter(getActivity(),R.layout.activity_password,cursor,from,to,0);
+//                list.setAdapter(adapter);
+//
+//            }
+//        }
+//    }
 }
