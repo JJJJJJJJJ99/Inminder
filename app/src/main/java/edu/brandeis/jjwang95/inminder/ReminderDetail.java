@@ -205,9 +205,7 @@ public class ReminderDetail extends AppCompatActivity {
             myIntent.putExtra("id", id);
             PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), id, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             sendBroadcast(myIntent);
-
             ((AlarmManager) getSystemService(ALARM_SERVICE)).cancel(pending_intent);
-            timer.cancel();
             Intent data = new Intent();
             setResult(RESULT_OK, data);
             finish();
@@ -334,7 +332,6 @@ public class ReminderDetail extends AppCompatActivity {
             counter.setTextColor(Color.BLACK);
             daysLeft.setText("");
         }
-
     }
 
 

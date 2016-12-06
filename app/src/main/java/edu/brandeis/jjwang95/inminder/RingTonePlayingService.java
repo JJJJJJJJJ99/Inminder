@@ -42,16 +42,14 @@ public class RingTonePlayingService extends Service {
                     .setSmallIcon(R.mipmap.ic_alarm_white_24dp)
                     .build();
             media_song = MediaPlayer.create(this, R.raw.jack_sparrow);
-//            Log.e("Start Sound, ID: ", id);
             media_song.start();
             media_song.setLooping(true);
             notify_manager.notify(0, notification_popup);
         }else if(state.equals("off")){
-//            Log.e("Stop Sound, ID: ", id);
             media_song.stop();
             media_song.reset();
         }else{
-//            Log.e("Cancel Sound, ID: ", id);
+            Log.e("Cancel Sound, ID: ", "do nothing");
         }
         return START_NOT_STICKY;
     }
