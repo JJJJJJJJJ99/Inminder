@@ -36,7 +36,9 @@ public class BillAdd extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(BillAdd.this, Bill.class);
-                BillAdd.this.startActivity(myIntent);
+                //BillAdd.this.startActivity(myIntent);
+                finish();
+
             }
         });
 
@@ -50,7 +52,8 @@ public class BillAdd extends AppCompatActivity {
                 long id = dbHelper.createBill(bill);
                 bill.setId(id);
                 Intent myIntent = new Intent(BillAdd.this, Bill.class);
-                BillAdd.this.startActivity(myIntent);
+                //BillAdd.this.startActivity(myIntent);
+                finish();
             }
         });
 

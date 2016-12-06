@@ -26,14 +26,16 @@ public class BillSetBudget extends AppCompatActivity {
             public void onClick(View v) {
                 DBHelper.getInstance(getApplicationContext()).setBudget(Double.parseDouble(setBudget.getText().toString()));
                 Intent i = new Intent(BillSetBudget.this, Bill.class);
-                BillSetBudget.this.startActivity(i);
+                //BillSetBudget.this.startActivity(i);
+                finish();
             }
         });
         final Button cancel = (Button) findViewById(R.id.bill_button_cancel);
         cancel.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent i = new Intent(BillSetBudget.this, Bill.class);
-                BillSetBudget.this.startActivity(i);
+                //BillSetBudget.this.startActivity(i);
+                finish();
             }
         });
 
