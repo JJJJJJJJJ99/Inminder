@@ -131,21 +131,4 @@ public class Password extends Fragment {
             }
         }
     }
-
-
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.passwordmenu,menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        int selected = item.getItemId();
-//        if(selected == R.id.add_new_password){
-//            startActivityForResult(new Intent(this,Add_password.class),code);
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
 }
