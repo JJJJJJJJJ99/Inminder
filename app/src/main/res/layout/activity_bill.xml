@@ -16,37 +16,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:id="@+id/plus_budget" />
+        android:id="@+id/set_budget" />
 
-    <TextView
-        android:text="Current Balance: "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/plus_budget"
-        android:id="@+id/current_balance" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/current_balance"
-        android:layout_toRightOf="@+id/current_balance"
-        android:layout_toEndOf="@+id/current_balance"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:id="@+id/balance"
-        android:text="850" />
-    <ListView
-        android:id="@+id/bill_list"
-        android:layout_below="@id/current_balance"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
 
     <Button
         android:text="ADD EXPENSE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button_add"
+        android:id="@+id/add_expense"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"/>
+        android:layout_alignParentRight="true"
+        />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/set_budget"/>
 
 </RelativeLayout>

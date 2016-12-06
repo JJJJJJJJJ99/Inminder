@@ -18,6 +18,14 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Bill extends Fragment {
@@ -27,7 +35,15 @@ public class Bill extends Fragment {
     public double sum = 0;
     public int request_Code;
     View rootView;
-
+    public int budget = 800;
+    public int expense = 100;
+    public int left = 700;
+    public PieChart chart;
+    List<PieEntry> entries;
+    PieDataSet set;
+    PieData data;
+    PieEntry ex ;
+    PieEntry lf;
     public Bill(){
 
     }
@@ -36,66 +52,62 @@ public class Bill extends Fragment {
         super.onCreate(savedInstanceState);
 
 
+
     }
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         rootView = inflater.inflate(R.layout.activity_bill, container, false);
-
-        dbhelper = DBHelper.getInstance(getActivity());
-        db = dbhelper.getWritableDatabase();
-
-        // Prepare for list view
-        Cursor c = db.rawQuery("SELECT * FROM bill_table", null);
-        String[] columns = new String[] { "title", "amount"};
-        int[] views = new int[]{R.id.textView_title, R.id.textView_amount};
-        BillCursorAdapter adapter = new BillCursorAdapter(getActivity(), R.layout.bill_entry, c, columns, views);
-        ListView billlst = (ListView) rootView.findViewById(R.id.bill_list);
-        billlst.setAdapter(adapter);
-
-        billlst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), BillNote.class);
-                intent.putExtra("id", id);
-                Bill.this.startActivityForResult(intent, request_Code);
-            }
-        });
-
-        // Balance
-        TextView balance = (TextView) rootView.findViewById(R.id.balance);
-        Button plus = (Button) rootView.findViewById(R.id.plus_budget);
-        plus.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent intent = new Intent(getActivity(), BillSetBudget.class);
-                Bill.this.startActivity(intent);
-            }
-        });
-        sum =  dbhelper.getBudget() - dbhelper.getSum();
-        balance.setText(Double.toString(sum));
-
-        /* Progress Bar
-        int pro = (int) Math.round(sum); // Converting a double sum into integer for display in progress bar
-        progress = (ProgressBar) findViewById(R.id.progressBar3);
-        if (pro<0){
-            progress.setProgress(-pro);
-            progress.getProgressDrawable().setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
-        } else{
-            progress.setProgress(pro);
-            progress.getProgressDrawable().setColorFilter(Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN);
-        }*/
-
-        // Add Expense
-        Button add = (Button) rootView.findViewById(R.id.button_add);
-        add.setOnClickListener(new View.OnClickListener(){
+        Button add_expense = (Button) rootView.findViewById(R.id.add_expense);
+        add_expense.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(new Intent("edu.brandeis.jjwang95.inminder.BillAdd" ));
-                Bill.this.startActivity(myIntent);
+                Bill.this.startActivityForResult(myIntent, 2);
             }
         });
+
+        PieChart chart = (PieChart) rootView.findViewById(R.id.chart);
+        entries = new ArrayList<>();
+        ex = new PieEntry(expense, "Expense");
+        lf = new PieEntry(left, "Left");
+        entries.add(ex);
+        entries.add(lf);
+
+
+        set = new PieDataSet(entries, "Your Bill");
+        set.setColors(ColorTemplate.COLORFUL_COLORS);
+        data = new PieData(set);
+
+        chart.setData(data);
+        chart.invalidate(); // refresh
+
         return rootView;
+    }
+    public void onActivityResult(int requestCode, int resultCode, Intent data1){
+
+        super.onActivityResult(requestCode, resultCode, data1);
+        if(requestCode==2){
+            if(resultCode == getActivity().RESULT_OK){
+                //if there were no last conversion, then we will have 0 as result here.
+                expense = expense + Integer.parseInt(data1.getData().toString());
+                set.removeEntry(ex);
+                ex = new PieEntry(expense, "Expense");
+                set.addEntry(ex);
+                left = left - Integer.parseInt(data1.getData().toString());
+                set.removeEntry(lf);
+                lf = new PieEntry(left, "Left");
+                set.addEntry(lf);
+                 // let the data know a dataSet changed
+                data.notifyDataChanged();
+                chart = (PieChart) rootView.findViewById(R.id.chart);
+                chart.notifyDataSetChanged(); // let the chart know it's data changed
+                chart.invalidate(); // refresh
+
+            }
+        }
+
     }
 
 }
