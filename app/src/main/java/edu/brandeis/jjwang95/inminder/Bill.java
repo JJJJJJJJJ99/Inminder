@@ -23,16 +23,16 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.components.Description;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.interfaces.datasets.IPieDataSet;
-import com.github.mikephil.charting.utils.ColorTemplate;
-
-import java.util.ArrayList;
+//import com.github.mikephil.charting.charts.PieChart;
+//import com.github.mikephil.charting.components.Description;
+//import com.github.mikephil.charting.data.Entry;
+//import com.github.mikephil.charting.data.PieData;
+//import com.github.mikephil.charting.data.PieDataSet;
+//import com.github.mikephil.charting.data.PieEntry;
+//import com.github.mikephil.charting.interfaces.datasets.IPieDataSet;
+//import com.github.mikephil.charting.utils.ColorTemplate;
+//
+//import java.util.ArrayList;
 
 
 public class Bill extends Fragment {
@@ -47,7 +47,7 @@ public class Bill extends Fragment {
     public BillCursorAdapter adapter;
     public ListView billlst;
     public TextView balance;
-
+    BillObject bill;
 
     public Bill(){
 
@@ -79,9 +79,35 @@ public class Bill extends Fragment {
         billlst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), BillNote.class);
-                intent.putExtra("id", id);
-                Bill.this.startActivityForResult(intent, request_Code);
+//                Intent intent = new Intent(getActivity(), BillNote.class);
+//                intent.putExtra("id", id);
+//                Bill.this.startActivityForResult(intent, request_Code);
+                LayoutInflater factory = LayoutInflater.from(getActivity());
+                final View textEntryView = factory.inflate(R.layout.bill_note, null);
+                bill = dbhelper.getBill(id);
+                final EditText billNote = (EditText) textEntryView.findViewById(R.id.billTextNote);
+                billNote.setText(bill.getNote());
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.MyDialogTheme);
+                alert.setTitle("New Expense");
+                alert.setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        bill.setNote(billNote.getText().toString());
+                        dbhelper.updateBill(bill);
+                        adapter.changeCursor(dbhelper.getAllBills());
+                        billlst.setAdapter(adapter);
+                        dialog.dismiss();
+                    }
+                });
+
+                alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                    }
+                });
+
+                alert.setView(textEntryView);
+                alert.show();
             }
         });
 
@@ -118,8 +144,47 @@ public class Bill extends Fragment {
 
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(new Intent("edu.brandeis.jjwang95.inminder.BillAdd" ));
-                Bill.this.startActivityForResult(myIntent, request_Code);
+//                Intent myIntent = new Intent(new Intent("edu.brandeis.jjwang95.inminder.BillAdd" ));
+//                Bill.this.startActivityForResult(myIntent, request_Code);
+
+                LayoutInflater factory = LayoutInflater.from(getActivity());
+                final View textEntryView = factory.inflate(R.layout.bill_add, null);
+                final EditText title = (EditText) textEntryView.findViewById(R.id.editText_title);
+                final EditText amount = (EditText) textEntryView.findViewById(R.id.editText_amount);
+                final EditText note = (EditText) textEntryView.findViewById(R.id.editText_note);
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.MyDialogTheme);
+                alert.setTitle("New Expense");
+
+                alert.setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dbhelper = DBHelper.getInstance(getActivity());
+                        dbhelper.onOpen(db);
+
+                        BillObject bill = new BillObject();
+                        bill.setNote(note.getText().toString());
+                        bill.setAmount(Double.parseDouble(amount.getText().toString()));
+                        dbhelper.addToSum(Double.parseDouble(amount.getText().toString()));
+                        bill.setTitle(title.getText().toString());
+                        long id = dbhelper.createBill(bill);
+                        bill.setId(id);
+
+                        adapter.changeCursor(dbhelper.getAllBills());
+                        billlst.setAdapter(adapter);
+                        sum = dbhelper.getBudget() - dbhelper.getSum();
+                        balance.setText(Double.toString(sum));
+                        dialog.dismiss();
+                    }
+                });
+
+                alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                    }
+                });
+                alert.setView(textEntryView);
+                alert.show();
+
             }
         });
 

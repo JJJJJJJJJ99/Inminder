@@ -4,6 +4,7 @@
     android:id= "@+id/bill_add"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context="edu.brandeis.jjwang95.inminder.BillAdd">
 
     <EditText
@@ -54,13 +55,13 @@
         android:layout_marginTop="45dp"
         android:id="@+id/button_cancel" />-->
 
-    <Button
-        android:text="SAVE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editText_note"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/button_save" />
+    <!--<Button-->
+        <!--android:text="SAVE"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/editText_note"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:id="@+id/button_save" />-->
 
 </RelativeLayout>

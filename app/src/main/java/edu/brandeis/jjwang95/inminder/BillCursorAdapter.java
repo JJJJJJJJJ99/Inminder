@@ -2,6 +2,7 @@ package edu.brandeis.jjwang95.inminder;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,7 @@ public class BillCursorAdapter extends SimpleCursorAdapter {
         titleText.setText(cursor.getString(cursor.getColumnIndexOrThrow("title")));
         amountText.setTypeface(mytypeface);
         amountText.setTextSize(30);
+        amountText.setTextColor(Color.MAGENTA);
         amountText.setText(cursor.getString(cursor.getColumnIndexOrThrow("amount")));
 
     }
