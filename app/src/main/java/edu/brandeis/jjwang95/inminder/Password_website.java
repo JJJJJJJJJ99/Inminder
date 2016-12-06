@@ -17,16 +17,7 @@ public class Password_website extends AppCompatActivity {
 
         web = (WebView) findViewById(R.id.password_web);
         web.setWebViewClient(new Callback());
-
-        String url = getIntent().getStringExtra("site");
-        if (URLUtil.isValidUrl(url)) {
-            web.loadUrl(url);
-        } else {
-            Toast.makeText(getApplicationContext(), "Not a valid website!", Toast.LENGTH_LONG).show();
-
-        }
-
-
+        web.loadUrl(getIntent().getStringExtra("site"));
     }
 
     private class Callback extends WebViewClient {

@@ -9,7 +9,6 @@ import android.database.Cursor;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,7 +24,6 @@ public class Password extends AppCompatActivity {
     private PasswordCursorAdapter adapter;
     private int code = 123;
     private ListView list;
-    private SearchView search;
     private Long getID;
 
     @Override
@@ -33,10 +31,7 @@ public class Password extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password);
 
-//        search = (SearchView) findViewById(R.id.password_search);
         list = (ListView) findViewById(R.id.password_list);
-
-
         helper = DBHelper.getInstance(getApplicationContext());
         cursor = helper.getAllPasswords();
         String[] from = new String[] {"website","email"};
@@ -50,13 +45,16 @@ public class Password extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         getID = id;
-                        AlertDialog.Builder builder = new AlertDialog.Builder(Password.this);
+                        final AlertDialog.Builder builder = new AlertDialog.Builder(Password.this);
 
                         builder.setTitle("Your password is: ");
                         builder.setMessage(helper.getPassword(id).getPassword());
-                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+                        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                helper.deletePassword(getID);
+                                adapter.changeCursor(helper.getAllPasswords());
                                 dialog.dismiss();
                             }
                         });
@@ -69,44 +67,25 @@ public class Password extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Password copied!", Toast.LENGTH_LONG).show();
                             }
                         });
-                        builder.setNeutralButton("Go to site", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Intent i = new Intent(Password.this,Password_website.class);
-                                String url = helper.getPassword(getID).getWebsite();
-                                i.putExtra("site",url);
-                                if (URLUtil.isValidUrl(url)) {
+
+                        final String url = helper.getPassword(getID).getWebsite();
+
+                        if (URLUtil.isValidUrl(url)) {
+                            builder.setNeutralButton("Go to site", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent i = new Intent(Password.this,Password_website.class);
+                                    i.putExtra("site",url);
                                     startActivity(i);
-                                } else {
-                                    Toast.makeText(getApplicationContext(), "Not a valid website!", Toast.LENGTH_LONG).show();
-                                    dialog.dismiss();
                                 }
-                            }
-                        });
+                            });
+                        }
 
                         AlertDialog dialog = builder.create();
                         dialog.show();
                     }
                 }
         );
-
-//        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-////                if (cursor==null) {
-////                    Toast.makeText(Password.this,"No results found.",Toast.LENGTH_LONG).show();
-////                }
-////                adapter.swapCursor(cursor);
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String text) {
-////                adapter.swapCursor(cursor);
-//                adapter.getFilter().filter(text);
-//                return true;
-//            }
-//        });
     }
 
     @Override
@@ -117,9 +96,9 @@ public class Password extends AppCompatActivity {
                 String accountName = data.getStringExtra("account name");
                 String password = data.getStringExtra("password");
 
-                PasswordObject papa = new PasswordObject(accountType, accountName, password);
-                long id = helper.createPassword(papa);
-                papa.setId(id);
+                PasswordObject po = new PasswordObject(accountType, accountName, password);
+                long id = helper.createPassword(po);
+                po.setId(id);
                 cursor = helper.getAllPasswords();
 
                 String[] from = new String[] {"website","email"};
