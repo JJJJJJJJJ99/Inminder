@@ -22,6 +22,7 @@ public class ReminderWebSearch extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         myToolbar.setTitleTextColor(Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Google Search");
 //        Intent intent = getIntent();
 //        String webpage = intent.getExtras().getString("keyword");
 //        Log.e("web check", webpage);
