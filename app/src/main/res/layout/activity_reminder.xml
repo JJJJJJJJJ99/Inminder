@@ -9,8 +9,18 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.brandeis.jjwang95.inminder.Reminder"
-    android:background="@mipmap/background">
+    android:background="@color/backgroundColor">
 
+
+    <!--<ImageButton-->
+        <!--android:id="@+id/addBtn"-->
+        <!--android:text="@string/add"-->
+        <!--android:background="@mipmap/ic_note_add_black_48dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true" />-->
 
     <ListView
         android:id="@+id/reminder_list"
@@ -20,13 +30,13 @@
     <ImageButton
         android:id="@+id/addBtn"
         android:text="@string/add"
-        android:background="@mipmap/ic_note_add_black_48dp"
+        android:background="@drawable/ic_add_circle_outline_black_36dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="18dp"
-        android:layout_marginEnd="18dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+
 
 </RelativeLayout>

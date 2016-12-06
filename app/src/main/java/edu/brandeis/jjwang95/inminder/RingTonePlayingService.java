@@ -21,7 +21,6 @@ public class RingTonePlayingService extends Service {
 
 
     MediaPlayer media_song;
-    Boolean isRunning;
     public IBinder onBind(Intent intent){
         Log.e("in Service", "OK");
         return null;
@@ -39,7 +38,7 @@ public class RingTonePlayingService extends Service {
                     .setContentTitle("ReminderAlarm")
                     .setContentText("Time's Up")
                     .setContentIntent(pIntent)
-                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .setSmallIcon(R.mipmap.ic_alarm_white_24dp)
                     .build();
 
 
@@ -50,17 +49,14 @@ public class RingTonePlayingService extends Service {
             media_song = MediaPlayer.create(this, R.raw.jack_sparrow);
             Log.e("Start Sound, ID: ", id);
             media_song.start();
-            isRunning = true;
             media_song.setLooping(true);
             notify_manager.notify(0, notification_popup);
         }else if(state.equals("off")){
             Log.e("Stop Sound, ID: ", id);
             media_song.stop();
-            isRunning = false;
             media_song.reset();
         }else{
             Log.e("Cancel Sound, ID: ", id);
-            isRunning = false;
         }
         return START_NOT_STICKY;
     }

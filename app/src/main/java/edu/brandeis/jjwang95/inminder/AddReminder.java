@@ -17,8 +17,11 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -30,7 +33,7 @@ import android.database.Cursor;
 public class AddReminder extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
     DBHelper dbHelper;
     SQLiteDatabase db;
-    Button setDate, save, cancel;
+    ImageButton setDate;
     Calendar calendar = Calendar.getInstance();
     Calendar alarmCal = Calendar.getInstance();
     int _year, _month, _day, _hour, _minute;
@@ -55,6 +58,8 @@ public class AddReminder extends AppCompatActivity implements DatePickerDialog.O
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         myToolbar.setTitleTextColor(Color.WHITE);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("New Reminder");
 
         alarm_manager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
@@ -62,9 +67,9 @@ public class AddReminder extends AppCompatActivity implements DatePickerDialog.O
         dbHelper.onOpen(db);
 
         Typeface mycustomFont = Typeface.createFromAsset(getAssets(), "fonts/Nawabiat.ttf");
-        setDate = (Button) findViewById(R.id.DateBtn);
-        save = (Button) findViewById(R.id.reminder_save);
-        cancel = (Button) findViewById(R.id.reminder_cancel);
+        setDate = (ImageButton) findViewById(R.id.DateBtn);
+//        save = (Button) findViewById(R.id.reminder_save);
+//        cancel = (Button) findViewById(R.id.reminder_cancel);
         name = (EditText) findViewById(R.id.reminder_addtopic);
         notes = (EditText) findViewById(R.id.reminder_addNotes);
         timeshow = (TextView) findViewById(R.id.reminder_timeshow);
@@ -88,35 +93,35 @@ public class AddReminder extends AppCompatActivity implements DatePickerDialog.O
             }
         });
 
-        save.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                time = (new SimpleDateFormat("MM/dd/yy HH:mm:ss", Locale.US)).format(new Date(_year, _month, _day, _hour, _minute));
-                long id = dbHelper.createReminder(new ReminderObject(time, name.getText().toString().trim(), notes.getText().toString().trim()));
+//        save.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                time = (new SimpleDateFormat("MM/dd/yy HH:mm:ss", Locale.US)).format(new Date(_year, _month, _day, _hour, _minute));
+//                long id = dbHelper.createReminder(new ReminderObject(time, name.getText().toString().trim(), notes.getText().toString().trim()));
+//
+//                alarmCal.set(Calendar.YEAR, _year);
+//                alarmCal.set(Calendar.MONTH, _month);
+//                alarmCal.set(Calendar.DAY_OF_MONTH, _day);
+//                alarmCal.set(Calendar.HOUR_OF_DAY, _hour);
+//                alarmCal.set(Calendar.MINUTE, _minute);
+//                alarmCal.set(Calendar.SECOND, 0);
+//                my_intent.putExtra("extra", "on");
+//                my_intent.putExtra("id", (int) id);
+//                pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), (int)id, my_intent, PendingIntent.FLAG_UPDATE_CURRENT);
+//                alarm_manager.set(AlarmManager.RTC_WAKEUP, alarmCal.getTimeInMillis(), pending_intent);
+//
+//                Intent data = new Intent();
+//                setResult(RESULT_OK, data);
+//                finish();
+//                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
+//            }
+//        });
 
-                alarmCal.set(Calendar.YEAR, _year);
-                alarmCal.set(Calendar.MONTH, _month);
-                alarmCal.set(Calendar.DAY_OF_MONTH, _day);
-                alarmCal.set(Calendar.HOUR_OF_DAY, _hour);
-                alarmCal.set(Calendar.MINUTE, _minute);
-                alarmCal.set(Calendar.SECOND, 0);
-                my_intent.putExtra("extra", "on");
-                my_intent.putExtra("id", (int) id);
-                pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), (int)id, my_intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                alarm_manager.set(AlarmManager.RTC_WAKEUP, alarmCal.getTimeInMillis(), pending_intent);
-
-                Intent data = new Intent();
-                setResult(RESULT_OK, data);
-                finish();
-                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
-            }
-        });
-
-        cancel.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                finish();
-                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
-            }
-        });
+//        cancel.setOnClickListener(new View.OnClickListener(){
+//            public void onClick(View v){
+//                finish();
+//                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
+//            }
+//        });
     }
 
     public void onDateSet(DatePicker datePicker, int i, int i1, int i2){
@@ -139,4 +144,44 @@ public class AddReminder extends AppCompatActivity implements DatePickerDialog.O
         timeshow.setText((new SimpleDateFormat("MM/dd/yy HH:mm:ss", Locale.US)).format(new Date(_year, _month, _day, _hour, _minute)));
 
     }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater myInflater = getMenuInflater();
+        myInflater.inflate(R.menu.create_reminder_menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.create_re_done) {
+            time = (new SimpleDateFormat("MM/dd/yy HH:mm:ss", Locale.US)).format(new Date(_year, _month, _day, _hour, _minute));
+            long id = dbHelper.createReminder(new ReminderObject(time, name.getText().toString().trim(), notes.getText().toString().trim()));
+
+            alarmCal.set(Calendar.YEAR, _year);
+            alarmCal.set(Calendar.MONTH, _month);
+            alarmCal.set(Calendar.DAY_OF_MONTH, _day);
+            alarmCal.set(Calendar.HOUR_OF_DAY, _hour);
+            alarmCal.set(Calendar.MINUTE, _minute);
+            alarmCal.set(Calendar.SECOND, 0);
+            my_intent.putExtra("extra", "on");
+            my_intent.putExtra("id", (int) id);
+            pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), (int)id, my_intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            alarm_manager.set(AlarmManager.RTC_WAKEUP, alarmCal.getTimeInMillis(), pending_intent);
+
+            Intent data = new Intent();
+            setResult(RESULT_OK, data);
+            finish();
+            overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
+            return true;
+        }else{
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+
+    public boolean onSupportNavigateUp(){
+        finish();
+        overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
+        return true;
+    }
+
 }
