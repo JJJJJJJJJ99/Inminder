@@ -139,7 +139,6 @@ public class EditReminder extends AppCompatActivity implements DatePickerDialog.
             Log.e(alarmCal.getTime().toString(), "check");
             my_intent.putExtra("extra", "on");
             my_intent.putExtra("id", id);
-            my_intent.putExtra("topic", name.getText().toString().trim());
             PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), id, my_intent, PendingIntent.FLAG_UPDATE_CURRENT);
             ((AlarmManager) getSystemService(ALARM_SERVICE)).set(AlarmManager.RTC_WAKEUP, alarmCal.getTimeInMillis(), pending_intent);
 

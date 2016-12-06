@@ -170,7 +170,7 @@ public class Reminder extends Fragment implements DatePickerDialog.OnDateSetList
                     TextView name = (TextView) myView.findViewById(R.id.nameShow);
                     TextView time = (TextView) myView.findViewById(R.id.timeShow);
                     name.setTypeface(mycustomFont, Typeface.BOLD);
-                    name.setTextSize(50);
+                    name.setTextSize(40);
                     time.setTypeface(mycustomFont);
                     time.setTextSize(30);
                     Date current = new Date();
