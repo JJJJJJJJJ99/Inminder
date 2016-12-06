@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Inminder</string>
+    <string name="app_name">InMinder</string>
     <string name="reminderName">Topic:</string>
     <string name="notes">Notes:</string>
     <string name="notifiTime">Time:</string>
