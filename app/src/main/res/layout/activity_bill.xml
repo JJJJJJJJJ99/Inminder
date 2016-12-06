@@ -8,21 +8,22 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/backgroundColor"
     tools:context="edu.brandeis.jjwang95.inminder.Bill">
 
-    <Button
+    <!-- Button
         android:text="Set Budget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:id="@+id/plus_budget" />
+        android:id="@+id/plus_budget" /> -->
 
     <TextView
         android:text="Current Balance: "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/plus_budget"
+        android:layout_below="@+id/bill_set_btn"
         android:id="@+id/current_balance" />
 
     <TextView
@@ -41,12 +42,29 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:text="ADD EXPENSE"
+    <!--com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bill_add_btn"/>-->
+
+    <ImageButton
+        android:id="@+id/bill_add_btn"
+        android:text="@string/add"
+        android:background="@drawable/ic_add_circle_outline_black_36dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button_add"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"/>
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <ImageButton
+        android:id= "@+id/bill_set_btn"
+        android:background="@drawable/ic_payment_black_18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>

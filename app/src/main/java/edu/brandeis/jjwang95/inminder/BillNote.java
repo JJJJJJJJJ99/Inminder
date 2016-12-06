@@ -37,8 +37,9 @@ public class BillNote extends AppCompatActivity {
                 Log.d("billNote", billNote.getText().toString());
                 bill.setNote(billNote.getText().toString());
                 dbHelper.updateBill(bill);
-                Intent intent = new Intent(BillNote.this, Bill.class);
-                BillNote.this.startActivity(intent);
+                //Intent intent = new Intent(BillNote.this, Bill.class);
+                //BillNote.this.startActivity(intent);
+                finish();
             }
         });
 

@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+        "outputFile": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 95
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 53,
                         "startColumn": 4,
@@ -31,7 +31,7 @@
                     "endOffset": 439
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -52,7 +52,7 @@
                     "endOffset": 582
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 39,
                         "startColumn": 4,
@@ -73,7 +73,7 @@
                     "endOffset": 859
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 30,
                         "startColumn": 4,
@@ -94,7 +94,7 @@
                     "endOffset": 1097
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -115,7 +115,7 @@
                     "endOffset": 1314
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -135,7 +135,7 @@
                     "endOffset": 1358
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 48,
                         "startColumn": 4,
@@ -154,7 +154,7 @@
                     "endOffset": 1410
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 47,
                         "startColumn": 4,
@@ -173,7 +173,7 @@
                     "endOffset": 1458
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 54,
                         "startColumn": 4,
@@ -192,7 +192,7 @@
                     "endOffset": 1513
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 49,
                         "startColumn": 4,
@@ -212,7 +212,7 @@
                     "endOffset": 34665
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs_font_awesome.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs_font_awesome.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -232,7 +232,7 @@
                     "endOffset": 34711
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 46,
                         "startColumn": 4,
@@ -251,7 +251,7 @@
                     "endOffset": 34760
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 50,
                         "startColumn": 4,
@@ -271,7 +271,7 @@
                     "endOffset": 81752
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs_materialIcon.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs_materialIcon.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -291,7 +291,7 @@
                     "endOffset": 81799
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 52,
                         "startColumn": 4,
@@ -310,7 +310,7 @@
                     "endOffset": 81850
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 45,
                         "startColumn": 4,
@@ -329,7 +329,7 @@
                     "endOffset": 81898
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 44,
                         "startColumn": 4,
@@ -348,7 +348,7 @@
                     "endOffset": 81944
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs.xml",
                     "position": {
                         "startLine": 51,
                         "startColumn": 4,
@@ -368,7 +368,7 @@
                     "endOffset": 98991
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs_typicons.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/attrs_typicons.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -388,7 +388,7 @@
                     "endOffset": 99057
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 32,
                         "startColumn": 4,
@@ -407,7 +407,7 @@
                     "endOffset": 99114
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -426,7 +426,7 @@
                     "endOffset": 99169
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -445,7 +445,7 @@
                     "endOffset": 99227
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -464,7 +464,7 @@
                     "endOffset": 99294
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 4,
@@ -483,7 +483,7 @@
                     "endOffset": 99359
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -502,7 +502,7 @@
                     "endOffset": 99424
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 24,
                         "startColumn": 4,
@@ -521,7 +521,7 @@
                     "endOffset": 99482
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -540,7 +540,7 @@
                     "endOffset": 99540
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -559,7 +559,7 @@
                     "endOffset": 99601
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 30,
                         "startColumn": 4,
@@ -578,7 +578,7 @@
                     "endOffset": 99665
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 27,
                         "startColumn": 4,
@@ -597,7 +597,7 @@
                     "endOffset": 99714
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -616,7 +616,7 @@
                     "endOffset": 99768
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -635,7 +635,7 @@
                     "endOffset": 99823
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -654,7 +654,7 @@
                     "endOffset": 99880
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -673,7 +673,7 @@
                     "endOffset": 99938
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -692,7 +692,7 @@
                     "endOffset": 100005
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 28,
                         "startColumn": 4,
@@ -711,7 +711,7 @@
                     "endOffset": 100065
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 29,
                         "startColumn": 4,
@@ -730,7 +730,7 @@
                     "endOffset": 100127
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 31,
                         "startColumn": 4,
@@ -749,7 +749,7 @@
                     "endOffset": 102769
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -768,7 +768,7 @@
                     "endOffset": 102824
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -787,7 +787,7 @@
                     "endOffset": 102883
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -806,7 +806,7 @@
                     "endOffset": 102943
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 69,
                         "startColumn": 4,
@@ -825,7 +825,7 @@
                     "endOffset": 103012
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -844,7 +844,7 @@
                     "endOffset": 103078
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -863,7 +863,7 @@
                     "endOffset": 103144
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -882,7 +882,7 @@
                     "endOffset": 103213
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -901,7 +901,7 @@
                     "endOffset": 103284
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -920,7 +920,7 @@
                     "endOffset": 103346
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 67,
                         "startColumn": 4,
@@ -939,7 +939,7 @@
                     "endOffset": 103417
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 35,
                         "startColumn": 4,
@@ -958,7 +958,7 @@
                     "endOffset": 103485
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 36,
                         "startColumn": 4,
@@ -977,7 +977,7 @@
                     "endOffset": 103553
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 32,
                         "startColumn": 4,
@@ -996,7 +996,7 @@
                     "endOffset": 103623
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 38,
                         "startColumn": 4,
@@ -1015,7 +1015,7 @@
                     "endOffset": 103696
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 31,
                         "startColumn": 4,
@@ -1034,7 +1034,7 @@
                     "endOffset": 103766
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 39,
                         "startColumn": 4,
@@ -1053,7 +1053,7 @@
                     "endOffset": 103841
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 33,
                         "startColumn": 4,
@@ -1072,7 +1072,7 @@
                     "endOffset": 103917
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 34,
                         "startColumn": 4,
@@ -1091,7 +1091,7 @@
                     "endOffset": 103987
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 37,
                         "startColumn": 4,
@@ -1110,7 +1110,7 @@
                     "endOffset": 104051
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -1129,7 +1129,7 @@
                     "endOffset": 104120
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -1148,7 +1148,7 @@
                     "endOffset": 104183
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -1167,7 +1167,7 @@
                     "endOffset": 104249
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -1186,7 +1186,7 @@
                     "endOffset": 104312
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -1205,7 +1205,7 @@
                     "endOffset": 104371
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 44,
                         "startColumn": 4,
@@ -1224,7 +1224,7 @@
                     "endOffset": 104427
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 42,
                         "startColumn": 4,
@@ -1243,7 +1243,7 @@
                     "endOffset": 104487
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 43,
                         "startColumn": 4,
@@ -1262,7 +1262,7 @@
                     "endOffset": 104546
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 48,
                         "startColumn": 4,
@@ -1281,7 +1281,7 @@
                     "endOffset": 104600
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 46,
                         "startColumn": 4,
@@ -1300,7 +1300,7 @@
                     "endOffset": 104656
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 47,
                         "startColumn": 4,
@@ -1319,7 +1319,7 @@
                     "endOffset": 104714
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 52,
                         "startColumn": 4,
@@ -1338,7 +1338,7 @@
                     "endOffset": 104770
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 50,
                         "startColumn": 4,
@@ -1357,7 +1357,7 @@
                     "endOffset": 104830
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 51,
                         "startColumn": 4,
@@ -1376,7 +1376,7 @@
                     "endOffset": 104888
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 56,
                         "startColumn": 4,
@@ -1395,7 +1395,7 @@
                     "endOffset": 104942
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 54,
                         "startColumn": 4,
@@ -1414,7 +1414,7 @@
                     "endOffset": 105001
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 55,
                         "startColumn": 4,
@@ -1433,7 +1433,7 @@
                     "endOffset": 105057
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 60,
                         "startColumn": 4,
@@ -1452,7 +1452,7 @@
                     "endOffset": 105113
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 58,
                         "startColumn": 4,
@@ -1471,7 +1471,7 @@
                     "endOffset": 105173
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 59,
                         "startColumn": 4,
@@ -1490,7 +1490,7 @@
                     "endOffset": 105231
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 64,
                         "startColumn": 4,
@@ -1509,7 +1509,7 @@
                     "endOffset": 105285
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 62,
                         "startColumn": 4,
@@ -1528,7 +1528,7 @@
                     "endOffset": 105343
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 63,
                         "startColumn": 4,
@@ -1547,7 +1547,7 @@
                     "endOffset": 105415
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 70,
                         "startColumn": 4,
@@ -1566,7 +1566,7 @@
                     "endOffset": 105476
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 68,
                         "startColumn": 4,
@@ -1585,7 +1585,7 @@
                     "endOffset": 105535
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 27,
                         "startColumn": 4,
@@ -1604,7 +1604,7 @@
                     "endOffset": 105596
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 29,
                         "startColumn": 4,
@@ -1623,7 +1623,7 @@
                     "endOffset": 105654
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 28,
                         "startColumn": 4,
@@ -1642,7 +1642,7 @@
                     "endOffset": 105710
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -1661,7 +1661,7 @@
                     "endOffset": 105764
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 24,
                         "startColumn": 4,
@@ -1680,7 +1680,7 @@
                     "endOffset": 105820
                 },
                 "from": {
-                    "file": "/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
+                    "file": "/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 4,
