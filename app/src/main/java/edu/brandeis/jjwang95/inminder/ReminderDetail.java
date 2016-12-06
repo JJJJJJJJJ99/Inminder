@@ -98,7 +98,7 @@ public class ReminderDetail extends AppCompatActivity {
             id = b.getInt("id");
         }
 
-        Log.e("check", Integer.toString(b.getInt("id")));
+        Log.e("check", Integer.toString(id));
         curr = dbHelper.getReminder(id);
         String thisTime = curr.getTime();
         countdown(thisTime);
@@ -140,7 +140,6 @@ public class ReminderDetail extends AppCompatActivity {
 
                     myIntent.putExtra("extra", "on");
                     myIntent.putExtra("id", id);
-                    myIntent.putExtra("topic", name.getText().toString().trim());
                     PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), id, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                     alarmManager.set(AlarmManager.RTC_WAKEUP, alarmCal.getTimeInMillis(), pending_intent);
                 } else {
@@ -332,6 +331,8 @@ public class ReminderDetail extends AppCompatActivity {
 
         public void onFinish(){
             counter.setText("Time's Up");
+            counter.setTextColor(Color.BLACK);
+            daysLeft.setText("");
         }
 
     }
