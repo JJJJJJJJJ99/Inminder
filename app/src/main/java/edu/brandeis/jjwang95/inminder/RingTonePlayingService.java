@@ -35,8 +35,8 @@ public class RingTonePlayingService extends Service {
 
 
         Notification notification_popup = new Notification.Builder(this)
-                    .setContentTitle("ReminderAlarm")
-                    .setContentText("Time's Up")
+                    .setContentTitle("InMinder Alarm")
+                    .setContentText("Time's Up For " + intent.getExtras().getString("topic"))
                     .setContentIntent(pIntent)
                     .setSmallIcon(R.mipmap.ic_alarm_white_24dp)
                     .build();

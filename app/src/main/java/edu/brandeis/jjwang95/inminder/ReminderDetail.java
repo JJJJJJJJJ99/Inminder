@@ -140,6 +140,7 @@ public class ReminderDetail extends AppCompatActivity {
 
                     myIntent.putExtra("extra", "on");
                     myIntent.putExtra("id", id);
+                    myIntent.putExtra("topic", name.getText().toString().trim());
                     PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), id, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                     alarmManager.set(AlarmManager.RTC_WAKEUP, alarmCal.getTimeInMillis(), pending_intent);
                 } else {
@@ -171,63 +172,6 @@ public class ReminderDetail extends AppCompatActivity {
             }
         });
 
-//        search.setOnClickListener(new View.OnClickListener(){
-//            public void onClick(View v){
-//                Intent newIntent = new Intent("edu.brandeis.jjwang95.inminder.ReminderWebSearch");
-//                String key = keywords.getText().toString().trim();
-//                String webpage = "https://www.google.com/#q=";
-//                for (String s : key.split(" ")){
-//                    webpage = webpage + s + "+";
-//                }
-//                newIntent.putExtra("keyword",webpage);
-//                startActivityForResult(newIntent,request_Code);
-//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-//            }
-//        });
-
-//        update.setOnClickListener(new View.OnClickListener(){
-//            public void onClick(View v){
-//                Intent newIntent = new Intent("edu.brandeis.jjwang95.inminder.EditReminder");
-//                newIntent.putExtra("name",curr.getName());
-//                newIntent.putExtra("notes", curr.getNote());
-//                newIntent.putExtra("time", curr.getTime());
-//                newIntent.putExtra("id", id);
-//                startActivityForResult(newIntent,request_Code);
-//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-//            }
-//        });
-//
-//        delete.setOnClickListener(new View.OnClickListener(){
-//            public void onClick(View v) {
-//                dbHelper.deleteReminder((long) id);
-//                Intent myIntent = new Intent(Reminder.getInstance(), Alarm_Receiver.class);
-//                myIntent.putExtra("extra", "cancel");
-//                myIntent.putExtra("id", id);
-//                PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), id, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-//                sendBroadcast(myIntent);
-//
-//                alarmManager.cancel(pending_intent);
-//                Intent data = new Intent();
-//                setResult(RESULT_OK,data);
-//                finish();
-//                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
-//            }
-//        });
-
-//        cancel.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                Intent data = new Intent();
-//                setResult(RESULT_OK, data);
-//                finish();
-//                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
-//            }
-//        });
-
-//        stop.setOnClickListener(new View.OnClickListener(){
-//            public void onClick(View v){
-//
-//            }
-//        });
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
