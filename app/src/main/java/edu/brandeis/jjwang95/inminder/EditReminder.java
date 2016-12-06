@@ -53,6 +53,7 @@ public class EditReminder extends AppCompatActivity implements DatePickerDialog.
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         myToolbar.setTitleTextColor(Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Edit Reminder");
         dbHelper = DBHelper.getInstance(getApplicationContext());
         dbHelper.onOpen(db);
         Intent intent = getIntent();
