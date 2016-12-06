@@ -131,6 +131,7 @@ public class Reminder extends Fragment implements DatePickerDialog.OnDateSetList
                         Intent my_intent = new Intent(Reminder.getInstance(), Alarm_Receiver.class);
                         my_intent.putExtra("extra", "on");
                         my_intent.putExtra("id", (int) id);
+                        my_intent.putExtra("topic", name.getText().toString().trim());
                         PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), (int)id, my_intent, PendingIntent.FLAG_UPDATE_CURRENT);
                         ((AlarmManager) getActivity().getSystemService(getActivity().ALARM_SERVICE)).set(AlarmManager.RTC_WAKEUP, alarmCal.getTimeInMillis(), pending_intent);
 
@@ -169,7 +170,7 @@ public class Reminder extends Fragment implements DatePickerDialog.OnDateSetList
                     TextView name = (TextView) myView.findViewById(R.id.nameShow);
                     TextView time = (TextView) myView.findViewById(R.id.timeShow);
                     name.setTypeface(mycustomFont, Typeface.BOLD);
-                    name.setTextSize(50);
+                    name.setTextSize(40);
                     time.setTypeface(mycustomFont);
                     time.setTextSize(30);
                     Date current = new Date();

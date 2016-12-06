@@ -98,7 +98,7 @@ public class ReminderDetail extends AppCompatActivity {
             id = b.getInt("id");
         }
 
-        Log.e("check", Integer.toString(b.getInt("id")));
+        Log.e("check", Integer.toString(id));
         curr = dbHelper.getReminder(id);
         String thisTime = curr.getTime();
         countdown(thisTime);
@@ -171,63 +171,6 @@ public class ReminderDetail extends AppCompatActivity {
             }
         });
 
-//        search.setOnClickListener(new View.OnClickListener(){
-//            public void onClick(View v){
-//                Intent newIntent = new Intent("edu.brandeis.jjwang95.inminder.ReminderWebSearch");
-//                String key = keywords.getText().toString().trim();
-//                String webpage = "https://www.google.com/#q=";
-//                for (String s : key.split(" ")){
-//                    webpage = webpage + s + "+";
-//                }
-//                newIntent.putExtra("keyword",webpage);
-//                startActivityForResult(newIntent,request_Code);
-//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-//            }
-//        });
-
-//        update.setOnClickListener(new View.OnClickListener(){
-//            public void onClick(View v){
-//                Intent newIntent = new Intent("edu.brandeis.jjwang95.inminder.EditReminder");
-//                newIntent.putExtra("name",curr.getName());
-//                newIntent.putExtra("notes", curr.getNote());
-//                newIntent.putExtra("time", curr.getTime());
-//                newIntent.putExtra("id", id);
-//                startActivityForResult(newIntent,request_Code);
-//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-//            }
-//        });
-//
-//        delete.setOnClickListener(new View.OnClickListener(){
-//            public void onClick(View v) {
-//                dbHelper.deleteReminder((long) id);
-//                Intent myIntent = new Intent(Reminder.getInstance(), Alarm_Receiver.class);
-//                myIntent.putExtra("extra", "cancel");
-//                myIntent.putExtra("id", id);
-//                PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), id, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-//                sendBroadcast(myIntent);
-//
-//                alarmManager.cancel(pending_intent);
-//                Intent data = new Intent();
-//                setResult(RESULT_OK,data);
-//                finish();
-//                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
-//            }
-//        });
-
-//        cancel.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                Intent data = new Intent();
-//                setResult(RESULT_OK, data);
-//                finish();
-//                overridePendingTransition(R.anim.silde_in_left, R.anim.slide_out_right);
-//            }
-//        });
-
-//        stop.setOnClickListener(new View.OnClickListener(){
-//            public void onClick(View v){
-//
-//            }
-//        });
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -262,9 +205,7 @@ public class ReminderDetail extends AppCompatActivity {
             myIntent.putExtra("id", id);
             PendingIntent pending_intent = PendingIntent.getBroadcast(Reminder.getInstance(), id, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             sendBroadcast(myIntent);
-
             ((AlarmManager) getSystemService(ALARM_SERVICE)).cancel(pending_intent);
-            timer.cancel();
             Intent data = new Intent();
             setResult(RESULT_OK, data);
             finish();
@@ -278,6 +219,10 @@ public class ReminderDetail extends AppCompatActivity {
             alert.setView(email);
             alert.setPositiveButton("Send", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
+                    curr = dbHelper.getReminder(id);
+                    String text = "Notes From Reminder\n" + "Topic: \n" + curr.getName() + "\n\n" + "Time Due: \n"
+                                + curr.getTime() + "\n\n" + "Notes: \n" + curr.getNote();
+
                     String sendTo = email.getText().toString();
                     String[] to = sendTo.split(";");
                     String subject = "A Message From InMinder";
@@ -285,7 +230,7 @@ public class ReminderDetail extends AppCompatActivity {
                     emailIntent.setData(Uri.parse("mailto:"));
                     emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
                     emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-                    emailIntent.putExtra(Intent.EXTRA_TEXT, "TEST");
+                    emailIntent.putExtra(Intent.EXTRA_TEXT, text);
                     emailIntent.setType("message/rfc822");
                     startActivity(Intent.createChooser(emailIntent, "Email"));
                     dialog.dismiss();
@@ -384,8 +329,9 @@ public class ReminderDetail extends AppCompatActivity {
 
         public void onFinish(){
             counter.setText("Time's Up");
+            counter.setTextColor(Color.BLACK);
+            daysLeft.setText("");
         }
-
     }
 
 

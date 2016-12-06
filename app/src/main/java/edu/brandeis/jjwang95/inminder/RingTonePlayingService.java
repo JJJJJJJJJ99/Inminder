@@ -28,35 +28,28 @@ public class RingTonePlayingService extends Service {
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public int onStartCommand(Intent intent, int flags, int startId){
-        NotificationManager notify_manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        Intent intent_to_reminder = new Intent(RingTonePlayingService.this, ReminderDetail.class);
-        intent_to_reminder.putExtras(intent.getExtras());
-        PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent_to_reminder, 0);
-
-
-        Notification notification_popup = new Notification.Builder(this)
-                    .setContentTitle("ReminderAlarm")
-                    .setContentText("Time's Up")
+        String state = intent.getExtras().getString("extra");
+        int id = intent.getExtras().getInt("id");
+        if (state.equals("on")) {
+            NotificationManager notify_manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            Intent intent_to_reminder = new Intent(RingTonePlayingService.this, ReminderDetail.class);
+            intent_to_reminder.putExtra("id", id);
+            PendingIntent pIntent = PendingIntent.getActivity(this, id, intent_to_reminder, 0);
+            Notification notification_popup = new Notification.Builder(this)
+                    .setContentTitle("InMinder Alarm")
+                    .setContentText("Time's Up! Click For Details!")
                     .setContentIntent(pIntent)
                     .setSmallIcon(R.mipmap.ic_alarm_white_24dp)
                     .build();
-
-
-
-        String state = intent.getExtras().getString("extra");
-        String id = Integer.toString(intent.getExtras().getInt("id"));
-        if (state.equals("on")) {
             media_song = MediaPlayer.create(this, R.raw.jack_sparrow);
-            Log.e("Start Sound, ID: ", id);
             media_song.start();
             media_song.setLooping(true);
             notify_manager.notify(0, notification_popup);
         }else if(state.equals("off")){
-            Log.e("Stop Sound, ID: ", id);
             media_song.stop();
             media_song.reset();
         }else{
-            Log.e("Cancel Sound, ID: ", id);
+            Log.e("Cancel Sound, ID: ", "do nothing");
         }
         return START_NOT_STICKY;
     }

@@ -87,6 +87,7 @@ public class Password extends Fragment {
                                     Intent i = new Intent(getActivity(),Password_website.class);
                                     i.putExtra("site",url);
                                     startActivity(i);
+                                    getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                                 }
                             });
                         }
