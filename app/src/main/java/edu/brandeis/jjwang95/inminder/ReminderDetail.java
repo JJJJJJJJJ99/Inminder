@@ -272,10 +272,9 @@ public class ReminderDetail extends AppCompatActivity {
             return true;
         } else if (item.getItemId() == R.id.reminder_menu_send) {
 
-            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            AlertDialog.Builder alert = new AlertDialog.Builder(this,R.style.MyDialogTheme);
             final EditText email = new EditText(context);
-            alert.setMessage("Enter email");
-            alert.setTitle("Enter email");
+            alert.setTitle("Enter target email");
             alert.setView(email);
             alert.setPositiveButton("Send", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
