@@ -27,6 +27,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String PASSWORD_TABLE = "password_table";
     private static final String BILL_TABLE = "bill_table";
     private static final String REMINDER_TABLE = "reminder_table";
+    private static final String BUDGET_TABLE = "budget_table";
 
     // Common column names
     private static final String KEY_ID = "_id";
@@ -62,6 +63,13 @@ public class DBHelper extends SQLiteOpenHelper {
                     KEY_TITLE + "," +
                     KEY_AMOUNT + " REAL," +
                     KEY_BILLNOTE + ");";
+    private static final String BUDGET_ID = "_id";
+    private static final String KEY_BUDGET_AMOUNT = "budgetAmount";
+
+    private static final String BUDGET_CREATE =
+            "CREATE TABLE if not exists " + BUDGET_TABLE + "(" +
+                    BUDGET_ID + " integer PRIMARY KEY AUTOINCREMENT," +
+                    KEY_BUDGET_AMOUNT + " REAL);";
 
     // REMINDER
     private static final String REMINDER_ID = "_id";
@@ -98,6 +106,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(REMINDER_CREATE);
         db.execSQL(BILL_CREATE);
         db.execSQL(PASSWORD_CREATE);
+        db.execSQL(BUDGET_CREATE);
     }
 
     // Used when drop the older tables
@@ -106,6 +115,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + PASSWORD_TABLE);
         db.execSQL("DROP TABLE IF EXISTS " + BILL_TABLE);
         db.execSQL("DROP TABLE IF EXISTS " + REMINDER_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + BUDGET_TABLE);
 
         // Create new tables
         onCreate(db);
@@ -204,6 +214,27 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("delete from "+ PASSWORD_TABLE);
     }
 
+    // Budget tables *****************************************************************
+    public long createBudget(Double budget){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL(BUDGET_CREATE);
+        ContentValues initBudget = new ContentValues();
+        initBudget.put(KEY_BUDGET_AMOUNT, budget);
+        return db.insert(BUDGET_TABLE, null, initBudget);
+    }
+    public Double getBudget(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT * FROM " + BUDGET_TABLE;
+        Double budget = 0.0;
+        Cursor c = db.rawQuery(selectQuery, null);
+        if (c.moveToFirst()){
+            do{
+                budget = c.getDouble(c.getColumnIndex(KEY_BUDGET_AMOUNT));
+            } while (c.moveToNext());
+        }
+        return budget;
+    }
+
     // Bill tables ********************************************************************
 
     public long createBill(BillObject bill){
@@ -251,24 +282,20 @@ public class DBHelper extends SQLiteOpenHelper {
         return c;
     }
 
-    public Double getBudget(){
-        return budget;
-    }
     public Double getSum(){
+        String selectQuery = "SELECT amount FROM " + BILL_TABLE;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(selectQuery, null);
+        Double sum = 0.0;
+        if (c.moveToFirst()){
+            do{
+                sum = sum + c.getDouble(c.getColumnIndex(KEY_AMOUNT));
+            } while (c.moveToNext());
+        }
+
         return sum;
     }
 
-    public void setBudget(Double budget){
-        this.budget = budget;
-    }
-
-    public void setSum(Double sum){
-        this.sum = sum;
-    }
-
-    public void addToSum(Double add){
-        sum = sum + add;
-    }
 
     public int updateBill(BillObject b){
         SQLiteDatabase db = this.getWritableDatabase();

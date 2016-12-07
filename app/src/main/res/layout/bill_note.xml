@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
+        android:ems="20"
         android:id="@+id/billTextNote" />
 
-    <Button
-        android:text="Save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/billButtonSave"
-        android:layout_below="@id/billTextNote"
-        android:layout_alignParentLeft="true" />
+    <!--<Button-->
+        <!--android:text="Save"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/billButtonSave"-->
+        <!--android:layout_below="@id/billTextNote"-->
+        <!--android:layout_alignParentLeft="true" />-->
 
 </RelativeLayout>

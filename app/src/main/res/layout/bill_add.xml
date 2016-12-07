@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id= "@+id/bill_add"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context="edu.brandeis.jjwang95.inminder.BillAdd">
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText_title"
+        android:ems="20"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingStart="20dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:hint="Title" />
@@ -15,8 +23,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText_amount"
-        android:layout_toRightOf="@+id/editText_title"
-        android:layout_marginLeft="23dp"
+        android:ems="20"
+        android:layout_below="@+id/editText_title"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingStart="20dp"
         android:hint="Amount"
         android:inputType="numberDecimal" />
 
@@ -24,15 +35,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_below="@+id/editText_title"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="22dp"
+        android:ems="20"
+        android:layout_below="@+id/editText_amount"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingStart="20dp"
         android:id="@+id/editText_note"
         android:hint="Note" />
 
-    <Button
+    <!--Button
         android:text="Cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,16 +53,15 @@
         android:layout_marginLeft="18dp"
         android:layout_marginStart="18dp"
         android:layout_marginTop="45dp"
-        android:id="@+id/button_cancel" />
+        android:id="@+id/button_cancel" />-->
 
-    <Button
-        android:text="SAVE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button_cancel"
-        android:layout_toRightOf="@+id/editText_amount"
-        android:layout_toEndOf="@+id/editText_amount"
-        android:layout_marginLeft="68dp"
-        android:layout_marginStart="68dp"
-        android:id="@+id/button_save" />
+    <!--<Button-->
+        <!--android:text="SAVE"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/editText_note"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:id="@+id/button_save" />-->
+
 </RelativeLayout>

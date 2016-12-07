@@ -31,16 +31,17 @@ public class BillNote extends AppCompatActivity {
 
         billNote = (EditText) findViewById(R.id.billTextNote);
         billNote.setText(bill.getNote());
-        Button save = (Button) findViewById(R.id.billButtonSave);
-        save.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Log.d("billNote", billNote.getText().toString());
-                bill.setNote(billNote.getText().toString());
-                dbHelper.updateBill(bill);
-                Intent intent = new Intent(BillNote.this, Bill.class);
-                BillNote.this.startActivity(intent);
-            }
-        });
+//        Button save = (Button) findViewById(R.id.billButtonSave);
+//        save.setOnClickListener(new View.OnClickListener(){
+//            public void onClick(View v){
+//                Log.d("billNote", billNote.getText().toString());
+//                bill.setNote(billNote.getText().toString());
+//                dbHelper.updateBill(bill);
+//                //Intent intent = new Intent(BillNote.this, Bill.class);
+//                //BillNote.this.startActivity(intent);
+//                finish();
+//            }
+//        });
 
         dbHelper.updateBill(bill);
     }
