@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/shaders"/></dataSet><dataSet config="release"><source path="/Users/Sylar/AndroidStudioProjects/Inminder/AndroidBootstrap/src/release/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/main/shaders"/></dataSet><dataSet config="release"><source path="/Users/admin/Desktop/AndroidStudioProjects/Inminder/AndroidBootstrap/src/release/shaders"/></dataSet></merger>

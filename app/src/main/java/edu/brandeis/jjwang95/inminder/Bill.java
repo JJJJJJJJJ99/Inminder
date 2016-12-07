@@ -67,6 +67,7 @@ public class Bill extends Fragment {
         dbhelper.onOpen(db);
         db = dbhelper.getWritableDatabase();
 
+
         Typeface mycustomFont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Nawabiat.ttf");
         // Prepare for list view
         Cursor c = db.rawQuery("SELECT * FROM bill_table", null);
@@ -126,13 +127,14 @@ public class Bill extends Fragment {
                 LayoutInflater factory = LayoutInflater.from(getActivity());
                 final View textEntryView = factory.inflate(R.layout.set_budget, null);
                 final EditText setBudget = (EditText) textEntryView.findViewById(R.id.budget_set);
+                setBudget.setHint("Currently " + String.valueOf(dbhelper.getBudget()));
 
                 AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.MyDialogTheme);
                 alert.setTitle("Set Budget");
 
                 alert.setPositiveButton("Set", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
-                        dbhelper.setBudget(Double.parseDouble(setBudget.getText().toString()));
+                        dbhelper.createBudget(Double.parseDouble(setBudget.getText().toString()));
                         adapter.changeCursor(dbhelper.getAllBills());
                         billlst.setAdapter(adapter);
                         sum = dbhelper.getBudget() - dbhelper.getSum();
@@ -152,18 +154,6 @@ public class Bill extends Fragment {
 
             }
         });
-
-
-        /*Progress Bar
-        int pro = (int) Math.round(sum); // Converting a double sum into integer for display in progress bar
-        progress = (ProgressBar) findViewById(R.id.progressBar3);
-        if (pro<0){
-            progress.setProgress(-pro);
-            progress.getProgressDrawable().setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
-        } else{
-            progress.setProgress(pro);
-            progress.getProgressDrawable().setColorFilter(Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN);
-        }*/
 
         // Add Expense
         bill_add_btn =  (ImageButton) rootView.findViewById(R.id.bill_add_btn);
@@ -191,7 +181,7 @@ public class Bill extends Fragment {
                         BillObject bill = new BillObject();
                         bill.setNote(note.getText().toString());
                         bill.setAmount(Double.parseDouble(amount.getText().toString()));
-                        dbhelper.addToSum(Double.parseDouble(amount.getText().toString()));
+                        //dbhelper.addToSum(Double.parseDouble(amount.getText().toString()));
                         bill.setTitle(title.getText().toString());
                         long id = dbhelper.createBill(bill);
                         bill.setId(id);

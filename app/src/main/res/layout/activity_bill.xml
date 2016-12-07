@@ -34,8 +34,7 @@
         android:layout_toEndOf="@+id/current_balance"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:id="@+id/balance"
-        android:text="850" />
+        android:id="@+id/balance" />
     <ListView
         android:id="@+id/bill_list"
         android:layout_below="@id/current_balance"
