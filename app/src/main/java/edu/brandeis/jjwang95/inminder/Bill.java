@@ -23,6 +23,15 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
+
 //import com.github.mikephil.charting.charts.PieChart;
 //import com.github.mikephil.charting.components.Description;
 //import com.github.mikephil.charting.data.Entry;
@@ -79,9 +88,6 @@ public class Bill extends Fragment {
         billlst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent intent = new Intent(getActivity(), BillNote.class);
-//                intent.putExtra("id", id);
-//                Bill.this.startActivityForResult(intent, request_Code);
                 LayoutInflater factory = LayoutInflater.from(getActivity());
                 final View textEntryView = factory.inflate(R.layout.bill_note, null);
                 bill = dbhelper.getBill(id);
@@ -154,16 +160,6 @@ public class Bill extends Fragment {
         });
 
 
-        /*Progress Bar
-        int pro = (int) Math.round(sum); // Converting a double sum into integer for display in progress bar
-        progress = (ProgressBar) findViewById(R.id.progressBar3);
-        if (pro<0){
-            progress.setProgress(-pro);
-            progress.getProgressDrawable().setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
-        } else{
-            progress.setProgress(pro);
-            progress.getProgressDrawable().setColorFilter(Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN);
-        }*/
 
         // Add Expense
         bill_add_btn =  (ImageButton) rootView.findViewById(R.id.bill_add_btn);
@@ -215,6 +211,43 @@ public class Bill extends Fragment {
             }
         });
 
+
+        ImageButton chart_btn = (ImageButton) rootView.findViewById(R.id.chart_btn);
+        chart_btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                LayoutInflater factory = LayoutInflater.from(getActivity());
+                View dialoglayout = factory.inflate(R.layout.dialogchart, null);
+                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.MyDialogTheme);
+
+                alert.setTitle("Pie Chart");
+
+                PieChart chart = (PieChart) dialoglayout.findViewById(R.id.chart);
+                List<PieEntry> entries = new ArrayList<>();
+
+                entries.add(new PieEntry(800, "Expense"));
+                entries.add(new PieEntry(100, "Left"));
+
+                PieDataSet set = new PieDataSet(entries, "Expense Chart");
+                set.setColors(ColorTemplate.COLORFUL_COLORS);
+                PieData data = new PieData(set);
+
+                chart.setData(data);
+                chart.invalidate(); // refresh
+
+
+                alert.setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                    }
+                });
+
+                alert.setView(dialoglayout);
+                alert.show();
+
+            }
+        });
         /*PieChart pieChart = (PieChart) rootView.findViewById(R.id.chart);
         pieChart.setDrawHoleEnabled(true);
         pieChart.setHoleColor(Color.TRANSPARENT);
