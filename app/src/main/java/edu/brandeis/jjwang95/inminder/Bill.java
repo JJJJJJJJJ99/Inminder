@@ -116,6 +116,7 @@ public class Bill extends Fragment {
         balance = (TextView) rootView.findViewById(R.id.balance);
         balance.setTypeface(mycustomFont);
         balance.setTextSize(30);
+        balance.setText(String.valueOf(dbhelper.getBudget() - dbhelper.getSum()));
         TextView label = (TextView) rootView.findViewById(R.id.current_balance);
         label.setTypeface(mycustomFont, Typeface.BOLD);
         label.setTextSize(30);
