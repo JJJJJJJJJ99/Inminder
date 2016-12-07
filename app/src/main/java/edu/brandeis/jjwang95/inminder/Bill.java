@@ -68,6 +68,18 @@ public class Bill extends Fragment {
             }
         });
 
+
+        Button set_budget =(Button) rootView.findViewById(R.id.set_budget);
+        set_budget.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(new Intent("edu.brandeis.jjwang95.inminder.BillSetBudget" ));
+                Bill.this.startActivityForResult(myIntent, 3);
+            }
+        });
+
+
         PieChart chart = (PieChart) rootView.findViewById(R.id.chart);
         entries = new ArrayList<>();
         ex = new PieEntry(expense, "Expense");
@@ -107,6 +119,7 @@ public class Bill extends Fragment {
 
             }
         }
+
 
     }
 

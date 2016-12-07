@@ -31,14 +31,14 @@ public class BillSetBudget extends AppCompatActivity {
             }
         });
         final Button cancel = (Button) findViewById(R.id.bill_button_cancel);
+
         cancel.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent i = new Intent(BillSetBudget.this, Bill.class);
-                //BillSetBudget.this.startActivity(i);
+                Intent data = new Intent();
+                setResult(RESULT_CANCELED, data);
                 finish();
             }
         });
-
 
     }
 }
