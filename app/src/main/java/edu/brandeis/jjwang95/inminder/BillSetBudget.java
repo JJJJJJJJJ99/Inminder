@@ -24,27 +24,27 @@ public class BillSetBudget extends AppCompatActivity {
         setContentView(R.layout.set_budget);
         dbHelper =  DBHelper.getInstance(getApplicationContext());
         setBudget = (EditText) findViewById(R.id.budget_set);
-        set = (Button) findViewById(R.id.button_set);
-        set.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Log.d("Here", "Budget");
-                DBHelper.getInstance(getApplicationContext()).setBudget(Double.parseDouble(setBudget.getText().toString()));
-
-                dbHelper.setBudget(Double.parseDouble(setBudget.getText().toString()));
-                Log.d("budget", setBudget.getText().toString());
-                Intent i = new Intent();
-                setResult(RESULT_OK, i);
-                finish();
-            }
-        });
-        final Button cancel = (Button) findViewById(R.id.bill_button_cancel);
-        cancel.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                //BillSetBudget.this.startActivity(i);
-                finish();
-            }
-        });
+//        set = (Button) findViewById(R.id.button_set);
+//        set.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//                Log.d("Here", "Budget");
+////                DBHelper.getInstance(getApplicationContext()).setBudget(Double.parseDouble(setBudget.getText().toString()));
+//
+//                dbHelper.setBudget(Double.parseDouble(setBudget.getText().toString()));
+//                Log.d("budget", setBudget.getText().toString());
+//                Intent i = new Intent();
+//                setResult(RESULT_OK, i);
+//                finish();
+//            }
+//        });
+//        final Button cancel = (Button) findViewById(R.id.bill_button_cancel);
+//        cancel.setOnClickListener(new View.OnClickListener(){
+//            public void onClick(View v){
+//                //BillSetBudget.this.startActivity(i);
+//                finish();
+//            }
+//        });
 
 
     }

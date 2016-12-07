@@ -121,8 +121,35 @@ public class Bill extends Fragment {
         bill_set_btn =  (ImageButton) rootView.findViewById(R.id.bill_set_btn);
         bill_set_btn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent myIntent = new Intent(new Intent("edu.brandeis.jjwang95.inminder.BillSetBudget" ));
-                Bill.this.startActivityForResult(myIntent, request_Code);
+//                Intent myIntent = new Intent(new Intent("edu.brandeis.jjwang95.inminder.BillSetBudget" ));
+//                Bill.this.startActivityForResult(myIntent, request_Code);
+                LayoutInflater factory = LayoutInflater.from(getActivity());
+                final View textEntryView = factory.inflate(R.layout.set_budget, null);
+                final EditText setBudget = (EditText) textEntryView.findViewById(R.id.budget_set);
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.MyDialogTheme);
+                alert.setTitle("Set Budget");
+
+                alert.setPositiveButton("Set", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dbhelper.setBudget(Double.parseDouble(setBudget.getText().toString()));
+                        adapter.changeCursor(dbhelper.getAllBills());
+                        billlst.setAdapter(adapter);
+                        sum = dbhelper.getBudget() - dbhelper.getSum();
+                        balance.setText(Double.toString(sum));
+                        dialog.dismiss();
+                    }
+                });
+
+                alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                    }
+                });
+                alert.setView(textEntryView);
+                alert.show();
+
+
             }
         });
 
